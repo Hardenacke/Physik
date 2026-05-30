@@ -1,0 +1,445 @@
+{
+  "site": {
+    "titel": "Physik",
+    "untertitel": "Digitale Materialübersicht für Lernpfade, Lernspiele und Arbeitsmaterialien",
+    "beschreibung": "Eine datengetriebene GitHub-Pages-Übersicht für das Physik-Repository.",
+    "basis": "./"
+  },
+  "klassen": [
+    {
+      "id": "klasse-5",
+      "titel": "Klasse 5",
+      "kurz": "5",
+      "beschreibung": "Grundlagen zu Wärme, Strom, Schall und Licht.",
+      "icon": "🌡️"
+    },
+    {
+      "id": "klasse-8",
+      "titel": "Klasse 8",
+      "kurz": "8",
+      "beschreibung": "Optik, Astronomie sowie Bewegung, Kraft und Energie.",
+      "icon": "🔭"
+    },
+    {
+      "id": "klasse-9",
+      "titel": "Klasse 9",
+      "kurz": "9",
+      "beschreibung": "Kräfte, Energie und Elektrizitätslehre.",
+      "icon": "⚡"
+    },
+    {
+      "id": "klasse-10",
+      "titel": "Klasse 10",
+      "kurz": "10",
+      "beschreibung": "Druck, Auftrieb, Kernphysik und Energieversorgung.",
+      "icon": "☢️"
+    },
+    {
+      "id": "ef",
+      "titel": "EF",
+      "kurz": "EF",
+      "beschreibung": "Mechanik in der Einführungsphase.",
+      "icon": "🧭"
+    },
+    {
+      "id": "q1-gk",
+      "titel": "Q1 Grundkurs",
+      "kurz": "Q1 GK",
+      "beschreibung": "Felder, Wellen, Quantenobjekte und Elektrodynamik.",
+      "icon": "🌊"
+    },
+    {
+      "id": "q1-lk",
+      "titel": "Q1 Leistungskurs",
+      "kurz": "Q1 LK",
+      "beschreibung": "Leistungskursbereich, aktuell noch nicht fachlich ausdifferenziert.",
+      "icon": "🧪"
+    },
+    {
+      "id": "q2-gk",
+      "titel": "Q2 Grundkurs",
+      "kurz": "Q2 GK",
+      "beschreibung": "Strahlung und Materie: Atomphysik, Kernphysik und Spektren.",
+      "icon": "🧬"
+    },
+    {
+      "id": "q2-lk",
+      "titel": "Q2 Leistungskurs",
+      "kurz": "Q2 LK",
+      "beschreibung": "Leistungskursbereich, aktuell noch nicht fachlich ausdifferenziert.",
+      "icon": "📡"
+    }
+  ],
+  "materialien": {
+    "klasse-5": [
+      {
+        "bereich": "IF 1",
+        "titel": "Temperatur und Wärme",
+        "typ": "Materialseite",
+        "pfad": "klasse-5/if-1/temperatur-und-waerme/test.html",
+        "tags": [
+          "Wärme",
+          "Temperatur",
+          "Klasse 5"
+        ]
+      },
+      {
+        "bereich": "IF 2",
+        "titel": "Elektrischer Strom und Magnetismus",
+        "typ": "Materialseite",
+        "pfad": "klasse-5/if-2/elektrischer-strom-und-magnetismus/test.html",
+        "tags": [
+          "Strom",
+          "Magnetismus",
+          "Klasse 5"
+        ]
+      },
+      {
+        "bereich": "IF 3",
+        "titel": "Schall",
+        "typ": "Materialseite",
+        "pfad": "klasse-5/if-3/schall/test.html",
+        "tags": [
+          "Akustik",
+          "Schall",
+          "Klasse 5"
+        ]
+      },
+      {
+        "bereich": "IF 4",
+        "titel": "Licht",
+        "typ": "Materialseite",
+        "pfad": "klasse-5/if-4/licht/test.html",
+        "tags": [
+          "Optik",
+          "Licht",
+          "Klasse 5"
+        ]
+      }
+    ],
+    "klasse-8": [
+      {
+        "bereich": "IF 5",
+        "titel": "Optische Instrumente",
+        "typ": "Materialseite",
+        "pfad": "klasse-8/if-5/optische-instrumente/test.html",
+        "tags": [
+          "Optik",
+          "Linsen",
+          "Klasse 8"
+        ]
+      },
+      {
+        "bereich": "IF 6",
+        "titel": "Sterne und Weltall",
+        "typ": "Materialseite",
+        "pfad": "klasse-8/if-6/sterne-und-weltall/test.html",
+        "tags": [
+          "Astronomie",
+          "Weltall",
+          "Klasse 8"
+        ]
+      },
+      {
+        "bereich": "IF 7",
+        "titel": "Bewegung, Kraft und Energie: Bewegungen",
+        "typ": "Materialseite",
+        "pfad": "klasse-8/if-7/bewegung-kraft-energie-bewegungen/test.html",
+        "tags": [
+          "Bewegung",
+          "Mechanik",
+          "Klasse 8"
+        ]
+      }
+    ],
+    "klasse-9": [
+      {
+        "bereich": "IF 7",
+        "titel": "Bewegung, Kraft und Energie: Kräfte und Energie",
+        "typ": "Materialseite",
+        "pfad": "klasse-9/if-7/bewegung-kraft-energie-kraefte-und-energie/test.html",
+        "tags": [
+          "Kraft",
+          "Energie",
+          "Klasse 9"
+        ]
+      },
+      {
+        "bereich": "IF 9",
+        "titel": "Elektrizität: Elektrostatik und Stromkreise",
+        "typ": "Materialseite",
+        "pfad": "klasse-9/if-9/elektrizitaet-elektrostatik-und-stromkreise/test.html",
+        "tags": [
+          "Elektrizität",
+          "Elektrostatik",
+          "Stromkreis"
+        ]
+      },
+      {
+        "bereich": "IF 9",
+        "titel": "Elektrizität: Widerstand, ohmsches Gesetz und Energie",
+        "typ": "Materialseite",
+        "pfad": "klasse-9/if-9/elektrizitaet-widerstand-ohmsches-gesetz-und-energie/test.html",
+        "tags": [
+          "Widerstand",
+          "Ohmsches Gesetz",
+          "Energie"
+        ]
+      }
+    ],
+    "klasse-10": [
+      {
+        "bereich": "IF 8",
+        "titel": "Druck und Auftrieb",
+        "typ": "Materialseite",
+        "pfad": "klasse-10/if-8/druck-und-auftrieb/test.html",
+        "tags": [
+          "Druck",
+          "Auftrieb",
+          "Klasse 10"
+        ]
+      },
+      {
+        "bereich": "IF 10",
+        "titel": "Ionisierende Strahlung und Kernenergie",
+        "typ": "Materialseite",
+        "pfad": "klasse-10/if-10/ionisierende-strahlung-und-kernenergie/test.html",
+        "tags": [
+          "Kernenergie",
+          "Strahlung",
+          "Radioaktivität"
+        ]
+      },
+      {
+        "bereich": "IF 11",
+        "titel": "Energieversorgung",
+        "typ": "Materialseite",
+        "pfad": "klasse-10/if-11/energieversorgung/test.html",
+        "tags": [
+          "Energie",
+          "Versorgung",
+          "Klasse 10"
+        ]
+      }
+    ],
+    "ef": [
+      {
+        "bereich": "Mechanik",
+        "titel": "Dynamik",
+        "typ": "Materialseite",
+        "pfad": "ef/mechanik/dynamik/test.html",
+        "tags": [
+          "Dynamik",
+          "Mechanik",
+          "EF"
+        ]
+      },
+      {
+        "bereich": "Mechanik",
+        "titel": "Erhaltungssätze",
+        "typ": "Materialseite",
+        "pfad": "ef/mechanik/erhaltungssaetze/test.html",
+        "tags": [
+          "Energieerhaltung",
+          "Impuls",
+          "EF"
+        ]
+      },
+      {
+        "bereich": "Mechanik",
+        "titel": "Fall und Wurf",
+        "typ": "Materialseite",
+        "pfad": "ef/mechanik/fall-und-wurf/test.html",
+        "tags": [
+          "Freier Fall",
+          "Wurf",
+          "EF"
+        ]
+      },
+      {
+        "bereich": "Mechanik",
+        "titel": "Gravitation und Planetenbewegungen",
+        "typ": "Materialseite",
+        "pfad": "ef/mechanik/gravitation-und-planetenbewegungen/test.html",
+        "tags": [
+          "Gravitation",
+          "Planeten",
+          "EF"
+        ]
+      },
+      {
+        "bereich": "Mechanik",
+        "titel": "Kinematik",
+        "typ": "Materialseite",
+        "pfad": "ef/mechanik/kinematik/test.html",
+        "tags": [
+          "Kinematik",
+          "Bewegung",
+          "EF"
+        ]
+      },
+      {
+        "bereich": "Mechanik",
+        "titel": "Kreisbewegungen",
+        "typ": "Materialseite",
+        "pfad": "ef/mechanik/kreisbewegungen/test.html",
+        "tags": [
+          "Kreisbewegung",
+          "Mechanik",
+          "EF"
+        ]
+      },
+      {
+        "bereich": "Mechanik",
+        "titel": "Relativität",
+        "typ": "Materialseite",
+        "pfad": "ef/mechanik/relativitaet/test.html",
+        "tags": [
+          "Relativität",
+          "Mechanik",
+          "EF"
+        ]
+      }
+    ],
+    "q1-gk": [
+      {
+        "bereich": "IF A",
+        "titel": "Geladene Teilchen in elektrischen Feldern",
+        "typ": "Materialseite",
+        "pfad": "q1-gk/if-a/geladene-teilchen-in-elektrischen-feldern/test.html",
+        "tags": [
+          "Elektrisches Feld",
+          "Geladene Teilchen",
+          "Q1 GK"
+        ]
+      },
+      {
+        "bereich": "IF A",
+        "titel": "Geladene Teilchen in magnetischen Feldern",
+        "typ": "Materialseite",
+        "pfad": "q1-gk/if-a/geladene-teilchen-in-magnetischen-feldern/test.html",
+        "tags": [
+          "Magnetisches Feld",
+          "Lorentzkraft",
+          "Q1 GK"
+        ]
+      },
+      {
+        "bereich": "IF A",
+        "titel": "Klassische Wellen",
+        "typ": "Materialseite",
+        "pfad": "q1-gk/if-a/klassische-wellen/test.html",
+        "tags": [
+          "Wellen",
+          "Interferenz",
+          "Q1 GK"
+        ]
+      },
+      {
+        "bereich": "IF B",
+        "titel": "Quantenobjekte",
+        "typ": "Materialseite",
+        "pfad": "q1-gk/if-b/quantenobjekte/test.html",
+        "tags": [
+          "Quantenphysik",
+          "Photonen",
+          "Q1 GK"
+        ]
+      },
+      {
+        "bereich": "IF C",
+        "titel": "Elektrodynamik: Induktion",
+        "typ": "Materialseite",
+        "pfad": "q1-gk/if-c/elektrodynamik-induktion/test.html",
+        "tags": [
+          "Induktion",
+          "Elektrodynamik",
+          "Q1 GK"
+        ]
+      },
+      {
+        "bereich": "IF C",
+        "titel": "Elektrodynamik: Transformatoren und Energieübertragung",
+        "typ": "Materialseite",
+        "pfad": "q1-gk/if-c/elektrodynamik-transformatoren-und-energieuebertragung/test.html",
+        "tags": [
+          "Transformator",
+          "Energieübertragung",
+          "Q1 GK"
+        ]
+      },
+      {
+        "bereich": "IF C",
+        "titel": "Kondensatoren und elektromagnetische Schwingungen",
+        "typ": "Materialseite",
+        "pfad": "q1-gk/if-c/kondensatoren-und-elektromagnetische-schwingungen/test.html",
+        "tags": [
+          "Kondensator",
+          "Schwingkreis",
+          "Q1 GK"
+        ]
+      }
+    ],
+    "q1-lk": [
+      {
+        "bereich": "Oberstufe",
+        "titel": "Leistungskurs Physik – noch nicht ausgewiesen",
+        "typ": "Materialseite",
+        "pfad": "q1-lk/oberstufe/leistungskurs-physik-noch-nicht-ausgewiesen/test.html",
+        "tags": [
+          "Q1 LK",
+          "Oberstufe",
+          "Platzhalter"
+        ]
+      }
+    ],
+    "q2-gk": [
+      {
+        "bereich": "IF D",
+        "titel": "Strahlung und Materie: Atomphysik",
+        "typ": "Materialseite",
+        "pfad": "q2-gk/if-d/strahlung-und-materie-atomphysik/test.html",
+        "tags": [
+          "Atomphysik",
+          "Strahlung",
+          "Q2 GK"
+        ]
+      },
+      {
+        "bereich": "IF D",
+        "titel": "Strahlung und Materie: Kernphysik",
+        "typ": "Materialseite",
+        "pfad": "q2-gk/if-d/strahlung-und-materie-kernphysik/test.html",
+        "tags": [
+          "Kernphysik",
+          "Strahlung",
+          "Q2 GK"
+        ]
+      },
+      {
+        "bereich": "IF D",
+        "titel": "Strahlung und Materie: Spektrum und Radioaktivität",
+        "typ": "Materialseite",
+        "pfad": "q2-gk/if-d/strahlung-und-materie-spektrum-und-radioaktivitaet/test.html",
+        "tags": [
+          "Spektrum",
+          "Radioaktivität",
+          "Q2 GK"
+        ]
+      }
+    ],
+    "q2-lk": [
+      {
+        "bereich": "Oberstufe",
+        "titel": "Leistungskurs Physik – noch nicht ausgewiesen",
+        "typ": "Materialseite",
+        "pfad": "q2-lk/oberstufe/leistungskurs-physik-noch-nicht-ausgewiesen/test.html",
+        "tags": [
+          "Q2 LK",
+          "Oberstufe",
+          "Platzhalter"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physik · Digitale Materialübersicht</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Digitale Lernplattform</p>
+      <h1 id="siteTitel">Physik</h1>
+      <p class="subtitle" id="siteUntertitel">Materialien und Lernpfade für den Physikunterricht.</p>
+      <div class="toolbar">
+        <label class="search-label" for="globalSearch">Material suchen</label>
+        <input id="globalSearch" class="search-input" type="search" placeholder="z. B. Optik, Mechanik, Q1 ...">
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="panel intro-panel">
+      <div>
+        <p class="eyebrow dark">Übersicht</p>
+        <h2>Wähle eine Jahrgangsstufe oder Kursstufe aus</h2>
+        <p>Die Seite liest alle Einträge aus <code>data.json</code>. Neue Materialien ergänzt du später nur dort.</p>
+      </div>
+      <span class="status-pill" id="materialCounter">Lade Materialien …</span>
+    </section>
+
+    <section class="grid" id="klassenGrid" aria-live="polite"></section>
+
+    <section class="panel" id="suchErgebnissePanel" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark">Suchergebnisse</p>
+          <h2>Gefundene Materialien</h2>
+        </div>
+        <button class="ghost-button" id="clearSearch" type="button">Suche zurücksetzen</button>
+      </div>
+      <div class="material-list" id="suchErgebnisse"></div>
+    </section>
+  </main>
+
+  <script>
+    const grid = document.getElementById('klassenGrid');
+    const searchInput = document.getElementById('globalSearch');
+    const resultPanel = document.getElementById('suchErgebnissePanel');
+    const resultBox = document.getElementById('suchErgebnisse');
+    const counter = document.getElementById('materialCounter');
+    const clearSearch = document.getElementById('clearSearch');
+    let data = null;
+
+    fetch('data.json')
+      .then(response => {
+        if (!response.ok) throw new Error('data.json konnte nicht geladen werden.');
+        return response.json();
+      })
+      .then(json => {
+        data = json;
+        document.getElementById('siteTitel').textContent = json.site?.titel || 'Physik';
+        document.getElementById('siteUntertitel').textContent = json.site?.untertitel || 'Digitale Materialübersicht';
+        renderKlassen();
+        updateCounter();
+      })
+      .catch(error => {
+        grid.innerHTML = `<article class="card error-card"><h2>Fehler beim Laden</h2><p>${error.message}</p><p>Prüfe, ob <code>data.json</code> im selben Ordner wie <code>index.html</code> liegt.</p></article>`;
+        counter.textContent = 'data.json nicht gefunden';
+      });
+
+    function materialCount(id) {
+      return (data.materialien?.[id] || []).length;
+    }
+
+    function allMaterials() {
+      return data.klassen.flatMap(klasse => (data.materialien?.[klasse.id] || []).map(item => ({...item, klasse})));
+    }
+
+    function renderKlassen() {
+      grid.innerHTML = data.klassen.map(klasse => {
+        const count = materialCount(klasse.id);
+        return `
+          <article class="card class-card">
+            <div class="icon-badge">${klasse.icon || '📘'}</div>
+            <div class="card-body">
+              <p class="eyebrow dark">${klasse.kurz || klasse.titel}</p>
+              <h2>${klasse.titel}</h2>
+              <p>${klasse.beschreibung || ''}</p>
+            </div>
+            <div class="card-footer">
+              <span class="status-pill">${count} ${count === 1 ? 'Material' : 'Materialien'}</span>
+              <a class="primary-link" href="klasse.html?klasse=${encodeURIComponent(klasse.id)}">Öffnen</a>
+            </div>
+          </article>`;
+      }).join('');
+    }
+
+    function updateCounter() {
+      const count = allMaterials().length;
+      counter.textContent = `${count} Materialien verlinkt`;
+    }
+
+    function renderSearch(query) {
+      const term = query.trim().toLowerCase();
+      if (!term) {
+        resultPanel.hidden = true;
+        resultBox.innerHTML = '';
+        return;
+      }
+      const results = allMaterials().filter(item => {
+        const haystack = [item.titel, item.bereich, item.typ, item.pfad, item.klasse.titel, ...(item.tags || [])]
+          .join(' ')
+          .toLowerCase();
+        return haystack.includes(term);
+      });
+      resultPanel.hidden = false;
+      resultBox.innerHTML = results.length ? results.map(renderMaterial).join('') : '<p>Keine passenden Materialien gefunden.</p>';
+    }
+
+    function renderMaterial(item) {
+      return `
+        <article class="material-card">
+          <div>
+            <p class="eyebrow dark">${item.klasse.titel} · ${item.bereich}</p>
+            <h3>${item.titel}</h3>
+            <p class="path-text">${item.pfad}</p>
+          </div>
+          <a class="primary-link" href="${item.pfad}">Material öffnen</a>
+        </article>`;
+    }
+
+    searchInput.addEventListener('input', event => renderSearch(event.target.value));
+    clearSearch.addEventListener('click', () => {
+      searchInput.value = '';
+      renderSearch('');
+      searchInput.focus();
+    });
+  </script>
+</body>
+</html>
