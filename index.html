@@ -1,1 +1,73 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Physik · Digitale Lernplattform</title><link rel="stylesheet" href="style.css"></head><body><header class="hero"><div class="hero-content"><p><strong>Digitale Lernplattform</strong></p><h1>Physik</h1><p class="subtitle">Materialien, Lernpfade und Arbeitsblätter in einer GitHub-Pages-tauglichen Ordnerstruktur.</p><div class="toolbar"><input id="q" class="input" placeholder="Material suchen …"></div></div></header><main class="page"><section class="panel"><h2>Jahrgangsstufe oder Kursstufe wählen</h2><p>Die Übersicht wird aus <code>data.json</code> erzeugt. Neue Materialien ergänzt man dort oder durch die automatische Generierung erneut.</p><div id="cards" class="grid"></div></section><section class="panel" id="resultsPanel" hidden><h2>Suchergebnisse</h2><div id="results" class="material-list"></div></section></main><script>let DATA;fetch('data.json').then(r=>r.json()).then(d=>{DATA=d;renderCards();});function renderCards(){cards.innerHTML=DATA.klassen.map(k=>`<a class="card" href="klasse.html?klasse=${encodeURIComponent(k.id)}"><div class="badge">${k.kurz}</div><div><h2>${k.titel}</h2><p>${k.beschreibung}</p></div><span class="primary">Materialien öffnen</span></a>`).join('')}function card(m){return `<article class="material-card"><div><strong>${m.titel}</strong><p>${m.bereich} · ${m.typ}</p><div class="path">${m.pfad}</div><div class="tags">${(m.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div></div><a class="primary" href="${m.pfad}">Öffnen</a></article>`}q.addEventListener('input',()=>{const term=q.value.trim().toLowerCase();if(!term){resultsPanel.hidden=true;return}const all=Object.values(DATA.materialien).flat();const hits=all.filter(m=>JSON.stringify(m).toLowerCase().includes(term));resultsPanel.hidden=false;results.innerHTML=hits.length?hits.map(card).join(''):'<p>Keine Treffer.</p>';});</script></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physik · Lernpfade und Arbeitsblätter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Digitale Physik-Lernplattform</div>
+    <h1>Physik</h1>
+    <p class="subtitle">Wähle zuerst eine Klasse oder einen Kurs. Danach erscheinen die Themenbereiche nach Lehrplan und Ordnerstruktur; darin liegen die Lernpfade mit den zugehörigen PDF-Arbeitsblättern.</p>
+    <div class="stats"><span class="stat"><strong>7</strong> Klassen/Kurse</span><span class="stat"><strong>26</strong> Themenbereiche</span><span class="stat"><strong>168</strong> Lernpfade/Materialien</span><span class="stat"><strong>163</strong> PDF-Arbeitsblätter</span></div>
+  </div>
+</header>
+<main class="page">
+  <section class="panel">
+    <div class="section-head"><div><h2>Klasse oder Kurs auswählen</h2><p>Die Navigation ist dreistufig aufgebaut: Klasse/Kurs → Themenbereich → Lernpfad und PDF.</p></div><div class="toolbar"><input class="input" data-search placeholder="Klasse oder Kurs suchen …"></div></div>
+    <div class="grid">
+<a class="card" href="klasse-5/index.html" data-filter="klasse 5 einstieg in physikalisches denken mit licht, schall, wärme, strom und magneten. klasse-5">
+  <div class="badge">5</div>
+  <div><h2>Klasse 5</h2><p>Einstieg in physikalisches Denken mit Licht, Schall, Wärme, Strom und Magneten.</p></div>
+  <div class="tags"><span class="tag">5 Themenbereiche</span><span class="tag">26 Lernpfade</span><span class="tag">25 PDFs</span></div>
+  <span class="primary">Klasse/Kurs öffnen</span>
+</a>
+<a class="card" href="klasse-8/index.html" data-filter="klasse 8 vertiefung mit optik, astronomie und bewegungslehre. klasse-8">
+  <div class="badge">8</div>
+  <div><h2>Klasse 8</h2><p>Vertiefung mit Optik, Astronomie und Bewegungslehre.</p></div>
+  <div class="tags"><span class="tag">3 Themenbereiche</span><span class="tag">21 Lernpfade</span><span class="tag">21 PDFs</span></div>
+  <span class="primary">Klasse/Kurs öffnen</span>
+</a>
+<a class="card" href="klasse-9/index.html" data-filter="klasse 9 elektrizitätslehre sowie mechanische grundbegriffe zu kräften, arbeit und energie. klasse-9">
+  <div class="badge">9</div>
+  <div><h2>Klasse 9</h2><p>Elektrizitätslehre sowie mechanische Grundbegriffe zu Kräften, Arbeit und Energie.</p></div>
+  <div class="tags"><span class="tag">2 Themenbereiche</span><span class="tag">15 Lernpfade</span><span class="tag">15 PDFs</span></div>
+  <span class="primary">Klasse/Kurs öffnen</span>
+</a>
+<a class="card" href="klasse-10/index.html" data-filter="klasse 10 druck und auftrieb, energieversorgung sowie strahlung und kernenergie. klasse-10">
+  <div class="badge">10</div>
+  <div><h2>Klasse 10</h2><p>Druck und Auftrieb, Energieversorgung sowie Strahlung und Kernenergie.</p></div>
+  <div class="tags"><span class="tag">4 Themenbereiche</span><span class="tag">26 Lernpfade</span><span class="tag">25 PDFs</span></div>
+  <span class="primary">Klasse/Kurs öffnen</span>
+</a>
+<a class="card" href="ef/index.html" data-filter="ef einführungsphase mit mechanik, kreisbewegung, gravitation und weltbildern. ef">
+  <div class="badge">EF</div>
+  <div><h2>EF</h2><p>Einführungsphase mit Mechanik, Kreisbewegung, Gravitation und Weltbildern.</p></div>
+  <div class="tags"><span class="tag">2 Themenbereiche</span><span class="tag">13 Lernpfade</span><span class="tag">13 PDFs</span></div>
+  <span class="primary">Klasse/Kurs öffnen</span>
+</a>
+<a class="card" href="q1-q2-grundkurs/index.html" data-filter="q1/q2 grundkurs grundkurs-materialien zu feldern, induktion, quantenphysik sowie atom- und kernphysik. q1-q2-grundkurs">
+  <div class="badge">GK</div>
+  <div><h2>Q1/Q2 Grundkurs</h2><p>Grundkurs-Materialien zu Feldern, Induktion, Quantenphysik sowie Atom- und Kernphysik.</p></div>
+  <div class="tags"><span class="tag">5 Themenbereiche</span><span class="tag">31 Lernpfade</span><span class="tag">30 PDFs</span></div>
+  <span class="primary">Klasse/Kurs öffnen</span>
+</a>
+<a class="card" href="q1-q2-leistungskurs/index.html" data-filter="q1/q2 leistungskurs leistungskurs-materialien mit vertieften lernpfaden zu feldern, wellen, quantenphysik und kernphysik. q1-q2-leistungskurs">
+  <div class="badge">LK</div>
+  <div><h2>Q1/Q2 Leistungskurs</h2><p>Leistungskurs-Materialien mit vertieften Lernpfaden zu Feldern, Wellen, Quantenphysik und Kernphysik.</p></div>
+  <div class="tags"><span class="tag">5 Themenbereiche</span><span class="tag">36 Lernpfade</span><span class="tag">34 PDFs</span></div>
+  <span class="primary">Klasse/Kurs öffnen</span>
+</a></div>
+  </section>
+</main>
+<script>
+const input=document.querySelector('[data-search]');
+if(input){input.addEventListener('input',()=>{const t=input.value.trim().toLowerCase();document.querySelectorAll('[data-filter]').forEach(el=>{el.classList.toggle('hidden',t && !el.dataset.filter.includes(t));});});}
+</script>
+
+</body>
+</html>

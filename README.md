@@ -1,18 +1,26 @@
-# Physik Repo - Lernpfade und Arbeitsblätter
+# Physik-Lernpfade mit dreistufiger Themen-Navigation
 
-Diese Fassung ist als GitHub-Pages-Struktur vorbereitet.
+Diese Fassung ist für GitHub Pages vorbereitet und nutzt eine klare Navigationslogik:
 
-Grundsatz der Ordnerstruktur:
+1. `index.html`: Auswahl der Klasse oder des Kurses
+2. `<klasse-oder-kurs>/index.html`: Übersicht über Themenbereiche nach Lehrplan und Ordnerstruktur
+3. `<klasse-oder-kurs>/<themenbereich>/index.html`: Lernpfade und die zugehörigen PDF-Arbeitsblätter
 
-- Jeder Lernpfad liegt in einem eigenen Unterordner.
-- Im Lernpfadordner liegt die HTML-Datei des Lernpfads.
-- Lokal benötigte Bilder, Skripte oder Styles liegen im Unterordner `assets/` des jeweiligen Lernpfads.
-- Das passende Arbeitsblatt liegt im selben Lernpfadordner als PDF, in der Regel als `arbeitsblatt.pdf`.
-- LaTeX-Projektdateien, `.tex`-Quellen und Build-Artefakte sind in dieser Downloadfassung nicht enthalten.
+## Strukturprinzip
 
-Die zentrale `data.json` verweist pro Eintrag auf:
+- Jeder Lernpfad bleibt in seinem Materialordner.
+- Lokale Assets wie Bilder bleiben im jeweiligen `assets/`-Ordner des Lernpfads.
+- Arbeitsblätter liegen nur als PDF im Materialordner.
+- LaTeX-Projektdateien sind nicht enthalten.
+- Die zentrale `data.json` enthält alle Klassen/Kurse, Themenbereiche und Materialpfade.
 
-- `lernpfad_html`
-- `arbeitsblatt_pdf`
+## Umfang
 
-Einträge ohne separates Arbeitsblatt enthalten `arbeitsblatt_pdf: null`.
+- Klassen/Kurse: 7
+- Themenbereiche: 26
+- Lernpfade/Materialien: 168
+- PDF-Arbeitsblätter: 163
+
+## Kompatibilität
+
+Alte Links wie `klasse.html?klasse=klasse-8` werden auf die neue Ordnernavigation weitergeleitet.

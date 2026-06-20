@@ -1,1 +1,20 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Physik · Materialien</title><link rel="stylesheet" href="style.css"><style>.actions{display:flex;gap:.5rem;flex-wrap:wrap}.secondary{display:inline-flex;align-items:center;justify-content:center;border:1px solid #c8d4e3;border-radius:999px;padding:.65rem .95rem;text-decoration:none;font-weight:700;color:#24415f;background:#fff}.material-card{gap:1rem}.fileline{font-size:.82rem;color:#526173;margin-top:.15rem}.missing{opacity:.7}</style></head><body><header class="hero compact"><div class="hero-content"><div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span><span id="crumb">Klasse</span></div><h1 id="title">Materialübersicht</h1><p class="subtitle" id="desc">Wähle einen Lernpfad aus. In jedem Lernpfadordner liegen HTML-Datei, benötigte Assets und das Arbeitsblatt als PDF.</p></div></header><main class="page"><section class="panel"><div class="toolbar"><select id="bereich" class="select"><option value="">Alle Bereiche</option></select><input id="q" class="input" placeholder="In dieser Stufe suchen …"></div></section><section class="panel"><h2>Themen</h2><div id="list" class="material-list"></div></section></main><script>let DATA,ID=new URLSearchParams(location.search).get('klasse')||'klasse-5',ITEMS=[];fetch('data.json').then(r=>r.json()).then(d=>{DATA=d;let k=d.klassen.find(x=>x.id===ID)||d.klassen[0];ID=k.id;ITEMS=d.materialien[ID]||[];title.textContent=k.titel;crumb.textContent=k.titel;desc.textContent=k.beschreibung||desc.textContent;[...new Set(ITEMS.map(x=>x.bereich).filter(Boolean))].sort().forEach(b=>bereich.insertAdjacentHTML('beforeend',`<option>${b}</option>`));render();});function card(m){let pdf=m.arbeitsblatt_pdf?`<a class="secondary" href="${m.arbeitsblatt_pdf}">AB als PDF</a>`:`<span class="secondary missing">kein PDF hinterlegt</span>`;return `<article class="material-card"><div><strong>${m.titel}</strong><p>${m.bereich} · ${m.typ}</p><div class="fileline">HTML: ${m.lernpfad_html||m.pfad}</div>${m.arbeitsblatt_pdf?`<div class="fileline">PDF: ${m.arbeitsblatt_pdf}</div>`:''}<div class="tags">${(m.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div></div><div class="actions"><a class="primary" href="${m.lernpfad_html||m.pfad}">Lernpfad öffnen</a>${pdf}</div></article>`}function render(){let term=q.value.trim().toLowerCase(), b=bereich.value;let hits=ITEMS.filter(m=>(!b||m.bereich===b)&&(!term||JSON.stringify(m).toLowerCase().includes(term)));list.innerHTML=hits.length?hits.map(card).join(''):'<p>Keine Materialien gefunden.</p>'}q.addEventListener('input',render);bereich.addEventListener('change',render);</script></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physik · Klasse öffnen</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero compact"><div class="hero-content"><div class="breadcrumb"><a href="index.html">Startseite</a><span>›</span><span>Auswahl</span></div><h1>Klasse oder Kurs öffnen</h1><p class="subtitle">Diese Kompatibilitätsseite leitet alte Links wie <code>klasse.html?klasse=klasse-8</code> auf die neue Ordnernavigation weiter.</p></div></header>
+<main class="page"><section class="panel"><h2>Auswahl</h2><p>Wähle eine Klasse oder einen Kurs.</p><div class="toolbar"><select class="select" id="k"><option value="klasse-5">Klasse 5</option><option value="klasse-8">Klasse 8</option><option value="klasse-9">Klasse 9</option><option value="klasse-10">Klasse 10</option><option value="ef">EF</option><option value="q1-q2-grundkurs">Q1/Q2 Grundkurs</option><option value="q1-q2-leistungskurs">Q1/Q2 Leistungskurs</option></select><button class="primary" id="go">Öffnen</button></div></section></main>
+<script>
+const params=new URLSearchParams(location.search);const id=params.get('klasse');
+if(id) location.replace(id+'/index.html');
+document.getElementById('go').addEventListener('click',()=>location.href=document.getElementById('k').value+'/index.html');
+</script>
+
+</body>
+</html>
