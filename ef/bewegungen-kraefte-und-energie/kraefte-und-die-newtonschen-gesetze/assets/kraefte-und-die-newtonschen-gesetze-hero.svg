@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 560" role="img" aria-label="Dynamik: Kräfte und Newtonsche Gesetze">
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#0f766e"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-opacity=".25"/></filter></defs>
+<rect width="1080" height="560" rx="34" fill="url(#g)"/>
+<g opacity=".18"><circle cx="90" cy="80" r="120" fill="white"/><circle cx="1030" cy="520" r="180" fill="white"/></g>
+<circle cx="740" cy="190" r="72" fill="none" stroke="white" stroke-width="10" opacity=".75"/><path d="M170 360 C300 230 470 470 660 300 S900 220 980 360" fill="none" stroke="white" stroke-width="12" opacity=".9"/><circle cx="170" cy="360" r="18" fill="white"/><circle cx="660" cy="300" r="18" fill="white"/><path d="M770 190 l80 0 M810 150 l0 80" stroke="white" stroke-width="10" stroke-linecap="round" opacity=".85"/>
+<g filter="url(#s)"><rect x="70" y="58" width="760" height="116" rx="26" fill="white" opacity=".94"/><text x="104" y="108" fill="#0f172a" font-size="34" font-weight="900">Dynamik: Kräfte und Newtonsche Gesetze</text><text x="104" y="150" fill="#334155" font-size="24">Wie erklären Newtonsche Gesetze Bewegungsänderungen im Alltag?</text></g>
+</svg>
