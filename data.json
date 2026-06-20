@@ -1,8 +1,8 @@
 {
   "site": {
     "titel": "Physik",
-    "untertitel": "Digitale Materialübersicht für Lernpfade, Lernspiele und Arbeitsmaterialien",
-    "beschreibung": "Eine datengetriebene GitHub-Pages-Übersicht für das Physik-Repository.",
+    "untertitel": "Digitale Materialübersicht für Lernpfade und Arbeitsblätter",
+    "beschreibung": "Repo-fertige Ordnerstruktur mit konsistenten Pfaden für GitHub Pages. Die data.json enthält alle HTML-Lernpfade sowie alle Arbeitsblätter als PDF-Verweise.",
     "basis": "./"
   },
   "klassen": [
@@ -11,434 +11,2748 @@
       "titel": "Klasse 5",
       "kurz": "5",
       "beschreibung": "Grundlagen zu Wärme, Strom, Schall und Licht.",
-      "icon": "🌡️"
+      "icon": ""
     },
     {
       "id": "klasse-8",
       "titel": "Klasse 8",
       "kurz": "8",
-      "beschreibung": "Optik, Astronomie sowie Bewegung, Kraft und Energie.",
-      "icon": "🔭"
+      "beschreibung": "Optik, Astronomie sowie Bewegung und Geschwindigkeit.",
+      "icon": ""
     },
     {
       "id": "klasse-9",
       "titel": "Klasse 9",
       "kurz": "9",
-      "beschreibung": "Kräfte, Energie und Elektrizitätslehre.",
-      "icon": "⚡"
+      "beschreibung": "Kräfte, Arbeit, Energie sowie Strom, Spannung und Widerstand.",
+      "icon": ""
     },
     {
       "id": "klasse-10",
       "titel": "Klasse 10",
       "kurz": "10",
-      "beschreibung": "Druck, Auftrieb, Kernphysik und Energieversorgung.",
-      "icon": "☢️"
+      "beschreibung": "Druck, Auftrieb, Radioaktivität und Energieversorgung.",
+      "icon": ""
     },
     {
       "id": "ef",
       "titel": "EF",
       "kurz": "EF",
       "beschreibung": "Mechanik in der Einführungsphase.",
-      "icon": "🧭"
+      "icon": ""
     },
     {
-      "id": "q1-gk",
-      "titel": "Q1 Grundkurs",
-      "kurz": "Q1 GK",
-      "beschreibung": "Felder, Wellen, Quantenobjekte und Elektrodynamik.",
-      "icon": "🌊"
+      "id": "q1-q2-grundkurs",
+      "titel": "Q1/Q2 Grundkurs",
+      "kurz": "GK",
+      "beschreibung": "Schwingungen, Felder, Induktion, Quantenphysik sowie Strahlung und Materie.",
+      "icon": ""
     },
     {
-      "id": "q1-lk",
-      "titel": "Q1 Leistungskurs",
-      "kurz": "Q1 LK",
-      "beschreibung": "Leistungskursbereich, aktuell noch nicht fachlich ausdifferenziert.",
-      "icon": "🧪"
-    },
-    {
-      "id": "q2-gk",
-      "titel": "Q2 Grundkurs",
-      "kurz": "Q2 GK",
-      "beschreibung": "Strahlung und Materie: Atomphysik, Kernphysik und Spektren.",
-      "icon": "🧬"
-    },
-    {
-      "id": "q2-lk",
-      "titel": "Q2 Leistungskurs",
-      "kurz": "Q2 LK",
-      "beschreibung": "Leistungskursbereich, aktuell noch nicht fachlich ausdifferenziert.",
-      "icon": "📡"
+      "id": "q1-q2-leistungskurs",
+      "titel": "Q1/Q2 Leistungskurs",
+      "kurz": "LK",
+      "beschreibung": "Vertiefte Felder, Wellen, Quantenphysik sowie Atom- und Kernphysik.",
+      "icon": ""
     }
   ],
+  "beschreibung": "Repo-Struktur: Jeder Lernpfadordner enthält HTML-Datei, lokal benötigte Assets und das passende Arbeitsblatt als PDF. LaTeX-Projektdateien sind nicht enthalten.",
   "materialien": {
     "klasse-5": [
       {
-        "bereich": "IF 1",
-        "titel": "Temperatur und Wärme",
-        "typ": "Materialseite",
-        "pfad": "klasse-5/if-1/temperatur-und-waerme/test.html",
+        "id": "klasse-5-licht-und-sehen-wie-sich-licht-ausbreitet-lernpfad",
+        "bereich": "Licht und Sehen",
+        "titel": "Geht Licht um die Ecke?",
+        "typ": "Lernpfad",
         "tags": [
-          "Wärme",
-          "Temperatur",
-          "Klasse 5"
-        ]
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/licht-und-sehen/wie-sich-licht-ausbreitet/lernpfad.html",
+        "lernpfad_html": "klasse-5/licht-und-sehen/wie-sich-licht-ausbreitet/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/licht-und-sehen/wie-sich-licht-ausbreitet/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF 2",
-        "titel": "Elektrischer Strom und Magnetismus",
-        "typ": "Materialseite",
-        "pfad": "klasse-5/if-2/elektrischer-strom-und-magnetismus/test.html",
+        "id": "klasse-5-licht-und-sehen-sichtbares-und-unsichtbares-licht-lernpfad",
+        "bereich": "Licht und Sehen",
+        "titel": "Licht, das wir nicht sehen",
+        "typ": "Lernpfad",
         "tags": [
-          "Strom",
-          "Magnetismus",
-          "Klasse 5"
-        ]
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/licht-und-sehen/sichtbares-und-unsichtbares-licht/lernpfad.html",
+        "lernpfad_html": "klasse-5/licht-und-sehen/sichtbares-und-unsichtbares-licht/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/licht-und-sehen/sichtbares-und-unsichtbares-licht/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF 3",
-        "titel": "Schall",
-        "typ": "Materialseite",
-        "pfad": "klasse-5/if-3/schall/test.html",
+        "id": "klasse-5-licht-und-sehen-lichtquellen-und-wie-wir-sehen-lernpfad",
+        "bereich": "Licht und Sehen",
+        "titel": "Warum können wir Dinge sehen?",
+        "typ": "Lernpfad",
         "tags": [
-          "Akustik",
-          "Schall",
-          "Klasse 5"
-        ]
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/licht-und-sehen/lichtquellen-und-wie-wir-sehen/lernpfad.html",
+        "lernpfad_html": "klasse-5/licht-und-sehen/lichtquellen-und-wie-wir-sehen/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/licht-und-sehen/lichtquellen-und-wie-wir-sehen/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF 4",
-        "titel": "Licht",
-        "typ": "Materialseite",
-        "pfad": "klasse-5/if-4/licht/test.html",
+        "id": "klasse-5-licht-und-sehen-licht-trifft-auf-oberflaechen-lernpfad",
+        "bereich": "Licht und Sehen",
+        "titel": "Was passiert mit Licht an einer Oberfläche?",
+        "typ": "Lernpfad",
         "tags": [
-          "Optik",
-          "Licht",
-          "Klasse 5"
-        ]
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/licht-und-sehen/licht-trifft-auf-oberflaechen/lernpfad.html",
+        "lernpfad_html": "klasse-5/licht-und-sehen/licht-trifft-auf-oberflaechen/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/licht-und-sehen/licht-trifft-auf-oberflaechen/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-licht-und-sehen-schatten-und-die-lochkamera-lernpfad",
+        "bereich": "Licht und Sehen",
+        "titel": "Wie entstehen Schatten und Bilder?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/licht-und-sehen/schatten-und-die-lochkamera/lernpfad.html",
+        "lernpfad_html": "klasse-5/licht-und-sehen/schatten-und-die-lochkamera/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/licht-und-sehen/schatten-und-die-lochkamera/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-licht-und-sehen-einstieg-licht-lernpfad",
+        "bereich": "Licht und Sehen",
+        "titel": "Wie gelangt ein Bild in unser Auge?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/licht-und-sehen/einstieg-licht/lernpfad.html",
+        "lernpfad_html": "klasse-5/licht-und-sehen/einstieg-licht/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/licht-und-sehen/einstieg-licht/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-strom-und-magnete-sicher-mit-strom-und-energie-sparen-lernpfad",
+        "bereich": "Strom und Magnete",
+        "titel": "Sicher mit Strom umgehen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/strom-und-magnete/sicher-mit-strom-und-energie-sparen/lernpfad.html",
+        "lernpfad_html": "klasse-5/strom-und-magnete/sicher-mit-strom-und-energie-sparen/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/strom-und-magnete/sicher-mit-strom-und-energie-sparen/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-strom-und-magnete-magnetfelder-kompass-und-kleine-magnete-lernpfad",
+        "bereich": "Strom und Magnete",
+        "titel": "Unsichtbare Magnetfelder sichtbar machen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/strom-und-magnete/magnetfelder-kompass-und-kleine-magnete/lernpfad.html",
+        "lernpfad_html": "klasse-5/strom-und-magnete/magnetfelder-kompass-und-kleine-magnete/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/strom-und-magnete/magnetfelder-kompass-und-kleine-magnete/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-strom-und-magnete-einstieg-strom-und-magnete-lernpfad",
+        "bereich": "Strom und Magnete",
+        "titel": "Was bringt Dinge zum Leuchten und Magnete zum Ziehen?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/strom-und-magnete/einstieg-strom-und-magnete/lernpfad.html",
+        "lernpfad_html": "klasse-5/strom-und-magnete/einstieg-strom-und-magnete/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/strom-und-magnete/einstieg-strom-und-magnete/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-strom-und-magnete-was-elektrischer-strom-bewirken-kann-lernpfad",
+        "bereich": "Strom und Magnete",
+        "titel": "Was kann elektrischer Strom bewirken?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/strom-und-magnete/was-elektrischer-strom-bewirken-kann/lernpfad.html",
+        "lernpfad_html": "klasse-5/strom-und-magnete/was-elektrischer-strom-bewirken-kann/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/strom-und-magnete/was-elektrischer-strom-bewirken-kann/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-strom-und-magnete-was-elektrischen-strom-leitet-lernpfad",
+        "bereich": "Strom und Magnete",
+        "titel": "Was leitet elektrischen Strom?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/strom-und-magnete/was-elektrischen-strom-leitet/lernpfad.html",
+        "lernpfad_html": "klasse-5/strom-und-magnete/was-elektrischen-strom-leitet/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/strom-und-magnete/was-elektrischen-strom-leitet/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-strom-und-magnete-wie-magnete-aufeinander-wirken-lernpfad",
+        "bereich": "Strom und Magnete",
+        "titel": "Was zieht ein Magnet wirklich an?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/strom-und-magnete/wie-magnete-aufeinander-wirken/lernpfad.html",
+        "lernpfad_html": "klasse-5/strom-und-magnete/wie-magnete-aufeinander-wirken/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/strom-und-magnete/wie-magnete-aufeinander-wirken/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-strom-und-magnete-einfache-stromkreise-und-schaltungen-lernpfad",
+        "bereich": "Strom und Magnete",
+        "titel": "Wie leuchtet eine Lampe?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/strom-und-magnete/einfache-stromkreise-und-schaltungen/lernpfad.html",
+        "lernpfad_html": "klasse-5/strom-und-magnete/einfache-stromkreise-und-schaltungen/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/strom-und-magnete/einfache-stromkreise-und-schaltungen/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-temperatur-und-waerme-fest-fluessig-gas-und-das-teilchenmodell-lernpfad",
+        "bereich": "Temperatur und Wärme",
+        "titel": "Fest, flüssig oder gasförmig?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/temperatur-und-waerme/fest-fluessig-gas-und-das-teilchenmodell/lernpfad.html",
+        "lernpfad_html": "klasse-5/temperatur-und-waerme/fest-fluessig-gas-und-das-teilchenmodell/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/temperatur-und-waerme/fest-fluessig-gas-und-das-teilchenmodell/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-temperatur-und-waerme-temperatur-messen-mit-dem-thermometer-lernpfad",
+        "bereich": "Temperatur und Wärme",
+        "titel": "Kann deine Hand Temperaturen messen?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/temperatur-und-waerme/temperatur-messen-mit-dem-thermometer/lernpfad.html",
+        "lernpfad_html": "klasse-5/temperatur-und-waerme/temperatur-messen-mit-dem-thermometer/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/temperatur-und-waerme/temperatur-messen-mit-dem-thermometer/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-temperatur-und-waerme-ausdehnung-durch-waerme-und-die-besonderheit-des-wassers-lernpfad",
+        "bereich": "Temperatur und Wärme",
+        "titel": "Warum brauchen Brücken Lücken?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/temperatur-und-waerme/ausdehnung-durch-waerme-und-die-besonderheit-des-wassers/lernpfad.html",
+        "lernpfad_html": "klasse-5/temperatur-und-waerme/ausdehnung-durch-waerme-und-die-besonderheit-des-wassers/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/temperatur-und-waerme/ausdehnung-durch-waerme-und-die-besonderheit-des-wassers/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-temperatur-und-waerme-einstieg-temperatur-und-waerme-lernpfad",
+        "bereich": "Temperatur und Wärme",
+        "titel": "Warum verändert Wärme unsere Welt?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/temperatur-und-waerme/einstieg-temperatur-und-waerme/lernpfad.html",
+        "lernpfad_html": "klasse-5/temperatur-und-waerme/einstieg-temperatur-und-waerme/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/temperatur-und-waerme/einstieg-temperatur-und-waerme/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-temperatur-und-waerme-waermeenergie-und-temperaturausgleich-lernpfad",
+        "bereich": "Temperatur und Wärme",
+        "titel": "Warum wird Kakao kalt und Eiswasser warm?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/temperatur-und-waerme/waermeenergie-und-temperaturausgleich/lernpfad.html",
+        "lernpfad_html": "klasse-5/temperatur-und-waerme/waermeenergie-und-temperaturausgleich/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/temperatur-und-waerme/waermeenergie-und-temperaturausgleich/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-temperatur-und-waerme-wie-waerme-weitergegeben-und-gedaemmt-wird-lernpfad",
+        "bereich": "Temperatur und Wärme",
+        "titel": "Wie kommt Wärme von hier nach dort?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/temperatur-und-waerme/wie-waerme-weitergegeben-und-gedaemmt-wird/lernpfad.html",
+        "lernpfad_html": "klasse-5/temperatur-und-waerme/wie-waerme-weitergegeben-und-gedaemmt-wird/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/temperatur-und-waerme/wie-waerme-weitergegeben-und-gedaemmt-wird/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-toene-klaenge-und-geraeusche-einstieg-schall-lernpfad",
+        "bereich": "Toene Klänge und Geräusche",
+        "titel": "Kann man Schall sehen?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/toene-klaenge-und-geraeusche/einstieg-schall/lernpfad.html",
+        "lernpfad_html": "klasse-5/toene-klaenge-und-geraeusche/einstieg-schall/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/toene-klaenge-und-geraeusche/einstieg-schall/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-toene-klaenge-und-geraeusche-sehr-hohe-und-sehr-tiefe-toene-lernpfad",
+        "bereich": "Toene Klänge und Geräusche",
+        "titel": "Töne, die wir nicht hören können",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/toene-klaenge-und-geraeusche/sehr-hohe-und-sehr-tiefe-toene/lernpfad.html",
+        "lernpfad_html": "klasse-5/toene-klaenge-und-geraeusche/sehr-hohe-und-sehr-tiefe-toene/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/toene-klaenge-und-geraeusche/sehr-hohe-und-sehr-tiefe-toene/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-toene-klaenge-und-geraeusche-laerm-und-schutz-fuer-die-ohren-lernpfad",
+        "bereich": "Toene Klänge und Geräusche",
+        "titel": "Wann wird Schall zu Lärm?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/toene-klaenge-und-geraeusche/laerm-und-schutz-fuer-die-ohren/lernpfad.html",
+        "lernpfad_html": "klasse-5/toene-klaenge-und-geraeusche/laerm-und-schutz-fuer-die-ohren/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/toene-klaenge-und-geraeusche/laerm-und-schutz-fuer-die-ohren/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-toene-klaenge-und-geraeusche-echo-und-schalldaempfung-lernpfad",
+        "bereich": "Toene Klänge und Geräusche",
+        "titel": "Warum hallt es und warum helfen Vorhänge?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/toene-klaenge-und-geraeusche/echo-und-schalldaempfung/lernpfad.html",
+        "lernpfad_html": "klasse-5/toene-klaenge-und-geraeusche/echo-und-schalldaempfung/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/toene-klaenge-und-geraeusche/echo-und-schalldaempfung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-toene-klaenge-und-geraeusche-wie-schall-entsteht-und-gehoert-wird-lernpfad",
+        "bereich": "Toene Klänge und Geräusche",
+        "titel": "Wie entsteht ein Ton?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/toene-klaenge-und-geraeusche/wie-schall-entsteht-und-gehoert-wird/lernpfad.html",
+        "lernpfad_html": "klasse-5/toene-klaenge-und-geraeusche/wie-schall-entsteht-und-gehoert-wird/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/toene-klaenge-und-geraeusche/wie-schall-entsteht-und-gehoert-wird/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-toene-klaenge-und-geraeusche-wie-sich-schall-ausbreitet-lernpfad",
+        "bereich": "Toene Klänge und Geräusche",
+        "titel": "Wie kommt der Schall zum Ohr?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-5/toene-klaenge-und-geraeusche/wie-sich-schall-ausbreitet/lernpfad.html",
+        "lernpfad_html": "klasse-5/toene-klaenge-und-geraeusche/wie-sich-schall-ausbreitet/lernpfad.html",
+        "arbeitsblatt_pdf": "klasse-5/toene-klaenge-und-geraeusche/wie-sich-schall-ausbreitet/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-5-lernpfade-klasse-5",
+        "bereich": "Übersicht",
+        "titel": "Übersicht - Lernpfade Klasse 5",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 5",
+          "Lernpfad",
+          "HTML"
+        ],
+        "format": "HTML",
+        "pfad": "klasse-5/lernpfade-klasse-5/lernpfade-klasse-5.html",
+        "lernpfad_html": "klasse-5/lernpfade-klasse-5/lernpfade-klasse-5.html",
+        "arbeitsblatt_pdf": null
       }
     ],
     "klasse-8": [
       {
-        "bereich": "IF 5",
-        "titel": "Optische Instrumente",
-        "typ": "Materialseite",
-        "pfad": "klasse-8/if-5/optische-instrumente/test.html",
+        "id": "klasse-8-bewegungen-und-geschwindigkeit-schneller-werden-bremsen-und-diagramme-lernpfad-beschleunigung-und-diagramme",
+        "bereich": "Bewegungen und Geschwindigkeit",
+        "titel": "Bewegung in Kurven lesen – Physik 8",
+        "typ": "Lernpfad",
         "tags": [
-          "Optik",
-          "Linsen",
-          "Klasse 8"
-        ]
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/bewegungen-und-geschwindigkeit/schneller-werden-bremsen-und-diagramme/beschleunigung-und-diagramme/lernpfad-beschleunigung-und-diagramme.html",
+        "lernpfad_html": "klasse-8/bewegungen-und-geschwindigkeit/schneller-werden-bremsen-und-diagramme/beschleunigung-und-diagramme/lernpfad-beschleunigung-und-diagramme.html",
+        "arbeitsblatt_pdf": "klasse-8/bewegungen-und-geschwindigkeit/schneller-werden-bremsen-und-diagramme/beschleunigung-und-diagramme/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF 6",
-        "titel": "Sterne und Weltall",
-        "typ": "Materialseite",
-        "pfad": "klasse-8/if-6/sterne-und-weltall/test.html",
+        "id": "klasse-8-bewegungen-und-geschwindigkeit-bewegungen-messen-und-auswerten-lernpfad-videoanalyse",
+        "bereich": "Bewegungen und Geschwindigkeit",
+        "titel": "Das Tablet als Messlabor – Physik 8",
+        "typ": "Lernpfad",
         "tags": [
-          "Astronomie",
-          "Weltall",
-          "Klasse 8"
-        ]
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/bewegungen-und-geschwindigkeit/bewegungen-messen-und-auswerten/videoanalyse/lernpfad-videoanalyse.html",
+        "lernpfad_html": "klasse-8/bewegungen-und-geschwindigkeit/bewegungen-messen-und-auswerten/videoanalyse/lernpfad-videoanalyse.html",
+        "arbeitsblatt_pdf": "klasse-8/bewegungen-und-geschwindigkeit/bewegungen-messen-und-auswerten/videoanalyse/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF 7",
-        "titel": "Bewegung, Kraft und Energie: Bewegungen",
-        "typ": "Materialseite",
-        "pfad": "klasse-8/if-7/bewegung-kraft-energie-bewegungen/test.html",
+        "id": "klasse-8-bewegungen-und-geschwindigkeit-gleichfoermige-beschleunigte-und-verzoegerte-bewegungen-lernpfad-bewegungsarten",
+        "bereich": "Bewegungen und Geschwindigkeit",
+        "titel": "Gleich schnell oder immer schneller? – Physik 8",
+        "typ": "Lernpfad",
         "tags": [
-          "Bewegung",
-          "Mechanik",
-          "Klasse 8"
-        ]
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/bewegungen-und-geschwindigkeit/gleichfoermige-beschleunigte-und-verzoegerte-bewegungen/bewegungsarten/lernpfad-bewegungsarten.html",
+        "lernpfad_html": "klasse-8/bewegungen-und-geschwindigkeit/gleichfoermige-beschleunigte-und-verzoegerte-bewegungen/bewegungsarten/lernpfad-bewegungsarten.html",
+        "arbeitsblatt_pdf": "klasse-8/bewegungen-und-geschwindigkeit/gleichfoermige-beschleunigte-und-verzoegerte-bewegungen/bewegungsarten/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-bewegungen-und-geschwindigkeit-lernpfad-einstieg-bewegung",
+        "bereich": "Bewegungen und Geschwindigkeit",
+        "titel": "Wer bewegt sich wie? – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/bewegungen-und-geschwindigkeit/einstieg-bewegung/lernpfad-einstieg-bewegung.html",
+        "lernpfad_html": "klasse-8/bewegungen-und-geschwindigkeit/einstieg-bewegung/lernpfad-einstieg-bewegung.html",
+        "arbeitsblatt_pdf": "klasse-8/bewegungen-und-geschwindigkeit/einstieg-bewegung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-bewegungen-und-geschwindigkeit-durchschnitts-und-momentangeschwindigkeit-lernpfad-geschwindigkeit",
+        "bereich": "Bewegungen und Geschwindigkeit",
+        "titel": "Wie schnell warst du wirklich? – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/bewegungen-und-geschwindigkeit/durchschnitts-und-momentangeschwindigkeit/geschwindigkeit/lernpfad-geschwindigkeit.html",
+        "lernpfad_html": "klasse-8/bewegungen-und-geschwindigkeit/durchschnitts-und-momentangeschwindigkeit/geschwindigkeit/lernpfad-geschwindigkeit.html",
+        "arbeitsblatt_pdf": "klasse-8/bewegungen-und-geschwindigkeit/durchschnitts-und-momentangeschwindigkeit/geschwindigkeit/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-licht-spiegel-linsen-und-farben-lernpfad-einstieg-optik",
+        "bereich": "Licht Spiegel Linsen und Farben",
+        "titel": "Das Lichtlabor – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/licht-spiegel-linsen-und-farben/einstieg-optik/lernpfad-einstieg-optik.html",
+        "lernpfad_html": "klasse-8/licht-spiegel-linsen-und-farben/einstieg-optik/lernpfad-einstieg-optik.html",
+        "arbeitsblatt_pdf": "klasse-8/licht-spiegel-linsen-und-farben/einstieg-optik/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-licht-spiegel-linsen-und-farben-lichtleitung-durch-totalreflexion-lernpfad-totalreflexion",
+        "bereich": "Licht Spiegel Linsen und Farben",
+        "titel": "Gefangen im Glas – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/licht-spiegel-linsen-und-farben/lichtleitung-durch-totalreflexion/totalreflexion/lernpfad-totalreflexion.html",
+        "lernpfad_html": "klasse-8/licht-spiegel-linsen-und-farben/lichtleitung-durch-totalreflexion/totalreflexion/lernpfad-totalreflexion.html",
+        "arbeitsblatt_pdf": "klasse-8/licht-spiegel-linsen-und-farben/lichtleitung-durch-totalreflexion/totalreflexion/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-licht-spiegel-linsen-und-farben-licht-am-spiegel-lernpfad-licht-am-spiegel",
+        "bereich": "Licht Spiegel Linsen und Farben",
+        "titel": "Licht am Spiegel – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/licht-spiegel-linsen-und-farben/licht-am-spiegel/licht-am-spiegel/lernpfad-licht-am-spiegel.html",
+        "lernpfad_html": "klasse-8/licht-spiegel-linsen-und-farben/licht-am-spiegel/licht-am-spiegel/lernpfad-licht-am-spiegel.html",
+        "arbeitsblatt_pdf": "klasse-8/licht-spiegel-linsen-und-farben/licht-am-spiegel/licht-am-spiegel/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-licht-spiegel-linsen-und-farben-auge-lupe-mikroskop-und-fernrohr-lernpfad-optische-instrumente",
+        "bereich": "Licht Spiegel Linsen und Farben",
+        "titel": "Optische Systeme erweitern unseren Blick – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/licht-spiegel-linsen-und-farben/auge-lupe-mikroskop-und-fernrohr/optische-instrumente/lernpfad-optische-instrumente.html",
+        "lernpfad_html": "klasse-8/licht-spiegel-linsen-und-farben/auge-lupe-mikroskop-und-fernrohr/optische-instrumente/lernpfad-optische-instrumente.html",
+        "arbeitsblatt_pdf": "klasse-8/licht-spiegel-linsen-und-farben/auge-lupe-mikroskop-und-fernrohr/optische-instrumente/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-licht-spiegel-linsen-und-farben-wie-linsen-bilder-erzeugen-lernpfad-linsen-und-bilder",
+        "bereich": "Licht Spiegel Linsen und Farben",
+        "titel": "Sammeln, brechen, abbilden – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/licht-spiegel-linsen-und-farben/wie-linsen-bilder-erzeugen/linsen-und-bilder/lernpfad-linsen-und-bilder.html",
+        "lernpfad_html": "klasse-8/licht-spiegel-linsen-und-farben/wie-linsen-bilder-erzeugen/linsen-und-bilder/lernpfad-linsen-und-bilder.html",
+        "arbeitsblatt_pdf": "klasse-8/licht-spiegel-linsen-und-farben/wie-linsen-bilder-erzeugen/linsen-und-bilder/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-licht-spiegel-linsen-und-farben-weisses-licht-und-seine-farben-lernpfad-spektrum",
+        "bereich": "Licht Spiegel Linsen und Farben",
+        "titel": "Vom weißen Licht zum Spektrum – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/licht-spiegel-linsen-und-farben/weisses-licht-und-seine-farben/spektrum/lernpfad-spektrum.html",
+        "lernpfad_html": "klasse-8/licht-spiegel-linsen-und-farben/weisses-licht-und-seine-farben/spektrum/lernpfad-spektrum.html",
+        "arbeitsblatt_pdf": "klasse-8/licht-spiegel-linsen-und-farben/weisses-licht-und-seine-farben/spektrum/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-licht-spiegel-linsen-und-farben-wenn-licht-seine-richtung-aendert-lernpfad-lichtbrechung",
+        "bereich": "Licht Spiegel Linsen und Farben",
+        "titel": "Wenn Licht seine Richtung ändert – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/licht-spiegel-linsen-und-farben/wenn-licht-seine-richtung-aendert/lichtbrechung/lernpfad-lichtbrechung.html",
+        "lernpfad_html": "klasse-8/licht-spiegel-linsen-und-farben/wenn-licht-seine-richtung-aendert/lichtbrechung/lernpfad-lichtbrechung.html",
+        "arbeitsblatt_pdf": "klasse-8/licht-spiegel-linsen-und-farben/wenn-licht-seine-richtung-aendert/lichtbrechung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-licht-spiegel-linsen-und-farben-farben-mischen-und-farben-auf-bildschirmen-lernpfad-farbmischung",
+        "bereich": "Licht Spiegel Linsen und Farben",
+        "titel": "Wie ein Bildschirm Millionen Farben erzeugt – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/licht-spiegel-linsen-und-farben/farben-mischen-und-farben-auf-bildschirmen/farbmischung/lernpfad-farbmischung.html",
+        "lernpfad_html": "klasse-8/licht-spiegel-linsen-und-farben/farben-mischen-und-farben-auf-bildschirmen/farbmischung/lernpfad-farbmischung.html",
+        "arbeitsblatt_pdf": "klasse-8/licht-spiegel-linsen-und-farben/farben-mischen-und-farben-auf-bildschirmen/farbmischung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-sterne-planeten-und-weltall-mondphasen-und-finsternisse-lernpfad-mondphasen",
+        "bereich": "Sterne Planeten und Weltall",
+        "titel": "Der Mond verändert nicht seine Form – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/sterne-planeten-und-weltall/mondphasen-und-finsternisse/mondphasen/lernpfad-mondphasen.html",
+        "lernpfad_html": "klasse-8/sterne-planeten-und-weltall/mondphasen-und-finsternisse/mondphasen/lernpfad-mondphasen.html",
+        "arbeitsblatt_pdf": "klasse-8/sterne-planeten-und-weltall/mondphasen-und-finsternisse/mondphasen/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-sterne-planeten-und-weltall-leben-und-sterben-von-sternen-lernpfad-sternentwicklung",
+        "bereich": "Sterne Planeten und Weltall",
+        "titel": "Ein Sternenleben hängt von der Masse ab – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/sterne-planeten-und-weltall/leben-und-sterben-von-sternen/sternentwicklung/lernpfad-sternentwicklung.html",
+        "lernpfad_html": "klasse-8/sterne-planeten-und-weltall/leben-und-sterben-von-sternen/sternentwicklung/lernpfad-sternentwicklung.html",
+        "arbeitsblatt_pdf": "klasse-8/sterne-planeten-und-weltall/leben-und-sterben-von-sternen/sternentwicklung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-sterne-planeten-und-weltall-lernpfad-einstieg-weltall",
+        "bereich": "Sterne Planeten und Weltall",
+        "titel": "Forschungsmission Weltall – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/sterne-planeten-und-weltall/einstieg-weltall/lernpfad-einstieg-weltall.html",
+        "lernpfad_html": "klasse-8/sterne-planeten-und-weltall/einstieg-weltall/lernpfad-einstieg-weltall.html",
+        "arbeitsblatt_pdf": "klasse-8/sterne-planeten-und-weltall/einstieg-weltall/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-sterne-planeten-und-weltall-entfernungen-im-all-und-das-licht-der-sterne-lernpfad-entfernungen-und-sternenlicht",
+        "bereich": "Sterne Planeten und Weltall",
+        "titel": "Licht als kosmische Nachricht – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/sterne-planeten-und-weltall/entfernungen-im-all-und-das-licht-der-sterne/entfernungen-und-sternenlicht/lernpfad-entfernungen-und-sternenlicht.html",
+        "lernpfad_html": "klasse-8/sterne-planeten-und-weltall/entfernungen-im-all-und-das-licht-der-sterne/entfernungen-und-sternenlicht/lernpfad-entfernungen-und-sternenlicht.html",
+        "arbeitsblatt_pdf": "klasse-8/sterne-planeten-und-weltall/entfernungen-im-all-und-das-licht-der-sterne/entfernungen-und-sternenlicht/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-sterne-planeten-und-weltall-unser-sonnensystem-und-andere-himmelskoerper-lernpfad-sonnensystem",
+        "bereich": "Sterne Planeten und Weltall",
+        "titel": "Mehr als acht Planeten – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/sterne-planeten-und-weltall/unser-sonnensystem-und-andere-himmelskoerper/sonnensystem/lernpfad-sonnensystem.html",
+        "lernpfad_html": "klasse-8/sterne-planeten-und-weltall/unser-sonnensystem-und-andere-himmelskoerper/sonnensystem/lernpfad-sonnensystem.html",
+        "arbeitsblatt_pdf": "klasse-8/sterne-planeten-und-weltall/unser-sonnensystem-und-andere-himmelskoerper/sonnensystem/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-sterne-planeten-und-weltall-warum-es-jahreszeiten-gibt-lernpfad-jahreszeiten",
+        "bereich": "Sterne Planeten und Weltall",
+        "titel": "Schräg durchs Jahr – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/sterne-planeten-und-weltall/warum-es-jahreszeiten-gibt/jahreszeiten/lernpfad-jahreszeiten.html",
+        "lernpfad_html": "klasse-8/sterne-planeten-und-weltall/warum-es-jahreszeiten-gibt/jahreszeiten/lernpfad-jahreszeiten.html",
+        "arbeitsblatt_pdf": "klasse-8/sterne-planeten-und-weltall/warum-es-jahreszeiten-gibt/jahreszeiten/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-sterne-planeten-und-weltall-schwerkraft-und-schwerelosigkeit-lernpfad-schwerelosigkeit",
+        "bereich": "Sterne Planeten und Weltall",
+        "titel": "Schwerelos – aber nicht ohne Gravitation – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/sterne-planeten-und-weltall/schwerkraft-und-schwerelosigkeit/schwerelosigkeit/lernpfad-schwerelosigkeit.html",
+        "lernpfad_html": "klasse-8/sterne-planeten-und-weltall/schwerkraft-und-schwerelosigkeit/schwerelosigkeit/lernpfad-schwerelosigkeit.html",
+        "arbeitsblatt_pdf": "klasse-8/sterne-planeten-und-weltall/schwerkraft-und-schwerelosigkeit/schwerelosigkeit/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-8-sterne-planeten-und-weltall-weltbilder-und-reisen-ins-all-lernpfad-weltbilder-und-raumfahrt",
+        "bereich": "Sterne Planeten und Weltall",
+        "titel": "Vom Weltbild zur Raumfahrt – Physik 8",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 8",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-8/sterne-planeten-und-weltall/weltbilder-und-reisen-ins-all/weltbilder-und-raumfahrt/lernpfad-weltbilder-und-raumfahrt.html",
+        "lernpfad_html": "klasse-8/sterne-planeten-und-weltall/weltbilder-und-reisen-ins-all/weltbilder-und-raumfahrt/lernpfad-weltbilder-und-raumfahrt.html",
+        "arbeitsblatt_pdf": "klasse-8/sterne-planeten-und-weltall/weltbilder-und-reisen-ins-all/weltbilder-und-raumfahrt/arbeitsblatt.pdf"
       }
     ],
     "klasse-9": [
       {
-        "bereich": "IF 7",
-        "titel": "Bewegung, Kraft und Energie: Kräfte und Energie",
-        "typ": "Materialseite",
-        "pfad": "klasse-9/if-7/bewegung-kraft-energie-kraefte-und-energie/test.html",
+        "id": "klasse-9-elektrischer-strom-spannung-und-widerstand-einstieg-strom-spannung-widerstand",
+        "bereich": "Elektrischer Strom Spannung und Widerstand",
+        "titel": "Einstieg: Strom, Spannung und Widerstand",
+        "typ": "Lernpfad",
         "tags": [
-          "Kraft",
-          "Energie",
-          "Klasse 9"
-        ]
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/elektrischer-strom-spannung-und-widerstand/einstieg-strom-spannung-widerstand/einstieg-strom-spannung-widerstand.html",
+        "lernpfad_html": "klasse-9/elektrischer-strom-spannung-und-widerstand/einstieg-strom-spannung-widerstand/einstieg-strom-spannung-widerstand.html",
+        "arbeitsblatt_pdf": "klasse-9/elektrischer-strom-spannung-und-widerstand/einstieg-strom-spannung-widerstand/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF 9",
-        "titel": "Elektrizität: Elektrostatik und Stromkreise",
-        "typ": "Materialseite",
-        "pfad": "klasse-9/if-9/elektrizitaet-elektrostatik-und-stromkreise/test.html",
+        "id": "klasse-9-elektrischer-strom-spannung-und-widerstand-elektrische-ladungen-und-das-elektroskop-lernpfad-ladungen-elektroskop",
+        "bereich": "Elektrischer Strom Spannung und Widerstand",
+        "titel": "Elektrische Ladungen und Elektroskop",
+        "typ": "Lernpfad",
         "tags": [
-          "Elektrizität",
-          "Elektrostatik",
-          "Stromkreis"
-        ]
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektrische-ladungen-und-das-elektroskop/ladungen-elektroskop/lernpfad-ladungen-elektroskop.html",
+        "lernpfad_html": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektrische-ladungen-und-das-elektroskop/ladungen-elektroskop/lernpfad-ladungen-elektroskop.html",
+        "arbeitsblatt_pdf": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektrische-ladungen-und-das-elektroskop/ladungen-elektroskop/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF 9",
-        "titel": "Elektrizität: Widerstand, ohmsches Gesetz und Energie",
-        "typ": "Materialseite",
-        "pfad": "klasse-9/if-9/elektrizitaet-widerstand-ohmsches-gesetz-und-energie/test.html",
+        "id": "klasse-9-elektrischer-strom-spannung-und-widerstand-elektronen-und-stromfluss-lernpfad-elektronen-stromfluss",
+        "bereich": "Elektrischer Strom Spannung und Widerstand",
+        "titel": "Elektronen und Stromfluss",
+        "typ": "Lernpfad",
         "tags": [
-          "Widerstand",
-          "Ohmsches Gesetz",
-          "Energie"
-        ]
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektronen-und-stromfluss/elektronen-stromfluss/lernpfad-elektronen-stromfluss.html",
+        "lernpfad_html": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektronen-und-stromfluss/elektronen-stromfluss/lernpfad-elektronen-stromfluss.html",
+        "arbeitsblatt_pdf": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektronen-und-stromfluss/elektronen-stromfluss/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-elektrischer-strom-spannung-und-widerstand-stromkreise-in-reihe-und-parallel-lernpfad-reihen-parallelschaltung",
+        "bereich": "Elektrischer Strom Spannung und Widerstand",
+        "titel": "Reihen- und Parallelschaltungen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/elektrischer-strom-spannung-und-widerstand/stromkreise-in-reihe-und-parallel/reihen-parallelschaltung/lernpfad-reihen-parallelschaltung.html",
+        "lernpfad_html": "klasse-9/elektrischer-strom-spannung-und-widerstand/stromkreise-in-reihe-und-parallel/reihen-parallelschaltung/lernpfad-reihen-parallelschaltung.html",
+        "arbeitsblatt_pdf": "klasse-9/elektrischer-strom-spannung-und-widerstand/stromkreise-in-reihe-und-parallel/reihen-parallelschaltung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-elektrischer-strom-spannung-und-widerstand-spannung-als-antrieb-des-stroms-lernpfad-spannung",
+        "bereich": "Elektrischer Strom Spannung und Widerstand",
+        "titel": "Spannung als Antrieb des Stroms",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/elektrischer-strom-spannung-und-widerstand/spannung-als-antrieb-des-stroms/spannung/lernpfad-spannung.html",
+        "lernpfad_html": "klasse-9/elektrischer-strom-spannung-und-widerstand/spannung-als-antrieb-des-stroms/spannung/lernpfad-spannung.html",
+        "arbeitsblatt_pdf": "klasse-9/elektrischer-strom-spannung-und-widerstand/spannung-als-antrieb-des-stroms/spannung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-elektrischer-strom-spannung-und-widerstand-strom-im-haus-und-elektrische-sicherheit-lernpfad-hausinstallation-sicherheit",
+        "bereich": "Elektrischer Strom Spannung und Widerstand",
+        "titel": "Strom im Haus und elektrische Sicherheit",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/elektrischer-strom-spannung-und-widerstand/strom-im-haus-und-elektrische-sicherheit/hausinstallation-sicherheit/lernpfad-hausinstallation-sicherheit.html",
+        "lernpfad_html": "klasse-9/elektrischer-strom-spannung-und-widerstand/strom-im-haus-und-elektrische-sicherheit/hausinstallation-sicherheit/lernpfad-hausinstallation-sicherheit.html",
+        "arbeitsblatt_pdf": "klasse-9/elektrischer-strom-spannung-und-widerstand/strom-im-haus-und-elektrische-sicherheit/hausinstallation-sicherheit/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-elektrischer-strom-spannung-und-widerstand-stromverbrauch-leistung-und-kosten-lernpfad-stromverbrauch-leistung-kosten",
+        "bereich": "Elektrischer Strom Spannung und Widerstand",
+        "titel": "Stromverbrauch, Leistung und Kosten",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/elektrischer-strom-spannung-und-widerstand/stromverbrauch-leistung-und-kosten/stromverbrauch-leistung-kosten/lernpfad-stromverbrauch-leistung-kosten.html",
+        "lernpfad_html": "klasse-9/elektrischer-strom-spannung-und-widerstand/stromverbrauch-leistung-und-kosten/stromverbrauch-leistung-kosten/lernpfad-stromverbrauch-leistung-kosten.html",
+        "arbeitsblatt_pdf": "klasse-9/elektrischer-strom-spannung-und-widerstand/stromverbrauch-leistung-und-kosten/stromverbrauch-leistung-kosten/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-elektrischer-strom-spannung-und-widerstand-elektrischer-widerstand-und-das-ohmsche-gesetz-lernpfad-widerstand-ohmsches-gesetz",
+        "bereich": "Elektrischer Strom Spannung und Widerstand",
+        "titel": "Widerstand und Ohmsches Gesetz",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektrischer-widerstand-und-das-ohmsche-gesetz/widerstand-ohmsches-gesetz/lernpfad-widerstand-ohmsches-gesetz.html",
+        "lernpfad_html": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektrischer-widerstand-und-das-ohmsche-gesetz/widerstand-ohmsches-gesetz/lernpfad-widerstand-ohmsches-gesetz.html",
+        "arbeitsblatt_pdf": "klasse-9/elektrischer-strom-spannung-und-widerstand/elektrischer-widerstand-und-das-ohmsche-gesetz/widerstand-ohmsches-gesetz/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-kraefte-arbeit-und-energie-arbeit-energie-und-leistung-im-alltag-lernpfad-arbeit-energie-leistung",
+        "bereich": "Kräfte Arbeit und Energie",
+        "titel": "Arbeit, Energie und Leistung im Alltag",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/kraefte-arbeit-und-energie/arbeit-energie-und-leistung-im-alltag/arbeit-energie-leistung/lernpfad-arbeit-energie-leistung.html",
+        "lernpfad_html": "klasse-9/kraefte-arbeit-und-energie/arbeit-energie-und-leistung-im-alltag/arbeit-energie-leistung/lernpfad-arbeit-energie-leistung.html",
+        "arbeitsblatt_pdf": "klasse-9/kraefte-arbeit-und-energie/arbeit-energie-und-leistung-im-alltag/arbeit-energie-leistung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-kraefte-arbeit-und-energie-bewegungsenergie-und-lageenergie-lernpfad-bewegungsenergie-lageenergie",
+        "bereich": "Kräfte Arbeit und Energie",
+        "titel": "Bewegungsenergie und Lageenergie",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/kraefte-arbeit-und-energie/bewegungsenergie-und-lageenergie/bewegungsenergie-lageenergie/lernpfad-bewegungsenergie-lageenergie.html",
+        "lernpfad_html": "klasse-9/kraefte-arbeit-und-energie/bewegungsenergie-und-lageenergie/bewegungsenergie-lageenergie/lernpfad-bewegungsenergie-lageenergie.html",
+        "arbeitsblatt_pdf": "klasse-9/kraefte-arbeit-und-energie/bewegungsenergie-und-lageenergie/bewegungsenergie-lageenergie/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-kraefte-arbeit-und-energie-einstieg-kraefte-maschinen-und-energie",
+        "bereich": "Kräfte Arbeit und Energie",
+        "titel": "Einstieg: Kräfte, Maschinen und Energie",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/kraefte-arbeit-und-energie/einstieg-kraefte-maschinen-und-energie/einstieg-kraefte-maschinen-und-energie.html",
+        "lernpfad_html": "klasse-9/kraefte-arbeit-und-energie/einstieg-kraefte-maschinen-und-energie/einstieg-kraefte-maschinen-und-energie.html",
+        "arbeitsblatt_pdf": "klasse-9/kraefte-arbeit-und-energie/einstieg-kraefte-maschinen-und-energie/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-kraefte-arbeit-und-energie-hebel-rollen-und-kraftsparende-maschinen-lernpfad-hebel-rollen-goldene-regel",
+        "bereich": "Kräfte Arbeit und Energie",
+        "titel": "Hebel, Rollen und Goldene Regel",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/kraefte-arbeit-und-energie/hebel-rollen-und-kraftsparende-maschinen/hebel-rollen-goldene-regel/lernpfad-hebel-rollen-goldene-regel.html",
+        "lernpfad_html": "klasse-9/kraefte-arbeit-und-energie/hebel-rollen-und-kraftsparende-maschinen/hebel-rollen-goldene-regel/lernpfad-hebel-rollen-goldene-regel.html",
+        "arbeitsblatt_pdf": "klasse-9/kraefte-arbeit-und-energie/hebel-rollen-und-kraftsparende-maschinen/hebel-rollen-goldene-regel/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-kraefte-arbeit-und-energie-gegenkraefte-und-kraefte-im-gleichgewicht-lernpfad-kraft-gegenkraft-gleichgewicht",
+        "bereich": "Kräfte Arbeit und Energie",
+        "titel": "Kraft, Gegenkraft und Gleichgewicht",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/kraefte-arbeit-und-energie/gegenkraefte-und-kraefte-im-gleichgewicht/kraft-gegenkraft-gleichgewicht/lernpfad-kraft-gegenkraft-gleichgewicht.html",
+        "lernpfad_html": "klasse-9/kraefte-arbeit-und-energie/gegenkraefte-und-kraefte-im-gleichgewicht/kraft-gegenkraft-gleichgewicht/lernpfad-kraft-gegenkraft-gleichgewicht.html",
+        "arbeitsblatt_pdf": "klasse-9/kraefte-arbeit-und-energie/gegenkraefte-und-kraefte-im-gleichgewicht/kraft-gegenkraft-gleichgewicht/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-kraefte-arbeit-und-energie-kraefte-und-zusammengesetzte-kraefte-lernpfad-kraefte-als-vektoren",
+        "bereich": "Kräfte Arbeit und Energie",
+        "titel": "Kräfte als Vektoren",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/kraefte-arbeit-und-energie/kraefte-und-zusammengesetzte-kraefte/kraefte-als-vektoren/lernpfad-kraefte-als-vektoren.html",
+        "lernpfad_html": "klasse-9/kraefte-arbeit-und-energie/kraefte-und-zusammengesetzte-kraefte/kraefte-als-vektoren/lernpfad-kraefte-als-vektoren.html",
+        "arbeitsblatt_pdf": "klasse-9/kraefte-arbeit-und-energie/kraefte-und-zusammengesetzte-kraefte/kraefte-als-vektoren/arbeitsblatt.pdf"
+      },
+      {
+        "id": "klasse-9-kraefte-arbeit-und-energie-masse-gewichtskraft-und-reibung-lernpfad-masse-gewichtskraft-reibung",
+        "bereich": "Kräfte Arbeit und Energie",
+        "titel": "Masse, Gewichtskraft und Reibung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 9",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-9/kraefte-arbeit-und-energie/masse-gewichtskraft-und-reibung/masse-gewichtskraft-reibung/lernpfad-masse-gewichtskraft-reibung.html",
+        "lernpfad_html": "klasse-9/kraefte-arbeit-und-energie/masse-gewichtskraft-und-reibung/masse-gewichtskraft-reibung/lernpfad-masse-gewichtskraft-reibung.html",
+        "arbeitsblatt_pdf": "klasse-9/kraefte-arbeit-und-energie/masse-gewichtskraft-und-reibung/masse-gewichtskraft-reibung/arbeitsblatt.pdf"
       }
     ],
     "klasse-10": [
       {
-        "bereich": "IF 8",
-        "titel": "Druck und Auftrieb",
-        "typ": "Materialseite",
-        "pfad": "klasse-10/if-8/druck-und-auftrieb/test.html",
+        "id": "klasse-10-druck-schwimmen-und-auftrieb-warum-koerper-im-wasser-leichter-werden-warum-koerper-im-wasser-leichter-werden",
+        "bereich": "Druck Schwimmen und Auftrieb",
+        "titel": "Auftrieb und Archimedisches Prinzip",
+        "typ": "Lernpfad",
         "tags": [
-          "Druck",
-          "Auftrieb",
-          "Klasse 10"
-        ]
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/druck-schwimmen-und-auftrieb/warum-koerper-im-wasser-leichter-werden/warum-koerper-im-wasser-leichter-werden/warum-koerper-im-wasser-leichter-werden.html",
+        "lernpfad_html": "klasse-10/druck-schwimmen-und-auftrieb/warum-koerper-im-wasser-leichter-werden/warum-koerper-im-wasser-leichter-werden/warum-koerper-im-wasser-leichter-werden.html",
+        "arbeitsblatt_pdf": "klasse-10/druck-schwimmen-und-auftrieb/warum-koerper-im-wasser-leichter-werden/warum-koerper-im-wasser-leichter-werden/arbeitsblatt-sammlung.pdf"
       },
       {
-        "bereich": "IF 10",
-        "titel": "Ionisierende Strahlung und Kernenergie",
-        "typ": "Materialseite",
-        "pfad": "klasse-10/if-10/ionisierende-strahlung-und-kernenergie/test.html",
+        "id": "klasse-10-druck-schwimmen-und-auftrieb-dichte-und-druck-in-fluessigkeiten-und-gasen-dichte-und-druck-in-fluessigkeiten-und-gasen",
+        "bereich": "Druck Schwimmen und Auftrieb",
+        "titel": "Dichte und Druck in Flüssigkeiten und Gasen",
+        "typ": "Lernpfad",
         "tags": [
-          "Kernenergie",
-          "Strahlung",
-          "Radioaktivität"
-        ]
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/druck-schwimmen-und-auftrieb/dichte-und-druck-in-fluessigkeiten-und-gasen/dichte-und-druck-in-fluessigkeiten-und-gasen/dichte-und-druck-in-fluessigkeiten-und-gasen.html",
+        "lernpfad_html": "klasse-10/druck-schwimmen-und-auftrieb/dichte-und-druck-in-fluessigkeiten-und-gasen/dichte-und-druck-in-fluessigkeiten-und-gasen/dichte-und-druck-in-fluessigkeiten-und-gasen.html",
+        "arbeitsblatt_pdf": "klasse-10/druck-schwimmen-und-auftrieb/dichte-und-druck-in-fluessigkeiten-und-gasen/dichte-und-druck-in-fluessigkeiten-und-gasen/arbeitsblatt-sammlung.pdf"
       },
       {
-        "bereich": "IF 11",
-        "titel": "Energieversorgung",
-        "typ": "Materialseite",
-        "pfad": "klasse-10/if-11/energieversorgung/test.html",
+        "id": "klasse-10-druck-schwimmen-und-auftrieb-druck-in-fluessigkeiten-druck-in-fluessigkeiten",
+        "bereich": "Druck Schwimmen und Auftrieb",
+        "titel": "Druck in Flüssigkeiten",
+        "typ": "Lernpfad",
         "tags": [
-          "Energie",
-          "Versorgung",
-          "Klasse 10"
-        ]
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/druck-schwimmen-und-auftrieb/druck-in-fluessigkeiten/druck-in-fluessigkeiten/druck-in-fluessigkeiten.html",
+        "lernpfad_html": "klasse-10/druck-schwimmen-und-auftrieb/druck-in-fluessigkeiten/druck-in-fluessigkeiten/druck-in-fluessigkeiten.html",
+        "arbeitsblatt_pdf": "klasse-10/druck-schwimmen-und-auftrieb/druck-in-fluessigkeiten/druck-in-fluessigkeiten/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-druck-schwimmen-und-auftrieb-druck-messen-druck-messen",
+        "bereich": "Druck Schwimmen und Auftrieb",
+        "titel": "Druck messen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/druck-schwimmen-und-auftrieb/druck-messen/druck-messen/druck-messen.html",
+        "lernpfad_html": "klasse-10/druck-schwimmen-und-auftrieb/druck-messen/druck-messen/druck-messen.html",
+        "arbeitsblatt_pdf": "klasse-10/druck-schwimmen-und-auftrieb/druck-messen/druck-messen/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-druck-schwimmen-und-auftrieb-luftdruck-und-atmosphaere-luftdruck-und-atmosphaere",
+        "bereich": "Druck Schwimmen und Auftrieb",
+        "titel": "Luftdruck und Atmosphäre",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/druck-schwimmen-und-auftrieb/luftdruck-und-atmosphaere/luftdruck-und-atmosphaere/luftdruck-und-atmosphaere.html",
+        "lernpfad_html": "klasse-10/druck-schwimmen-und-auftrieb/luftdruck-und-atmosphaere/luftdruck-und-atmosphaere/luftdruck-und-atmosphaere.html",
+        "arbeitsblatt_pdf": "klasse-10/druck-schwimmen-und-auftrieb/luftdruck-und-atmosphaere/luftdruck-und-atmosphaere/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-druck-schwimmen-und-auftrieb-warum-koerper-steigen-sinken-oder-schweben-warum-koerper-steigen-sinken-oder-schweben",
+        "bereich": "Druck Schwimmen und Auftrieb",
+        "titel": "Steigen, Sinken, Schweben und Schwimmen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/druck-schwimmen-und-auftrieb/warum-koerper-steigen-sinken-oder-schweben/warum-koerper-steigen-sinken-oder-schweben/warum-koerper-steigen-sinken-oder-schweben.html",
+        "lernpfad_html": "klasse-10/druck-schwimmen-und-auftrieb/warum-koerper-steigen-sinken-oder-schweben/warum-koerper-steigen-sinken-oder-schweben/warum-koerper-steigen-sinken-oder-schweben.html",
+        "arbeitsblatt_pdf": "klasse-10/druck-schwimmen-und-auftrieb/warum-koerper-steigen-sinken-oder-schweben/warum-koerper-steigen-sinken-oder-schweben/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-druck-schwimmen-und-auftrieb-ueberblick-druck-auftrieb",
+        "bereich": "Druck Schwimmen und Auftrieb",
+        "titel": "Überblick: Druck, Schwimmen und Auftrieb",
+        "typ": "Oberthema-Einstieg",
+        "tags": [
+          "Klasse 10",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/druck-schwimmen-und-auftrieb/ueberblick-druck-auftrieb/ueberblick-druck-auftrieb.html",
+        "lernpfad_html": "klasse-10/druck-schwimmen-und-auftrieb/ueberblick-druck-auftrieb/ueberblick-druck-auftrieb.html",
+        "arbeitsblatt_pdf": "klasse-10/druck-schwimmen-und-auftrieb/ueberblick-druck-auftrieb/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-alpha-beta-gamma-und-roentgenstrahlung-alpha-beta-gamma-und-roentgenstrahlung",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Alpha-, Beta-, Gamma- und Röntgenstrahlung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/alpha-beta-gamma-und-roentgenstrahlung/alpha-beta-gamma-und-roentgenstrahlung/alpha-beta-gamma-und-roentgenstrahlung.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/alpha-beta-gamma-und-roentgenstrahlung/alpha-beta-gamma-und-roentgenstrahlung/alpha-beta-gamma-und-roentgenstrahlung.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/alpha-beta-gamma-und-roentgenstrahlung/alpha-beta-gamma-und-roentgenstrahlung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-atomkerne-und-isotope-atomkerne-und-isotope",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Atomkerne und Isotope",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/atomkerne-und-isotope/atomkerne-und-isotope/atomkerne-und-isotope.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/atomkerne-und-isotope/atomkerne-und-isotope/atomkerne-und-isotope.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/atomkerne-und-isotope/atomkerne-und-isotope/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-kernfusion-in-sonne-und-forschung-kernfusion-in-sonne-und-forschung",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Kernfusion in Sonne und Forschung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/kernfusion-in-sonne-und-forschung/kernfusion-in-sonne-und-forschung/kernfusion-in-sonne-und-forschung.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/kernfusion-in-sonne-und-forschung/kernfusion-in-sonne-und-forschung/kernfusion-in-sonne-und-forschung.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/kernfusion-in-sonne-und-forschung/kernfusion-in-sonne-und-forschung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-kernspaltung-kernkraftwerke-und-endlagerung-kernspaltung-kernkraftwerke-und-endlagerung",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Kernspaltung, Kernkraftwerke und Endlagerung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/kernspaltung-kernkraftwerke-und-endlagerung/kernspaltung-kernkraftwerke-und-endlagerung/kernspaltung-kernkraftwerke-und-endlagerung.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/kernspaltung-kernkraftwerke-und-endlagerung/kernspaltung-kernkraftwerke-und-endlagerung/kernspaltung-kernkraftwerke-und-endlagerung.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/kernspaltung-kernkraftwerke-und-endlagerung/kernspaltung-kernkraftwerke-und-endlagerung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-radioaktive-strahlung-nachweisen-radioaktive-strahlung-nachweisen",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Radioaktive Strahlung nachweisen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/radioaktive-strahlung-nachweisen/radioaktive-strahlung-nachweisen/radioaktive-strahlung-nachweisen.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/radioaktive-strahlung-nachweisen/radioaktive-strahlung-nachweisen/radioaktive-strahlung-nachweisen.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/radioaktive-strahlung-nachweisen/radioaktive-strahlung-nachweisen/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-radioaktiver-zerfall-und-halbwertszeit-radioaktiver-zerfall-und-halbwertszeit",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Radioaktiver Zerfall und Halbwertszeit",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/radioaktiver-zerfall-und-halbwertszeit/radioaktiver-zerfall-und-halbwertszeit/radioaktiver-zerfall-und-halbwertszeit.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/radioaktiver-zerfall-und-halbwertszeit/radioaktiver-zerfall-und-halbwertszeit/radioaktiver-zerfall-und-halbwertszeit.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/radioaktiver-zerfall-und-halbwertszeit/radioaktiver-zerfall-und-halbwertszeit/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-strahlendosis-und-strahlenschutz-strahlendosis-und-strahlenschutz",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Strahlendosis und Strahlenschutz",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/strahlendosis-und-strahlenschutz/strahlendosis-und-strahlenschutz/strahlendosis-und-strahlenschutz.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/strahlendosis-und-strahlenschutz/strahlendosis-und-strahlenschutz/strahlendosis-und-strahlenschutz.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/strahlendosis-und-strahlenschutz/strahlendosis-und-strahlenschutz/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-strahlung-in-medizin-und-technik-strahlung-in-medizin-und-technik",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Strahlung in Medizin und Technik",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/strahlung-in-medizin-und-technik/strahlung-in-medizin-und-technik/strahlung-in-medizin-und-technik.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/strahlung-in-medizin-und-technik/strahlung-in-medizin-und-technik/strahlung-in-medizin-und-technik.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/strahlung-in-medizin-und-technik/strahlung-in-medizin-und-technik/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-radioaktivitaet-strahlung-und-kernenergie-ueberblick-radioaktivitaet-strahlung-kernenergie",
+        "bereich": "Radioaktivität Strahlung und Kernenergie",
+        "titel": "Überblick: Radioaktivität, Strahlung und Kernenergie",
+        "typ": "Oberthema-Einstieg",
+        "tags": [
+          "Klasse 10",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/ueberblick-radioaktivitaet-strahlung-kernenergie/ueberblick-radioaktivitaet-strahlung-kernenergie.html",
+        "lernpfad_html": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/ueberblick-radioaktivitaet-strahlung-kernenergie/ueberblick-radioaktivitaet-strahlung-kernenergie.html",
+        "arbeitsblatt_pdf": "klasse-10/radioaktivitaet-strahlung-und-kernenergie/ueberblick-radioaktivitaet-strahlung-kernenergie/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-elektromotoren-elektromotoren",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Elektromotoren",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/elektromotoren/elektromotoren/elektromotoren.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/elektromotoren/elektromotoren/elektromotoren.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/elektromotoren/elektromotoren/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-energie-speichern-und-nutzen-energie-speichern-und-nutzen",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Energie speichern und nutzen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/energie-speichern-und-nutzen/energie-speichern-und-nutzen/energie-speichern-und-nutzen.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/energie-speichern-und-nutzen/energie-speichern-und-nutzen/energie-speichern-und-nutzen.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/energie-speichern-und-nutzen/energie-speichern-und-nutzen/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-generatoren-und-wechselspannung-generatoren-und-wechselspannung",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Generatoren und Wechselspannung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/generatoren-und-wechselspannung/generatoren-und-wechselspannung/generatoren-und-wechselspannung.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/generatoren-und-wechselspannung/generatoren-und-wechselspannung/generatoren-und-wechselspannung.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/generatoren-und-wechselspannung/generatoren-und-wechselspannung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-kraftwerke-und-erneuerbare-energien-kraftwerke-und-erneuerbare-energien",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Kraftwerke und erneuerbare Energien",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/kraftwerke-und-erneuerbare-energien/kraftwerke-und-erneuerbare-energien/kraftwerke-und-erneuerbare-energien.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/kraftwerke-und-erneuerbare-energien/kraftwerke-und-erneuerbare-energien/kraftwerke-und-erneuerbare-energien.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/kraftwerke-und-erneuerbare-energien/kraftwerke-und-erneuerbare-energien/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-kuehlschrank-und-waermepumpe-kuehlschrank-und-waermepumpe",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Kühlschrank und Wärmepumpe",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/kuehlschrank-und-waermepumpe/kuehlschrank-und-waermepumpe/kuehlschrank-und-waermepumpe.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/kuehlschrank-und-waermepumpe/kuehlschrank-und-waermepumpe/kuehlschrank-und-waermepumpe.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/kuehlschrank-und-waermepumpe/kuehlschrank-und-waermepumpe/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-strom-und-magnetfelder-strom-und-magnetfelder",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Strom und Magnetfelder",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/strom-und-magnetfelder/strom-und-magnetfelder/strom-und-magnetfelder.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/strom-und-magnetfelder/strom-und-magnetfelder/strom-und-magnetfelder.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/strom-und-magnetfelder/strom-und-magnetfelder/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-transformatoren-und-stromtransport-transformatoren-und-stromtransport",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Transformatoren und Stromtransport",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/transformatoren-und-stromtransport/transformatoren-und-stromtransport/transformatoren-und-stromtransport.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/transformatoren-und-stromtransport/transformatoren-und-stromtransport/transformatoren-und-stromtransport.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/transformatoren-und-stromtransport/transformatoren-und-stromtransport/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-wie-durch-induktion-strom-entsteht-wie-durch-induktion-strom-entsteht",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Wie durch Induktion Strom entsteht",
+        "typ": "Lernpfad",
+        "tags": [
+          "Klasse 10",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/wie-durch-induktion-strom-entsteht/wie-durch-induktion-strom-entsteht/wie-durch-induktion-strom-entsteht.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/wie-durch-induktion-strom-entsteht/wie-durch-induktion-strom-entsteht/wie-durch-induktion-strom-entsteht.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/wie-durch-induktion-strom-entsteht/wie-durch-induktion-strom-entsteht/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-stromerzeugung-und-energieversorgung-ueberblick-stromerzeugung-energieversorgung",
+        "bereich": "Stromerzeugung und Energieversorgung",
+        "titel": "Überblick: Stromerzeugung und Energieversorgung",
+        "typ": "Oberthema-Einstieg",
+        "tags": [
+          "Klasse 10",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "klasse-10/stromerzeugung-und-energieversorgung/ueberblick-stromerzeugung-energieversorgung/ueberblick-stromerzeugung-energieversorgung.html",
+        "lernpfad_html": "klasse-10/stromerzeugung-und-energieversorgung/ueberblick-stromerzeugung-energieversorgung/ueberblick-stromerzeugung-energieversorgung.html",
+        "arbeitsblatt_pdf": "klasse-10/stromerzeugung-und-energieversorgung/ueberblick-stromerzeugung-energieversorgung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "klasse-10-formelsammlung-klasse-10",
+        "bereich": "Zusatzmaterial",
+        "titel": "Formelsammlung Klasse 10",
+        "typ": "Formelsammlung",
+        "tags": [
+          "Klasse 10",
+          "Formelsammlung",
+          "HTML"
+        ],
+        "format": "HTML",
+        "pfad": "klasse-10/formelsammlung-klasse-10/formelsammlung-klasse-10.html",
+        "lernpfad_html": "klasse-10/formelsammlung-klasse-10/formelsammlung-klasse-10.html",
+        "arbeitsblatt_pdf": null
       }
     ],
     "ef": [
       {
-        "bereich": "Mechanik",
-        "titel": "Dynamik",
-        "typ": "Materialseite",
-        "pfad": "ef/mechanik/dynamik/test.html",
+        "id": "ef-bewegungen-kraefte-und-energie-kraefte-und-die-newtonschen-gesetze-lernpfad",
+        "bereich": "Bewegungen Kräfte und Energie",
+        "titel": "Dynamik: Kräfte und Newtonsche Gesetze",
+        "typ": "Lernpfad",
         "tags": [
-          "Dynamik",
-          "Mechanik",
-          "EF"
-        ]
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/bewegungen-kraefte-und-energie/kraefte-und-die-newtonschen-gesetze/lernpfad.html",
+        "lernpfad_html": "ef/bewegungen-kraefte-und-energie/kraefte-und-die-newtonschen-gesetze/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/bewegungen-kraefte-und-energie/kraefte-und-die-newtonschen-gesetze/arbeitsblatt.pdf"
       },
       {
-        "bereich": "Mechanik",
-        "titel": "Erhaltungssätze",
-        "typ": "Materialseite",
-        "pfad": "ef/mechanik/erhaltungssaetze/test.html",
+        "id": "ef-bewegungen-kraefte-und-energie-einstieg-lernpfad",
+        "bereich": "Bewegungen Kräfte und Energie",
+        "titel": "Einstieg: Bewegungen, Kräfte und Energie",
+        "typ": "Lernpfad",
         "tags": [
-          "Energieerhaltung",
-          "Impuls",
-          "EF"
-        ]
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/bewegungen-kraefte-und-energie/einstieg/lernpfad.html",
+        "lernpfad_html": "ef/bewegungen-kraefte-und-energie/einstieg/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/bewegungen-kraefte-und-energie/einstieg/arbeitsblatt.pdf"
       },
       {
-        "bereich": "Mechanik",
-        "titel": "Fall und Wurf",
-        "typ": "Materialseite",
-        "pfad": "ef/mechanik/fall-und-wurf/test.html",
+        "id": "ef-bewegungen-kraefte-und-energie-freier-fall-und-waagerechter-wurf-lernpfad",
+        "bereich": "Bewegungen Kräfte und Energie",
+        "titel": "Freier Fall und waagerechter Wurf",
+        "typ": "Lernpfad",
         "tags": [
-          "Freier Fall",
-          "Wurf",
-          "EF"
-        ]
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/bewegungen-kraefte-und-energie/freier-fall-und-waagerechter-wurf/lernpfad.html",
+        "lernpfad_html": "ef/bewegungen-kraefte-und-energie/freier-fall-und-waagerechter-wurf/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/bewegungen-kraefte-und-energie/freier-fall-und-waagerechter-wurf/arbeitsblatt.pdf"
       },
       {
-        "bereich": "Mechanik",
-        "titel": "Gravitation und Planetenbewegungen",
-        "typ": "Materialseite",
-        "pfad": "ef/mechanik/gravitation-und-planetenbewegungen/test.html",
+        "id": "ef-bewegungen-kraefte-und-energie-impuls-und-zusammenstoesse-lernpfad",
+        "bereich": "Bewegungen Kräfte und Energie",
+        "titel": "Impuls und Zusammenstöße",
+        "typ": "Lernpfad",
         "tags": [
-          "Gravitation",
-          "Planeten",
-          "EF"
-        ]
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/bewegungen-kraefte-und-energie/impuls-und-zusammenstoesse/lernpfad.html",
+        "lernpfad_html": "ef/bewegungen-kraefte-und-energie/impuls-und-zusammenstoesse/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/bewegungen-kraefte-und-energie/impuls-und-zusammenstoesse/arbeitsblatt.pdf"
       },
       {
-        "bereich": "Mechanik",
-        "titel": "Kinematik",
-        "typ": "Materialseite",
-        "pfad": "ef/mechanik/kinematik/test.html",
+        "id": "ef-bewegungen-kraefte-und-energie-bewegungen-beschreiben-und-berechnen-lernpfad",
+        "bereich": "Bewegungen Kräfte und Energie",
+        "titel": "Kinematik: Bewegungen beschreiben und berechnen",
+        "typ": "Lernpfad",
         "tags": [
-          "Kinematik",
-          "Bewegung",
-          "EF"
-        ]
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/bewegungen-kraefte-und-energie/bewegungen-beschreiben-und-berechnen/lernpfad.html",
+        "lernpfad_html": "ef/bewegungen-kraefte-und-energie/bewegungen-beschreiben-und-berechnen/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/bewegungen-kraefte-und-energie/bewegungen-beschreiben-und-berechnen/arbeitsblatt.pdf"
       },
       {
-        "bereich": "Mechanik",
-        "titel": "Kreisbewegungen",
-        "typ": "Materialseite",
-        "pfad": "ef/mechanik/kreisbewegungen/test.html",
+        "id": "ef-bewegungen-kraefte-und-energie-energie-arbeit-und-leistung-lernpfad",
+        "bereich": "Bewegungen Kräfte und Energie",
+        "titel": "Mechanische Energie, Arbeit und Leistung",
+        "typ": "Lernpfad",
         "tags": [
-          "Kreisbewegung",
-          "Mechanik",
-          "EF"
-        ]
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/bewegungen-kraefte-und-energie/energie-arbeit-und-leistung/lernpfad.html",
+        "lernpfad_html": "ef/bewegungen-kraefte-und-energie/energie-arbeit-und-leistung/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/bewegungen-kraefte-und-energie/energie-arbeit-und-leistung/arbeitsblatt.pdf"
       },
       {
-        "bereich": "Mechanik",
-        "titel": "Relativität",
-        "typ": "Materialseite",
-        "pfad": "ef/mechanik/relativitaet/test.html",
+        "id": "ef-bewegungen-kraefte-und-energie-messdaten-bewegung-und-digitale-auswertung-lernpfad",
+        "bereich": "Bewegungen Kräfte und Energie",
+        "titel": "Messdaten, Mobilität und digitale Auswertung",
+        "typ": "Lernpfad",
         "tags": [
-          "Relativität",
-          "Mechanik",
-          "EF"
-        ]
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/bewegungen-kraefte-und-energie/messdaten-bewegung-und-digitale-auswertung/lernpfad.html",
+        "lernpfad_html": "ef/bewegungen-kraefte-und-energie/messdaten-bewegung-und-digitale-auswertung/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/bewegungen-kraefte-und-energie/messdaten-bewegung-und-digitale-auswertung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "ef-kreisbewegung-gravitation-und-weltbilder-bezugssysteme-und-relativistische-zeit-lernpfad",
+        "bereich": "Kreisbewegung Gravitation und Weltbilder",
+        "titel": "Bezugssysteme und relativistische Zeit",
+        "typ": "Lernpfad",
+        "tags": [
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/kreisbewegung-gravitation-und-weltbilder/bezugssysteme-und-relativistische-zeit/lernpfad.html",
+        "lernpfad_html": "ef/kreisbewegung-gravitation-und-weltbilder/bezugssysteme-und-relativistische-zeit/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/kreisbewegung-gravitation-und-weltbilder/bezugssysteme-und-relativistische-zeit/arbeitsblatt.pdf"
+      },
+      {
+        "id": "ef-kreisbewegung-gravitation-und-weltbilder-einstieg-lernpfad",
+        "bereich": "Kreisbewegung Gravitation und Weltbilder",
+        "titel": "Einstieg: Kreisbewegung, Gravitation und Weltbilder",
+        "typ": "Lernpfad",
+        "tags": [
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/kreisbewegung-gravitation-und-weltbilder/einstieg/lernpfad.html",
+        "lernpfad_html": "ef/kreisbewegung-gravitation-und-weltbilder/einstieg/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/kreisbewegung-gravitation-und-weltbilder/einstieg/arbeitsblatt.pdf"
+      },
+      {
+        "id": "ef-kreisbewegung-gravitation-und-weltbilder-gleichfoermige-kreisbewegung-lernpfad",
+        "bereich": "Kreisbewegung Gravitation und Weltbilder",
+        "titel": "Gleichförmige Kreisbewegung",
+        "typ": "Lernpfad",
+        "tags": [
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/kreisbewegung-gravitation-und-weltbilder/gleichfoermige-kreisbewegung/lernpfad.html",
+        "lernpfad_html": "ef/kreisbewegung-gravitation-und-weltbilder/gleichfoermige-kreisbewegung/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/kreisbewegung-gravitation-und-weltbilder/gleichfoermige-kreisbewegung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "ef-kreisbewegung-gravitation-und-weltbilder-gravitation-und-gravitationsfelder-lernpfad",
+        "bereich": "Kreisbewegung Gravitation und Weltbilder",
+        "titel": "Gravitation und Gravitationsfelder",
+        "typ": "Lernpfad",
+        "tags": [
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/kreisbewegung-gravitation-und-weltbilder/gravitation-und-gravitationsfelder/lernpfad.html",
+        "lernpfad_html": "ef/kreisbewegung-gravitation-und-weltbilder/gravitation-und-gravitationsfelder/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/kreisbewegung-gravitation-und-weltbilder/gravitation-und-gravitationsfelder/arbeitsblatt.pdf"
+      },
+      {
+        "id": "ef-kreisbewegung-gravitation-und-weltbilder-kepler-gesetze-und-planetenbahnen-lernpfad",
+        "bereich": "Kreisbewegung Gravitation und Weltbilder",
+        "titel": "Keplersche Gesetze und Planetenbahnen",
+        "typ": "Lernpfad",
+        "tags": [
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/kreisbewegung-gravitation-und-weltbilder/kepler-gesetze-und-planetenbahnen/lernpfad.html",
+        "lernpfad_html": "ef/kreisbewegung-gravitation-und-weltbilder/kepler-gesetze-und-planetenbahnen/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/kreisbewegung-gravitation-und-weltbilder/kepler-gesetze-und-planetenbahnen/arbeitsblatt.pdf"
+      },
+      {
+        "id": "ef-kreisbewegung-gravitation-und-weltbilder-vom-geozentrischen-zum-modernen-weltbild-lernpfad",
+        "bereich": "Kreisbewegung Gravitation und Weltbilder",
+        "titel": "Vom geozentrischen zum modernen Weltbild",
+        "typ": "Lernpfad",
+        "tags": [
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "ef/kreisbewegung-gravitation-und-weltbilder/vom-geozentrischen-zum-modernen-weltbild/lernpfad.html",
+        "lernpfad_html": "ef/kreisbewegung-gravitation-und-weltbilder/vom-geozentrischen-zum-modernen-weltbild/lernpfad.html",
+        "arbeitsblatt_pdf": "ef/kreisbewegung-gravitation-und-weltbilder/vom-geozentrischen-zum-modernen-weltbild/arbeitsblatt.pdf"
       }
     ],
-    "q1-gk": [
+    "q1-q2-grundkurs": [
       {
-        "bereich": "IF A",
-        "titel": "Geladene Teilchen in elektrischen Feldern",
-        "typ": "Materialseite",
-        "pfad": "q1-gk/if-a/geladene-teilchen-in-elektrischen-feldern/test.html",
+        "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-elektromagnetische-schwingungen-und-energierueckgewinnung-index",
+        "bereich": "Induktion und Elektrische Energieübertragung",
+        "titel": "Elektromagnetische Schwingung und Energierückgewinnung",
+        "typ": "Lernpfad",
         "tags": [
-          "Elektrisches Feld",
-          "Geladene Teilchen",
-          "Q1 GK"
-        ]
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/elektromagnetische-schwingungen-und-energierueckgewinnung/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/elektromagnetische-schwingungen-und-energierueckgewinnung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/elektromagnetische-schwingungen-und-energierueckgewinnung/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF A",
-        "titel": "Geladene Teilchen in magnetischen Feldern",
-        "typ": "Materialseite",
-        "pfad": "q1-gk/if-a/geladene-teilchen-in-magnetischen-feldern/test.html",
+        "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-generatoren-und-wechselspannung-index",
+        "bereich": "Induktion und Elektrische Energieübertragung",
+        "titel": "Generator und Wechselspannung",
+        "typ": "Lernpfad",
         "tags": [
-          "Magnetisches Feld",
-          "Lorentzkraft",
-          "Q1 GK"
-        ]
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/generatoren-und-wechselspannung/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/generatoren-und-wechselspannung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/generatoren-und-wechselspannung/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF A",
-        "titel": "Klassische Wellen",
-        "typ": "Materialseite",
-        "pfad": "q1-gk/if-a/klassische-wellen/test.html",
+        "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-magnetischer-fluss-und-induktion-index",
+        "bereich": "Induktion und Elektrische Energieübertragung",
+        "titel": "Induktion durch Bewegung und Flussänderung",
+        "typ": "Lernpfad",
         "tags": [
-          "Wellen",
-          "Interferenz",
-          "Q1 GK"
-        ]
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/magnetischer-fluss-und-induktion/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/magnetischer-fluss-und-induktion/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/magnetischer-fluss-und-induktion/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF B",
-        "titel": "Quantenobjekte",
-        "typ": "Materialseite",
-        "pfad": "q1-gk/if-b/quantenobjekte/test.html",
+        "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-index",
+        "bereich": "Induktion und Elektrische Energieübertragung",
+        "titel": "Induktion und elektrische Energieübertragung – Einstieg",
+        "typ": "Oberthema-Einstieg",
         "tags": [
-          "Quantenphysik",
-          "Photonen",
-          "Q1 GK"
-        ]
+          "Q1/Q2 Grundkurs",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF C",
-        "titel": "Elektrodynamik: Induktion",
-        "typ": "Materialseite",
-        "pfad": "q1-gk/if-c/elektrodynamik-induktion/test.html",
+        "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-induktionsgesetz-und-lenzsche-regel-index",
+        "bereich": "Induktion und Elektrische Energieübertragung",
+        "titel": "Induktionsgesetz und Thomson-Ring",
+        "typ": "Lernpfad",
         "tags": [
-          "Induktion",
-          "Elektrodynamik",
-          "Q1 GK"
-        ]
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/induktionsgesetz-und-lenzsche-regel/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/induktionsgesetz-und-lenzsche-regel/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/induktionsgesetz-und-lenzsche-regel/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF C",
-        "titel": "Elektrodynamik: Transformatoren und Energieübertragung",
-        "typ": "Materialseite",
-        "pfad": "q1-gk/if-c/elektrodynamik-transformatoren-und-energieuebertragung/test.html",
+        "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-kondensatoren-und-kapazitaet-index",
+        "bereich": "Induktion und Elektrische Energieübertragung",
+        "titel": "Kondensator, Kapazität und Energiespeicherung",
+        "typ": "Lernpfad",
         "tags": [
-          "Transformator",
-          "Energieübertragung",
-          "Q1 GK"
-        ]
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/kondensatoren-und-kapazitaet/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/kondensatoren-und-kapazitaet/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/kondensatoren-und-kapazitaet/arbeitsblatt.pdf"
       },
       {
-        "bereich": "IF C",
-        "titel": "Kondensatoren und elektromagnetische Schwingungen",
-        "typ": "Materialseite",
-        "pfad": "q1-gk/if-c/kondensatoren-und-elektromagnetische-schwingungen/test.html",
+        "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-transformatoren-und-energieuebertragung-index",
+        "bereich": "Induktion und Elektrische Energieübertragung",
+        "titel": "Transformator und Energieübertragung",
+        "typ": "Lernpfad",
         "tags": [
-          "Kondensator",
-          "Schwingkreis",
-          "Q1 GK"
-        ]
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/transformatoren-und-energieuebertragung/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/transformatoren-und-energieuebertragung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/transformatoren-und-energieuebertragung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-quantenphysik-materiewellen-und-elektroneninterferenz-lernpfad",
+        "bereich": "Quantenphysik",
+        "titel": "De-Broglie-Hypothese und Elektroneninterferenz",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/quantenphysik/materiewellen-und-elektroneninterferenz/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/quantenphysik/materiewellen-und-elektroneninterferenz/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/quantenphysik/materiewellen-und-elektroneninterferenz/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-quantenphysik-einstieg-quantenphysik-index",
+        "bereich": "Quantenphysik",
+        "titel": "Einstieg: Warum braucht die Physik Quanten?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/quantenphysik/einstieg-quantenphysik/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/quantenphysik/einstieg-quantenphysik/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/quantenphysik/einstieg-quantenphysik/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-quantenphysik-photoeffekt-und-lichtquanten-lernpfad",
+        "bereich": "Quantenphysik",
+        "titel": "Photoeffekt und Lichtquanten",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/quantenphysik/photoeffekt-und-lichtquanten/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/quantenphysik/photoeffekt-und-lichtquanten/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/quantenphysik/photoeffekt-und-lichtquanten/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-quantenphysik-quantenobjekte-und-wahrscheinlichkeiten-lernpfad",
+        "bereich": "Quantenphysik",
+        "titel": "Photon und Elektron als Quantenobjekte",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/quantenphysik/quantenobjekte-und-wahrscheinlichkeiten/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/quantenphysik/quantenobjekte-und-wahrscheinlichkeiten/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/quantenphysik/quantenobjekte-und-wahrscheinlichkeiten/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-quantenphysik-welcher-weg-information-und-kopenhagener-deutung-lernpfad",
+        "bereich": "Quantenphysik",
+        "titel": "Welcher-Weg-Information und Kopenhagener Deutung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/quantenphysik/welcher-weg-information-und-kopenhagener-deutung/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/quantenphysik/welcher-weg-information-und-kopenhagener-deutung/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/quantenphysik/welcher-weg-information-und-kopenhagener-deutung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-elektrische-felder-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Elektrische Felder und Plattenkondensator",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/elektrische-felder/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/elektrische-felder/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/elektrische-felder/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-millikan-versuch-und-elektronenkanone-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Elementarladung und Beschleunigung von Elektronen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/millikan-versuch-und-elektronenkanone/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/millikan-versuch-und-elektronenkanone/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/millikan-versuch-und-elektronenkanone/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-harmonische-schwingungen-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Harmonische Schwingungen und Federpendel",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/harmonische-schwingungen/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/harmonische-schwingungen/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/harmonische-schwingungen/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-interferenz-von-licht-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Interferenz des Lichts",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/interferenz-von-licht/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/interferenz-von-licht/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/interferenz-von-licht/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-magnetfelder-und-lorentzkraft-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Magnetische Felder, Lorentzkraft und Fadenstrahlrohr",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/magnetfelder-und-lorentzkraft/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/magnetfelder-und-lorentzkraft/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/magnetfelder-und-lorentzkraft/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-mechanische-wellen-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Mechanische Wellen und Huygenssches Prinzip",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/mechanische-wellen/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/mechanische-wellen/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/mechanische-wellen/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Schwingungen, Wellen und Teilchen in Feldern – Einstieg",
+        "typ": "Oberthema-Einstieg",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-ueberlagerung-und-stehende-wellen-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Superposition, stehende Wellen und Störgeräusche",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/ueberlagerung-und-stehende-wellen/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/ueberlagerung-und-stehende-wellen/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/ueberlagerung-und-stehende-wellen/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-schwingungen-wellen-und-teilchen-in-feldern-geladene-teilchen-in-feldern-und-das-zyklotron-index",
+        "bereich": "Schwingungen Wellen und Teilchen in Feldern",
+        "titel": "Teilchenbahnen, Erdmagnetfeld und Zyklotron",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/geladene-teilchen-in-feldern-und-das-zyklotron/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/geladene-teilchen-in-feldern-und-das-zyklotron/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/schwingungen-wellen-und-teilchen-in-feldern/geladene-teilchen-in-feldern-und-das-zyklotron/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-strahlung-atome-und-atomkerne-einstieg-strahlung-materie-index",
+        "bereich": "Strahlung Atome und Atomkerne",
+        "titel": "Einstieg: Wie verrät Strahlung den Aufbau der Materie?",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/einstieg-strahlung-materie/index.html",
+        "lernpfad_html": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/einstieg-strahlung-materie/index.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/einstieg-strahlung-materie/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-strahlung-atome-und-atomkerne-elektromagnetische-strahlung-und-spektrum-lernpfad",
+        "bereich": "Strahlung Atome und Atomkerne",
+        "titel": "Elektromagnetisches Spektrum und ionisierende Strahlung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/elektromagnetische-strahlung-und-spektrum/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/elektromagnetische-strahlung-und-spektrum/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/elektromagnetische-strahlung-und-spektrum/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-strahlung-atome-und-atomkerne-atomkern-und-radioaktiver-zerfall-lernpfad",
+        "bereich": "Strahlung Atome und Atomkerne",
+        "titel": "Kernaufbau, Zerfall und Nuklidkarte",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/atomkern-und-radioaktiver-zerfall/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/atomkern-und-radioaktiver-zerfall/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/atomkern-und-radioaktiver-zerfall/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-strahlung-atome-und-atomkerne-kernspaltung-kernfusion-und-massendefekt-lernpfad",
+        "bereich": "Strahlung Atome und Atomkerne",
+        "titel": "Kernspaltung, Kernfusion und Massendefekt",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/kernspaltung-kernfusion-und-massendefekt/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/kernspaltung-kernfusion-und-massendefekt/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/kernspaltung-kernfusion-und-massendefekt/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-strahlung-atome-und-atomkerne-linienspektren-und-atommodelle-lernpfad",
+        "bereich": "Strahlung Atome und Atomkerne",
+        "titel": "Linienspektren, Atommodelle und Franck-Hertz",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/linienspektren-und-atommodelle/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/linienspektren-und-atommodelle/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/linienspektren-und-atommodelle/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-strahlung-atome-und-atomkerne-strahlung-messen-abschirmen-und-bewerten-lernpfad",
+        "bereich": "Strahlung Atome und Atomkerne",
+        "titel": "Nachweis, Absorption und Dosimetrie",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/strahlung-messen-abschirmen-und-bewerten/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/strahlung-messen-abschirmen-und-bewerten/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/strahlung-messen-abschirmen-und-bewerten/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-strahlung-atome-und-atomkerne-roentgenstrahlung-lernpfad",
+        "bereich": "Strahlung Atome und Atomkerne",
+        "titel": "Röntgenstrahlung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/roentgenstrahlung/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/roentgenstrahlung/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/roentgenstrahlung/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-strahlung-atome-und-atomkerne-wasserstoffatom-und-orbitale-lernpfad",
+        "bereich": "Strahlung Atome und Atomkerne",
+        "titel": "Wasserstoffatom und Orbitale",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/wasserstoffatom-und-orbitale/lernpfad.html",
+        "lernpfad_html": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/wasserstoffatom-und-orbitale/lernpfad.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/strahlung-atome-und-atomkerne/wasserstoffatom-und-orbitale/arbeitsblatt.pdf"
+      },
+      {
+        "id": "q1-q2-grundkurs-klausurtraining-q1-gk",
+        "bereich": "Zusatzmaterial",
+        "titel": "Klausurtraining Q1 Grundkurs",
+        "typ": "Training",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Training",
+          "HTML"
+        ],
+        "format": "HTML",
+        "pfad": "q1-q2-grundkurs/klausurtraining-q1-gk/klausurtraining_q1_gk.html",
+        "lernpfad_html": "q1-q2-grundkurs/klausurtraining-q1-gk/klausurtraining_q1_gk.html",
+        "arbeitsblatt_pdf": null
+      },
+      {
+        "id": "q1-q2-grundkurs-sicherungsblaetter-q1-gk",
+        "bereich": "Zusatzmaterial",
+        "titel": "Sicherungsblätter Q1 Grundkurs",
+        "typ": "Sicherungsblätter",
+        "tags": [
+          "Q1/Q2 Grundkurs",
+          "Sicherungsblätter",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-grundkurs/sicherungsblaetter-q1-gk/sicherungsblaetter_q1_gk.html",
+        "lernpfad_html": "q1-q2-grundkurs/sicherungsblaetter-q1-gk/sicherungsblaetter_q1_gk.html",
+        "arbeitsblatt_pdf": "q1-q2-grundkurs/sicherungsblaetter-q1-gk/arbeitsblatt-sammlung.pdf"
       }
     ],
-    "q1-lk": [
+    "q1-q2-leistungskurs": [
       {
-        "bereich": "Oberstufe",
-        "titel": "Leistungskurs Physik – noch nicht ausgewiesen",
-        "typ": "Materialseite",
-        "pfad": "q1-lk/oberstufe/leistungskurs-physik-noch-nicht-ausgewiesen/test.html",
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Atome, Atomkerne und Radioaktivität – Einstieg",
+        "typ": "Oberthema-Einstieg",
         "tags": [
-          "Q1 LK",
-          "Oberstufe",
-          "Platzhalter"
-        ]
-      }
-    ],
-    "q2-gk": [
-      {
-        "bereich": "IF D",
-        "titel": "Strahlung und Materie: Atomphysik",
-        "typ": "Materialseite",
-        "pfad": "q2-gk/if-d/strahlung-und-materie-atomphysik/test.html",
-        "tags": [
-          "Atomphysik",
-          "Strahlung",
-          "Q2 GK"
-        ]
+          "Q1/Q2 Leistungskurs",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/arbeitsblatt-sammlung.pdf"
       },
       {
-        "bereich": "IF D",
-        "titel": "Strahlung und Materie: Kernphysik",
-        "typ": "Materialseite",
-        "pfad": "q2-gk/if-d/strahlung-und-materie-kernphysik/test.html",
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-energieniveaus-und-spektren-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Energieniveaus, Spektren und Franck-Hertz",
+        "typ": "Lernpfad",
         "tags": [
-          "Kernphysik",
-          "Strahlung",
-          "Q2 GK"
-        ]
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/energieniveaus-und-spektren/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/energieniveaus-und-spektren/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/energieniveaus-und-spektren/arbeitsblatt-sammlung.pdf"
       },
       {
-        "bereich": "IF D",
-        "titel": "Strahlung und Materie: Spektrum und Radioaktivität",
-        "typ": "Materialseite",
-        "pfad": "q2-gk/if-d/strahlung-und-materie-spektrum-und-radioaktivitaet/test.html",
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-entwicklung-der-atommodelle-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Historische Atommodelle und Kern-Hülle-Modell",
+        "typ": "Lernpfad",
         "tags": [
-          "Spektrum",
-          "Radioaktivität",
-          "Q2 GK"
-        ]
-      }
-    ],
-    "q2-lk": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/entwicklung-der-atommodelle/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/entwicklung-der-atommodelle/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/entwicklung-der-atommodelle/arbeitsblatt-sammlung.pdf"
+      },
       {
-        "bereich": "Oberstufe",
-        "titel": "Leistungskurs Physik – noch nicht ausgewiesen",
-        "typ": "Materialseite",
-        "pfad": "q2-lk/oberstufe/leistungskurs-physik-noch-nicht-ausgewiesen/test.html",
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-ionisierende-strahlung-und-detektoren-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Ionisierende Strahlung und Nachweismethoden",
+        "typ": "Lernpfad",
         "tags": [
-          "Q2 LK",
-          "Oberstufe",
-          "Platzhalter"
-        ]
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/ionisierende-strahlung-und-detektoren/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/ionisierende-strahlung-und-detektoren/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/ionisierende-strahlung-und-detektoren/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-atomkern-und-fundamentale-wechselwirkungen-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Kernaufbau und fundamentale Wechselwirkungen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/atomkern-und-fundamentale-wechselwirkungen/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/atomkern-und-fundamentale-wechselwirkungen/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/atomkern-und-fundamentale-wechselwirkungen/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-kernphysik-in-gesellschaft-und-technik-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Kernphysik in Gesellschaft und Technik",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/kernphysik-in-gesellschaft-und-technik/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/kernphysik-in-gesellschaft-und-technik/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/kernphysik-in-gesellschaft-und-technik/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-kernspaltung-kernfusion-und-bindungsenergie-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Kernspaltung, Kernfusion und Bindungsenergie",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/kernspaltung-kernfusion-und-bindungsenergie/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/kernspaltung-kernfusion-und-bindungsenergie/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/kernspaltung-kernfusion-und-bindungsenergie/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-potentialtopf-orbitale-und-pauli-prinzip-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Potentialtopf, Orbitale und Pauli-Prinzip",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/potentialtopf-orbitale-und-pauli-prinzip/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/potentialtopf-orbitale-und-pauli-prinzip/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/potentialtopf-orbitale-und-pauli-prinzip/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-atome-atomkerne-und-radioaktivitaet-zerfallsgesetz-und-c14-datierung-index",
+        "bereich": "Atome Atomkerne und Radioaktivität",
+        "titel": "Radioaktiver Zerfall, Zerfallsreihen und Altersbestimmung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/zerfallsgesetz-und-c14-datierung/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/zerfallsgesetz-und-c14-datierung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/atome-atomkerne-und-radioaktivitaet/zerfallsgesetz-und-c14-datierung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-teilchenbeschleuniger-induktion-und-bewertung-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Beschleuniger, Induktionsanwendungen und Bewertung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/teilchenbeschleuniger-induktion-und-bewertung/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/teilchenbeschleuniger-induktion-und-bewertung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/teilchenbeschleuniger-induktion-und-bewertung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-bewegung-geladener-teilchen-in-feldern-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Bewegung in elektrischen und magnetischen Feldern",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/bewegung-geladener-teilchen-in-feldern/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/bewegung-geladener-teilchen-in-feldern/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/bewegung-geladener-teilchen-in-feldern/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-coulombgesetz-und-elektrische-felder-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Elektrostatik, Coulombgesetz und Superposition",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/coulombgesetz-und-elektrische-felder/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/coulombgesetz-und-elektrische-felder/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/coulombgesetz-und-elektrische-felder/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-millikan-versuch-und-fadenstrahlrohr-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Elementarladung, Elektronenmasse und Teilchenquellen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/millikan-versuch-und-fadenstrahlrohr/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/millikan-versuch-und-fadenstrahlrohr/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/millikan-versuch-und-fadenstrahlrohr/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-induktionsgesetz-lenzsche-regel-und-generatoren-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Induktion, Lenzsche Regel und Generator",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/induktionsgesetz-lenzsche-regel-und-generatoren/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/induktionsgesetz-lenzsche-regel-und-generatoren/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/induktionsgesetz-lenzsche-regel-und-generatoren/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Ladungen, elektrische und magnetische Felder – Einstieg",
+        "typ": "Oberthema-Einstieg",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-magnetfelder-von-spulen-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Magnetische Felder stromdurchflossener Spulen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/magnetfelder-von-spulen/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/magnetfelder-von-spulen/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/magnetfelder-von-spulen/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-elektrisches-potential-kondensatoren-und-kapazitaet-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Potential, Spannung, Kondensator und Kapazität",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/elektrisches-potential-kondensatoren-und-kapazitaet/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/elektrisches-potential-kondensatoren-und-kapazitaet/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/elektrisches-potential-kondensatoren-und-kapazitaet/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-ladungen-elektrische-und-magnetische-felder-selbstinduktion-und-induktivitaet-index",
+        "bereich": "Ladungen Elektrische und Magnetische Felder",
+        "titel": "Selbstinduktion und Induktivität",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/selbstinduktion-und-induktivitaet/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/selbstinduktion-und-induktivitaet/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/ladungen-elektrische-und-magnetische-felder/selbstinduktion-und-induktivitaet/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-quantenphysik-doppelspalt-und-delayed-choice-experiment-index",
+        "bereich": "Quantenphysik",
+        "titel": "Doppelspalt, Delayed Choice und Komplementarität",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/quantenphysik/doppelspalt-und-delayed-choice-experiment/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/quantenphysik/doppelspalt-und-delayed-choice-experiment/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/quantenphysik/doppelspalt-und-delayed-choice-experiment/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-quantenphysik-unbestimmtheit-und-kopenhagener-deutung-index",
+        "bereich": "Quantenphysik",
+        "titel": "Heisenbergsche Unbestimmtheit und Deutung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/quantenphysik/unbestimmtheit-und-kopenhagener-deutung/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/quantenphysik/unbestimmtheit-und-kopenhagener-deutung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/quantenphysik/unbestimmtheit-und-kopenhagener-deutung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-quantenphysik-photoeffekt-und-planck-konstante-index",
+        "bereich": "Quantenphysik",
+        "titel": "Photoeffekt und Plancksches Wirkungsquantum",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/quantenphysik/photoeffekt-und-planck-konstante/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/quantenphysik/photoeffekt-und-planck-konstante/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/quantenphysik/photoeffekt-und-planck-konstante/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-quantenphysik-index",
+        "bereich": "Quantenphysik",
+        "titel": "Quantenphysik – Einstieg",
+        "typ": "Oberthema-Einstieg",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/quantenphysik/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/quantenphysik/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/quantenphysik/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-quantenphysik-roentgenstrahlung-und-bragg-reflexion-index",
+        "bereich": "Quantenphysik",
+        "titel": "Röntgenröhre, Bremsstrahlung und Bragg-Reflexion",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/quantenphysik/roentgenstrahlung-und-bragg-reflexion/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/quantenphysik/roentgenstrahlung-und-bragg-reflexion/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/quantenphysik/roentgenstrahlung-und-bragg-reflexion/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-quantenphysik-welle-teilchen-dualismus-index",
+        "bereich": "Quantenphysik",
+        "titel": "Welle-Teilchen-Dualismus und Elektronenbeugung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/quantenphysik/welle-teilchen-dualismus/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/quantenphysik/welle-teilchen-dualismus/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/quantenphysik/welle-teilchen-dualismus/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-quantenphysik-wellenfunktion-und-aufenthaltswahrscheinlichkeit-index",
+        "bereich": "Quantenphysik",
+        "titel": "Wellenfunktion und Wahrscheinlichkeitsdichte",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/quantenphysik/wellenfunktion-und-aufenthaltswahrscheinlichkeit/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/quantenphysik/wellenfunktion-und-aufenthaltswahrscheinlichkeit/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/quantenphysik/wellenfunktion-und-aufenthaltswahrscheinlichkeit/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-schwingungen-und-wellen-elektromagnetische-schwingkreise-index",
+        "bereich": "Schwingungen und Wellen",
+        "titel": "Elektromagnetischer Schwingkreis",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/schwingungen-und-wellen/elektromagnetische-schwingkreise/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/schwingungen-und-wellen/elektromagnetische-schwingkreise/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/schwingungen-und-wellen/elektromagnetische-schwingkreise/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-schwingungen-und-wellen-hertzscher-dipol-und-elektromagnetische-wellen-index",
+        "bereich": "Schwingungen und Wellen",
+        "titel": "Hertzscher Dipol und elektromagnetische Wellen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/schwingungen-und-wellen/hertzscher-dipol-und-elektromagnetische-wellen/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/schwingungen-und-wellen/hertzscher-dipol-und-elektromagnetische-wellen/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/schwingungen-und-wellen/hertzscher-dipol-und-elektromagnetische-wellen/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-schwingungen-und-wellen-interferenz-an-spalt-und-gitter-index",
+        "bereich": "Schwingungen und Wellen",
+        "titel": "Interferenz an Spalt und Gitter",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/schwingungen-und-wellen/interferenz-an-spalt-und-gitter/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/schwingungen-und-wellen/interferenz-an-spalt-und-gitter/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/schwingungen-und-wellen/interferenz-an-spalt-und-gitter/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-schwingungen-und-wellen-mechanische-schwingungen-index",
+        "bereich": "Schwingungen und Wellen",
+        "titel": "Mechanische harmonische Schwingungen",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/schwingungen-und-wellen/mechanische-schwingungen/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/schwingungen-und-wellen/mechanische-schwingungen/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/schwingungen-und-wellen/mechanische-schwingungen/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-schwingungen-und-wellen-mechanische-wellen-und-wellengleichung-index",
+        "bereich": "Schwingungen und Wellen",
+        "titel": "Mechanische Wellen und Wellengleichung",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/schwingungen-und-wellen/mechanische-wellen-und-wellengleichung/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/schwingungen-und-wellen/mechanische-wellen-und-wellengleichung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/schwingungen-und-wellen/mechanische-wellen-und-wellengleichung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-schwingungen-und-wellen-michelson-interferometer-index",
+        "bereich": "Schwingungen und Wellen",
+        "titel": "Michelson-Interferometer",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/schwingungen-und-wellen/michelson-interferometer/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/schwingungen-und-wellen/michelson-interferometer/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/schwingungen-und-wellen/michelson-interferometer/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-schwingungen-und-wellen-resonanz-und-energieuebertragung-index",
+        "bereich": "Schwingungen und Wellen",
+        "titel": "Resonanz",
+        "typ": "Lernpfad",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Lernpfad",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/schwingungen-und-wellen/resonanz-und-energieuebertragung/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/schwingungen-und-wellen/resonanz-und-energieuebertragung/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/schwingungen-und-wellen/resonanz-und-energieuebertragung/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-schwingungen-und-wellen-index",
+        "bereich": "Schwingungen und Wellen",
+        "titel": "Schwingungen und Wellen – Einstieg",
+        "typ": "Oberthema-Einstieg",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Oberthema-Einstieg",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/schwingungen-und-wellen/index.html",
+        "lernpfad_html": "q1-q2-leistungskurs/schwingungen-und-wellen/index.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/schwingungen-und-wellen/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-klausurtraining-q1-lk",
+        "bereich": "Zusatzmaterial",
+        "titel": "Klausurtraining Q1 Leistungskurs",
+        "typ": "Training",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Training",
+          "HTML"
+        ],
+        "format": "HTML",
+        "pfad": "q1-q2-leistungskurs/klausurtraining-q1-lk/klausurtraining_q1_lk.html",
+        "lernpfad_html": "q1-q2-leistungskurs/klausurtraining-q1-lk/klausurtraining_q1_lk.html",
+        "arbeitsblatt_pdf": null
+      },
+      {
+        "id": "q1-q2-leistungskurs-sicherungsblaetter-q1-lk",
+        "bereich": "Zusatzmaterial",
+        "titel": "Sicherungsblätter Q1 Leistungskurs",
+        "typ": "Sicherungsblätter",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Sicherungsblätter",
+          "HTML",
+          "PDF im Lernpfadordner"
+        ],
+        "format": "HTML+PDF",
+        "pfad": "q1-q2-leistungskurs/sicherungsblaetter-q1-lk/sicherungsblaetter_q1_lk.html",
+        "lernpfad_html": "q1-q2-leistungskurs/sicherungsblaetter-q1-lk/sicherungsblaetter_q1_lk.html",
+        "arbeitsblatt_pdf": "q1-q2-leistungskurs/sicherungsblaetter-q1-lk/arbeitsblatt-sammlung.pdf"
+      },
+      {
+        "id": "q1-q2-leistungskurs-uebungsaufgaben-q1-lk",
+        "bereich": "Zusatzmaterial",
+        "titel": "Übungsaufgaben Q1 Leistungskurs",
+        "typ": "Übungsaufgaben",
+        "tags": [
+          "Q1/Q2 Leistungskurs",
+          "Übungsaufgaben",
+          "HTML"
+        ],
+        "format": "HTML",
+        "pfad": "q1-q2-leistungskurs/uebungsaufgaben-q1-lk/uebungsaufgaben_q1_lk.html",
+        "lernpfad_html": "q1-q2-leistungskurs/uebungsaufgaben-q1-lk/uebungsaufgaben_q1_lk.html",
+        "arbeitsblatt_pdf": null
       }
     ]
   }
