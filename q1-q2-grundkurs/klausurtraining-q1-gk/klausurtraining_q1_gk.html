@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Q1 GK Physik – Klausurtraining</title>
+<style>
+:root{--text:#16202a;--primary:#1565c0;--accent:#003b73}*{box-sizing:border-box}body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:linear-gradient(140deg,#eef6ff,#fff);color:var(--text);line-height:1.55}header{padding:32px 18px;background:linear-gradient(135deg,#1565c0,#003b73);color:white}main{max-width:1100px;margin:auto;padding:20px}.card{background:white;border-radius:24px;padding:20px;margin:18px 0;box-shadow:0 14px 34px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.10)}.task{border-left:8px solid #1565c0}.qua{border-left-color:#6a1b9a}.ind{border-left-color:#ef6c00}.str{border-left-color:#c62828}h1{font-size:clamp(2rem,5vw,3.7rem);margin:.2em 0}textarea{width:100%;min-height:110px;border-radius:14px;border:1px solid #ccd6e0;padding:10px;font:inherit}details{background:#f7fbff;border:1px solid #d7e6f7;border-radius:14px;padding:12px;margin-top:10px}.btn{border:0;border-radius:13px;padding:11px 14px;font-weight:800;cursor:pointer;background:#1565c0;color:white}.score{font-weight:900;color:#003b73;background:#eaf6ff;border-radius:14px;padding:10px}a{font-weight:800;color:#1565c0}.op{display:inline-flex;border-radius:999px;background:#eef6ff;color:#003b73;padding:6px 10px;font-weight:800;margin:2px}
+
+/* iPad-/Safari-Stabilisierung und KaTeX-Darstellung */
+html{-webkit-text-size-adjust:100%;touch-action:manipulation}
+body{min-height:100svh;overflow-wrap:anywhere}
+.topbar{-webkit-backdrop-filter:blur(10px)}
+button,.btn,a.btn,input,textarea,select,summary{min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+input,textarea,select{font-size:16px;line-height:1.4;-webkit-appearance:none;appearance:none}
+input[type="checkbox"],input[type="radio"]{width:22px;height:22px;min-height:22px;-webkit-appearance:auto;appearance:auto;flex:0 0 auto}
+input[type="range"]{-webkit-appearance:auto;appearance:auto;padding:8px 0}
+.choice,.check-tile,.slider-row,summary{cursor:pointer;-webkit-user-select:none;user-select:none}
+textarea{-webkit-user-select:text;user-select:text}
+svg,canvas,img{max-width:100%;height:auto}
+.sim-canvas{touch-action:none;-webkit-user-select:none;user-select:none}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.25rem 0;-webkit-overflow-scrolling:touch}
+.formula,.formula-card{white-space:normal;line-height:1.55}
+.formula .katex,.formula-card .katex{font-size:1.08em;color:inherit}
+.formula .katex-display,.formula-card .katex-display{margin:.1rem 0;color:inherit}
+.katex-fallback .formula,.katex-fallback .formula-card{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.ai-frame-card.fullscreen{inset:max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left))}
+@supports (-webkit-touch-callout:none){.topbar{position:sticky}.fobizz-frame{min-height:520px}.ai-frame-card.fullscreen .fobizz-frame{height:calc(100svh - 104px)}}
+
+</style>
+<!-- KaTeX: Formeldarstellung für GitHub Pages/iPad; mit lokalem Fallback, falls CDN offline ist -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+</head><body><header><h1>Q1 GK Physik – Klausurtraining</h1><p>Gemischtes materialgestütztes Training mit Operatoren, Bewertungseinheiten und Erwartungshorizonten. Alle Aufgaben sind neu formuliert.</p><p><a style="color:white" href="../index.html">Zurück zur Übersicht</a></p></header><main><section class="card"><h2>Arbeitsweise</h2><p>Bearbeite eine Aufgabe in 25–35 Minuten. Nutze die Erwartungshorizonte erst nach deiner eigenen Lösung. Achte auf Einheiten, Diagrammdeutung, Modellgrenzen und Operatoren.</p></section>
+<section class="card task sww"><h2>Aufgabe 1: Schwingungen und Felder im Messpraktikum</h2><p>Material: Ein Federpendel besitzt m = 0,200 kg und D = 18 N/m. Eine Welle auf einem Seil zeigt bei f = 5,0 Hz den Abstand zweier Wellenberge λ = 0,42 m. In einem Plattenkondensator liegen U = 450 V bei d = 3,0 cm an.</p><p><span class="op">berechnen</span> <span class="op">erläutern</span> <span class="op">beurteilen</span></p><ol><li>Berechnen Sie T, v und E. Erläutern Sie Gemeinsamkeiten und Unterschiede von Schwingung und Welle. Beurteilen Sie die Modellannahme homogener Felder.</li></ol><textarea placeholder="Meine Lösung ..."></textarea><details><summary>Erwartungshorizont</summary><p>T≈0,66 s; v=2,1 m/s; E=1,5·10⁴ V/m. Erwartet werden Unterscheidung zeitlicher periodischer Bewegung vs. räumlicher Ausbreitung und eine Modellkritik zu Randfeldern/Reibung.</p><p><strong>Bewertung:</strong> Rechenansatz, Einheiten, fachliche Deutung und Operatorbezug werden gemeinsam bewertet.</p></details></section><section class="card task qua"><h2>Aufgabe 2: Photoeffekt und Elektroneninterferenz</h2><p>Material: Eine Kaliumoberfläche besitzt eine Austrittsarbeit von 2,25 eV. Sie wird mit Licht der Frequenz 7,2·10¹⁴ Hz bestrahlt. In einem anderen Versuch zeigen Elektronen ein Interferenzmuster.</p><p><span class="op">berechnen</span> <span class="op">deuten</span> <span class="op">begründen</span></p><ol><li>Berechnen Sie die maximale kinetische Energie der Elektronen. Deuten Sie den Einfluss der Intensität. Begründen Sie, warum das Elektroneninterferenzmuster nicht mit klassischen Teilchenbahnen erklärt wird.</li></ol><textarea placeholder="Meine Lösung ..."></textarea><details><summary>Erwartungshorizont</summary><p>E=hf≈2,98 eV, E_kin≈0,73 eV. Intensität verändert vor allem die Anzahl ausgelöster Elektronen. Elektroneninterferenz erfordert Wahrscheinlichkeitsbeschreibung und keine klassische Bahn.</p><p><strong>Bewertung:</strong> Rechenansatz, Einheiten, fachliche Deutung und Operatorbezug werden gemeinsam bewertet.</p></details></section><section class="card task ind"><h2>Aufgabe 3: Induktion im Modellgenerator</h2><p>Material: Eine Spule mit N = 400 Windungen erfährt in 0,050 s eine Flussänderung von 1,8·10⁻³ Wb. Ein Transformator besitzt N1 = 600 und N2 = 90 Windungen.</p><p><span class="op">berechnen</span> <span class="op">erklären</span> <span class="op">bewerten</span></p><ol><li>Berechnen Sie den Betrag der Induktionsspannung. Bestimmen Sie für U1 = 230 V die Sekundärspannung im idealen Transformator. Erklären Sie die Lenzsche Regel und bewerten Sie die Idealannahme.</li></ol><textarea placeholder="Meine Lösung ..."></textarea><details><summary>Erwartungshorizont</summary><p>|U_ind|=N·ΔΦ/Δt=14,4 V. U2=34,5 V. Lenzsche Regel: Induktionswirkung wirkt der Ursache entgegen. Reale Transformatoren besitzen Verluste, Streufluss und Erwärmung.</p><p><strong>Bewertung:</strong> Rechenansatz, Einheiten, fachliche Deutung und Operatorbezug werden gemeinsam bewertet.</p></details></section><section class="card task str"><h2>Aufgabe 4: Zerfall, Spektrum und Bewertung</h2><p>Material: Eine Probe besitzt eine Halbwertszeit von 8,0 Tagen. Zu Beginn beträgt die Zählrate 1600 Impulse/min. Eine Spektrallinie hat λ = 486 nm.</p><p><span class="op">auswerten</span> <span class="op">berechnen</span> <span class="op">bewerten</span></p><ol><li>Berechnen Sie die Zählrate nach 24 Tagen. Berechnen Sie die Photonenenergie in eV. Bewerten Sie, warum Messwerte bei radioaktivem Zerfall schwanken können.</li></ol><textarea placeholder="Meine Lösung ..."></textarea><details><summary>Erwartungshorizont</summary><p>Nach drei Halbwertszeiten: 1600·(1/2)^3=200 Impulse/min. E≈1240/486 eV≈2,55 eV. Schwankungen sind statistisch; Mittelwerte und Messdauer sind relevant.</p><p><strong>Bewertung:</strong> Rechenansatz, Einheiten, fachliche Deutung und Operatorbezug werden gemeinsam bewertet.</p></details></section><section class="card"><h2>Selbsteinschätzung</h2><p>Schätze dich nach dem Training ein:</p><p class="score">0–1 Aufgaben sicher: Basis wiederholen · 2 Aufgaben sicher: gezielt Diagramme/Formeln trainieren · 3–4 Aufgaben sicher: Prüfungstraining mit Zeitvorgabe bearbeiten</p></section></main>
+<script>
+(function(){
+  const katexOptions={
+    delimiters:[
+      {left:'$$',right:'$$',display:true},
+      {left:'\\[',right:'\\]',display:true},
+      {left:'\\(',right:'\\)',display:false}
+    ],
+    throwOnError:false,
+    strict:false,
+    ignoredTags:['script','noscript','style','textarea','pre','code']
+  };
+  function renderAllMath(){
+    if(window.renderMathInElement){
+      try{ renderMathInElement(document.body,katexOptions); document.body.classList.remove('katex-fallback'); document.body.classList.add('katex-ready'); }
+      catch(err){ console.warn('KaTeX-Rendering übersprungen:',err); document.body.classList.add('katex-fallback'); }
+    } else {
+      document.body.classList.add('katex-fallback');
+    }
+  }
+  function safeCopyText(text, sourceField, successMessage){
+    const fallback=()=>{
+      try{
+        if(sourceField){ sourceField.focus(); sourceField.select(); if(sourceField.setSelectionRange) sourceField.setSelectionRange(0, sourceField.value.length); }
+        document.execCommand('copy');
+      }catch(e){}
+      if(successMessage) window.setTimeout(()=>alert(successMessage), 10);
+    };
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(()=>{ if(successMessage) alert(successMessage); }).catch(fallback);
+    } else fallback();
+  }
+  function stabiliseForIPad(){
+    document.querySelectorAll('button:not([type])').forEach(b=>b.setAttribute('type','button'));
+    document.querySelectorAll('textarea,input,select').forEach(el=>{
+      if(!el.getAttribute('autocomplete')) el.setAttribute('autocomplete','off');
+      el.addEventListener('focus',()=>{try{el.scrollIntoView({block:'center',behavior:'smooth'});}catch(e){}},{passive:true});
+    });
+    document.querySelectorAll('canvas').forEach(c=>{c.style.touchAction='none';});
+    document.querySelectorAll('iframe').forEach(fr=>{
+      fr.setAttribute('loading','lazy');
+      fr.setAttribute('referrerpolicy','no-referrer-when-downgrade');
+    });
+  }
+  window.safeCopyText=safeCopyText;
+  window.renderAllMath=renderAllMath;
+  document.addEventListener('DOMContentLoaded',()=>{
+    stabiliseForIPad();
+    window.setTimeout(renderAllMath,60);
+    window.setTimeout(renderAllMath,600);
+  });
+  window.addEventListener('load',()=>window.setTimeout(renderAllMath,120));
+  window.addEventListener('orientationchange',()=>window.setTimeout(()=>{
+    document.querySelectorAll('[data-sim-widget]').forEach(box=>{ if(window.drawExtensionSimulation) drawExtensionSimulation(box); });
+    renderAllMath();
+  },450));
+})();
+</script>
+
+</body></html>

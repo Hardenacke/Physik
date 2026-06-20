@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elektromagnetische Schwingung und Energierückgewinnung</title>
+<style>
+:root {
+  --primary:#ef6c00; --secondary:#455a64; --bg:#fff4e8; --accent:#4a2500; --soft:#fffaf4;
+  --ok:#1b7f3a; --bad:#b3261e; --warn:#a16207; --text:#16202a; --muted:#617080; --card:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:linear-gradient(140deg,var(--bg),#fff 52%,var(--soft));line-height:1.55}
+a{color:var(--primary);font-weight:700;text-decoration:none}
+a:hover{text-decoration:underline}
+header{position:relative;overflow:hidden;padding:28px 18px 18px;background:radial-gradient(circle at 10% 15%,rgba(255,255,255,.85),transparent 28%),linear-gradient(135deg,var(--primary),var(--accent));color:white}
+.header-inner{max-width:1160px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);padding:7px 11px;border-radius:999px;font-size:.92rem}
+h1{font-size:clamp(2rem,5vw,4.3rem);line-height:1.02;margin:16px 0 10px;letter-spacing:-.045em}
+.subtitle{font-size:clamp(1rem,2vw,1.25rem);max-width:75ch;opacity:.95}
+.hero-svg{width:100%;max-width:520px;display:block;margin:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.2))}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.08)}
+.topbar-inner{max-width:1160px;margin:auto;display:flex;gap:10px;align-items:center;justify-content:space-between;padding:9px 14px;flex-wrap:wrap}
+.progress-wrap{height:10px;background:#e8eef2;border-radius:999px;overflow:hidden;min-width:180px;flex:1;max-width:340px}
+#progress{height:100%;width:0%;background:linear-gradient(90deg,var(--secondary),var(--primary));transition:.35s}
+.btn{border:0;border-radius:13px;padding:11px 14px;font-weight:750;cursor:pointer;background:var(--primary);color:white;box-shadow:0 7px 18px rgba(0,0,0,.15);touch-action:manipulation}
+.btn.secondary{background:white;color:var(--accent);border:1px solid rgba(0,0,0,.12);box-shadow:none}
+.btn.ghost{background:transparent;color:var(--primary);box-shadow:none;border:1px solid color-mix(in srgb, var(--primary) 35%, white)}
+.btn.warn{background:var(--warn)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+main{max-width:1160px;margin:0 auto;padding:22px 14px 80px}
+.grid{display:grid;gap:16px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card,.station{background:rgba(255,255,255,.92);border:1px solid rgba(0,0,0,.09);border-radius:24px;padding:20px;box-shadow:0 14px 34px rgba(0,0,0,.08)}
+.station{margin:18px 0;position:relative}
+.station.locked{opacity:.48;filter:grayscale(.2)}
+.station.locked::after{content:"Diese Station wird nach der vorherigen Station freigeschaltet.";position:absolute;inset:0;background:rgba(255,255,255,.72);display:grid;place-items:center;text-align:center;font-weight:800;border-radius:24px;padding:18px;color:var(--accent)}
+.station h2{font-size:clamp(1.35rem,3vw,2rem);margin:0 0 10px;letter-spacing:-.02em;color:var(--accent)}
+.pill{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:var(--bg);color:var(--accent);padding:6px 10px;font-weight:800;font-size:.9rem;border:1px solid rgba(0,0,0,.08)}
+.note{background:var(--bg);border-left:6px solid var(--primary);padding:12px 14px;border-radius:14px;margin:12px 0}
+.warning{background:#fff7ed;border-left:6px solid #f97316;padding:12px 14px;border-radius:14px;margin:12px 0}
+.success{background:#ecfdf5;border-left:6px solid var(--ok);padding:12px 14px;border-radius:14px;margin:12px 0}
+.error{background:#fef2f2;border-left:6px solid var(--bad);padding:12px 14px;border-radius:14px;margin:12px 0}
+.small{font-size:.92rem;color:var(--muted)}
+.formula{font-family:"SFMono-Regular",Consolas,monospace;background:#0f172a;color:#e6f1ff;border-radius:16px;padding:14px;margin:12px 0;overflow:auto}
+input, textarea, select{width:100%;border:1px solid rgba(0,0,0,.18);border-radius:13px;padding:11px;font:inherit;background:white}
+textarea{min-height:92px;resize:vertical}
+.choice{display:block;width:100%;text-align:left;background:#fff;border:1px solid rgba(0,0,0,.14);border-radius:15px;padding:12px;margin:8px 0;cursor:pointer}
+.choice.correct{border-color:var(--ok);background:#ecfdf5}
+.choice.wrong{border-color:var(--bad);background:#fef2f2}
+.kbd{font-family:ui-monospace,Menlo,Consolas,monospace;background:#eef2f7;border:1px solid #d7dee8;border-radius:8px;padding:1px 6px}
+.tip-area{display:grid;gap:10px;margin-top:12px}
+.tip-card{display:none;background:#f8fafc;border:1px dashed var(--primary);border-radius:15px;padding:12px}
+.tip-card.visible{display:block}
+.calc-box{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end;margin-top:12px}
+.result{font-size:1.35rem;font-weight:850;color:var(--accent)}
+.badge-list{display:flex;gap:8px;flex-wrap:wrap}
+.badge{background:white;border:1px solid rgba(0,0,0,.12);border-radius:999px;padding:6px 10px;font-size:.9rem;font-weight:750}
+details{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:16px;padding:12px;margin:10px 0}
+summary{cursor:pointer;font-weight:850;color:var(--accent)}
+
+.ai-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr);gap:16px;align-items:start}
+.ai-frame-card{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:22px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.08)}
+.ai-frame-top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:12px;background:var(--bg);border-bottom:1px solid rgba(0,0,0,.08)}
+.fobizz-frame{width:100%;height:min(72vh,720px);border:0;background:#fff}
+.ai-frame-card.fullscreen{position:fixed;inset:10px;z-index:60;border-radius:18px}
+.ai-frame-card.fullscreen .fobizz-frame{height:calc(100vh - 92px)}
+.fobizz-window-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+.hidden{display:none!important}
+.footer{text-align:center;color:var(--muted);font-size:.9rem;margin-top:28px}
+.ai-float{position:fixed;right:16px;bottom:16px;z-index:30;border-radius:999px}
+.ai-panel{max-width:950px;margin:0 auto}
+.linkgrid a{display:block;background:white;border:1px solid rgba(0,0,0,.11);border-radius:16px;padding:14px;margin:8px 0}
+.checkline{display:flex;gap:8px;align-items:center;margin:8px 0}
+.checkline input{width:auto}
+@media (max-width:860px){
+ .header-inner,.grid.two,.grid.three,.calc-box{grid-template-columns:1fr}
+ header{padding-top:18px}
+ .topbar-inner{align-items:stretch}
+ .progress-wrap{max-width:none;width:100%}
+ .ai-float{right:10px;bottom:10px}
+}
+@media print{
+ .topbar,.ai-float,.btn{display:none!important}
+ body{background:white}
+ .station.locked{opacity:1;filter:none}
+ .station.locked::after{display:none}
+}
+
+/* Ergänzungen: Diagnose, Formeltraining, Diagrammtraining, Simulationen, Export */
+.startcheck-card{border-left:7px solid var(--primary);background:linear-gradient(135deg,var(--soft),#fff 72%)}
+.startcheck-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin:12px 0}
+.check-tile{display:flex;gap:8px;align-items:flex-start;background:white;border:1px solid rgba(0,0,0,.10);border-radius:16px;padding:10px}
+.operator-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.operator-chip{display:inline-flex;border-radius:999px;padding:6px 10px;background:var(--bg);color:var(--accent);border:1px solid color-mix(in srgb,var(--primary) 28%,white);font-weight:800;font-size:.88rem}
+.training-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:14px 0}
+.training-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid rgba(0,0,0,.10);border-radius:18px;padding:14px}
+.training-box h3{margin:.1rem 0 .5rem;color:var(--accent)}
+.formula-card{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#101820;color:white;border-radius:14px;padding:10px;margin:6px 0;font-weight:800;overflow:auto}
+.diagram-panel{background:white;border:1px solid rgba(0,0,0,.12);border-radius:20px;padding:12px;margin:12px 0}
+.diagram-svg{width:100%;max-width:640px;display:block;margin:auto;background:linear-gradient(180deg,#fff,#f7fbff);border-radius:18px;border:1px solid rgba(0,0,0,.08)}
+.mini-lab{display:grid;grid-template-columns:minmax(260px,1fr) minmax(220px,.65fr);gap:16px;align-items:start}
+.sim-canvas{width:100%;height:260px;border:1px solid rgba(0,0,0,.12);border-radius:20px;background:white;display:block}
+.slider-row{background:white;border:1px solid rgba(0,0,0,.10);border-radius:16px;padding:10px;margin:8px 0}
+.slider-row label{display:block;font-weight:800;color:var(--accent)}
+.slider-row input{width:100%}
+.sim-readout{font-weight:900;color:var(--accent);background:var(--bg);border-radius:14px;padding:10px;margin-top:8px}
+.crosslink-list{display:grid;gap:10px;margin:12px 0}
+.crosslink-list label{display:block;background:white;border:1px solid rgba(0,0,0,.10);border-radius:16px;padding:10px}
+.export-box{background:linear-gradient(135deg,var(--bg),#fff);border:1px solid color-mix(in srgb,var(--primary) 25%,white);border-radius:20px;padding:14px;margin:12px 0}
+.print-link{display:inline-flex;align-items:center;gap:8px;margin:.25rem .35rem .25rem 0;padding:8px 12px;border-radius:999px;background:var(--bg);color:var(--accent);font-weight:850;border:1px solid rgba(0,0,0,.08)}
+@media(max-width:760px){.mini-lab{grid-template-columns:1fr}.sim-canvas{height:220px}.startcheck-grid{grid-template-columns:1fr}}
+
+
+/* iPad-/Safari-Stabilisierung und KaTeX-Darstellung */
+html{-webkit-text-size-adjust:100%;touch-action:manipulation}
+body{min-height:100svh;overflow-wrap:anywhere}
+.topbar{-webkit-backdrop-filter:blur(10px)}
+button,.btn,a.btn,input,textarea,select,summary{min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+input,textarea,select{font-size:16px;line-height:1.4;-webkit-appearance:none;appearance:none}
+input[type="checkbox"],input[type="radio"]{width:22px;height:22px;min-height:22px;-webkit-appearance:auto;appearance:auto;flex:0 0 auto}
+input[type="range"]{-webkit-appearance:auto;appearance:auto;padding:8px 0}
+.choice,.check-tile,.slider-row,summary{cursor:pointer;-webkit-user-select:none;user-select:none}
+textarea{-webkit-user-select:text;user-select:text}
+svg,canvas,img{max-width:100%;height:auto}
+.sim-canvas{touch-action:none;-webkit-user-select:none;user-select:none}
+.katex-display{overflow-x:auto;overflow-y:hidden;padding:.25rem 0;-webkit-overflow-scrolling:touch}
+.formula,.formula-card{white-space:normal;line-height:1.55}
+.formula .katex,.formula-card .katex{font-size:1.08em;color:inherit}
+.formula .katex-display,.formula-card .katex-display{margin:.1rem 0;color:inherit}
+.katex-fallback .formula,.katex-fallback .formula-card{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.ai-frame-card.fullscreen{inset:max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left))}
+@supports (-webkit-touch-callout:none){.topbar{position:sticky}.fobizz-frame{min-height:520px}.ai-frame-card.fullscreen .fobizz-frame{height:calc(100svh - 104px)}}
+
+
+.visual-card{padding:16px;margin:18px 0;background:rgba(255,255,255,.96)}
+.visual-card figure{margin:0}
+.visual-card img{display:block;width:100%;max-height:520px;object-fit:contain;border-radius:18px;border:1px solid rgba(0,0,0,.10);background:white;box-shadow:0 10px 22px rgba(0,0,0,.08);touch-action:manipulation}
+.visual-card figcaption{margin-top:8px;color:var(--muted);font-size:.96rem}
+
+</style>
+
+<!-- KaTeX: Formeldarstellung für GitHub Pages/iPad; mit lokalem Fallback, falls CDN offline ist -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<div id="learning-view">
+<header>
+  <div class="header-inner">
+    <section>
+      <span class="eyebrow">Grundkurs Physik Q1 · IF 3 · interaktiver Lernpfad</span>
+      <h1>Elektromagnetische Schwingung und Energierückgewinnung</h1>
+      <p class="subtitle">Wie pendelt Energie zwischen elektrischem und magnetischem Feld?</p>
+    </section>
+    <svg class="hero-svg" viewBox="0 0 470 320" role="img" aria-label="Schema zu Elektromagnetische Schwingung und Energierückgewinnung">
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#455a64" />
+      </marker>
+      <linearGradient id="softBg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff4e8" offset="0"/><stop stop-color="#ffffff" offset="1"/></linearGradient>
+    </defs>
+    <rect x="8" y="8" width="454" height="304" rx="26" fill="url(#softBg)" stroke="#ef6c00" stroke-width="3" opacity=".97"/>
+    
+            <rect x="110" y="145" width="80" height="48" rx="8" fill="none" stroke="#ef6c00" stroke-width="6"/>
+            <path d="M230 168 q18 -32 36 0 t36 0 t36 0" fill="none" stroke="#455a64" stroke-width="6"/>
+            <line x1="190" y1="168" x2="230" y2="168" stroke="#4a2500" stroke-width="4"/><line x1="340" y1="168" x2="390" y2="168" stroke="#4a2500" stroke-width="4"/>
+            <path d="M125 90 C180 50 250 50 335 90" fill="none" stroke="#ef6c00" stroke-width="4" marker-end="url(#arrow)"/>
+            <text x="125" y="240" font-size="20" fill="#4a2500">E-Feld ↔ B-Feld</text>
+            
+    </svg>
+  </div>
+</header>
+<nav class="topbar" aria-label="Lernpfad-Navigation">
+  <div class="topbar-inner">
+    <button class="btn secondary" onclick="toggleNav()">☰ Stationen</button>
+    <div class="progress-wrap" aria-label="Fortschritt"><div id="progress"></div></div>
+    <button class="btn ghost" onclick="resetProgress()">Fortschritt zurücksetzen</button>
+    <button class="btn" onclick="openAiPage('allgemein')">KI-Hilfe</button>
+  </div>
+  <div id="nav-panel" class="hidden" style="max-width:1160px;margin:0 auto;padding:0 14px 12px;">
+    <div class="badge-list" id="station-links"></div>
+  </div>
+</nav>
+<main>
+
+<div class="card">
+  <p><a href="../../index.html">← Zur Kursübersicht</a></p>
+  <div class="badge-list">
+    <span class="pill">IF C: Elektrodynamik und Energieübertragung</span>
+    <span class="pill">50–70 Minuten</span>
+    <span class="pill">Pfad: induktion-und-elektrische-energieuebertragung/elektromagnetische-schwingungen-und-energierueckgewinnung</span>
+  </div>
+<section class="card visual-card" aria-label="Bildimpuls">
+  <figure>
+    <img src="assets/elektromagnetische-induktion-und-stromerzeugung.png" alt="Visualisierung: elektromagnetische Induktion und Stromerzeugung" loading="lazy">
+    <figcaption>Visualisierung: elektromagnetische Induktion und Stromerzeugung.</figcaption>
+  </figure>
+</section>
+
+  <h2>Leitfrage</h2>
+  <p class="note"><strong>Wie pendelt Energie zwischen elektrischem und magnetischem Feld?</strong></p>
+  <p>Funktechnik, Schwingkreise und Rekuperation beim E-Auto nutzen Energieumwandlungen in Feldern.</p>
+</div>
+
+
+<div class="card startcheck-card">
+  <span class="pill">Diagnostischer Einstieg · IF 3</span>
+  <h2>Startcheck vor dem Lernpfad</h2>
+  <p>Markiere ehrlich, was du zum Thema <strong>Elektromagnetische Schwingung und Energierückgewinnung</strong> bereits sicher kannst. Danach erhältst du eine kurze Empfehlung für deinen Lernweg.</p>
+  <div class="startcheck-grid"><label class="check-tile"><input type="checkbox" data-startcheck="1"><span>Formeln mit Einheiten notieren</span></label><label class="check-tile"><input type="checkbox" data-startcheck="2"><span>Graphen und Achsen auswerten</span></label><label class="check-tile"><input type="checkbox" data-startcheck="3"><span>Modellannahmen benennen</span></label><label class="check-tile"><input type="checkbox" data-startcheck="4"><span>Operatoren wie erläutern/beurteilen nutzen</span></label><label class="check-tile"><input type="checkbox" data-startcheck="5"><span>Ergebnis physikalisch deuten</span></label></div>
+  <label><strong>Mein persönlicher Fokus:</strong></label>
+  <textarea id="startcheck-note" placeholder="z. B. Einheiten, Diagramme, Formeln umstellen, Begründungen ..."></textarea>
+  <p><button class="btn" onclick="runStartCheck()">Startcheck auswerten</button></p>
+  <div id="startcheck-feedback"></div>
+</div>
+<section id="station-1" class="station" data-short="Einstieg">
+  <span class="pill">Station 1 · Staunen und Vorwissen</span>
+  <h2>Starte mit einer Vermutung</h2>
+  <p>Funktechnik, Schwingkreise und Rekuperation beim E-Auto nutzen Energieumwandlungen in Feldern.</p>
+  <p><strong>Arbeitsauftrag:</strong> Formuliere eine Vermutung zur Leitfrage. Nutze mindestens einen Fachbegriff, den du bereits kennst.</p>
+  <textarea id="text1" placeholder="Meine Vermutung ..."></textarea>
+  <p><button class="btn" onclick="checkText('text1',1,['schwingkreis', 'kondensator', 'spule', 'energie', 'feld'])">Vermutung prüfen</button></p>
+  <div id="text1_fb"></div>
+</section>
+
+<section id="station-2" class="station" data-short="Grundidee">
+  <span class="pill">Station 2 · Fachliche Grundidee</span>
+  <h2>Modell und zentrale Aussage</h2>
+  <p>Im LC-Kreis wandelt sich elektrische Feldenergie des Kondensators in magnetische Feldenergie der Spule und zurück.</p>
+  <div class="formula"><span class="katex-source" data-raw="T = 2π · √(L·C)">\[T=2\pi\sqrt{L\cdot C}\]</span></div>
+  <div class="note"><strong>Typische Fehlvorstellung:</strong> Die Schwingung bleibt real nicht ewig gleich groß; Widerstände führen zu Dämpfung.</div>
+  <p><strong>Welche Aussage passt am besten?</strong></p>
+  <div><button class="choice" onclick="checkChoice(this,2,0)">Induktion hängt mit der Änderung des magnetischen Flusses zusammen.</button>
+<button class="choice" onclick="checkChoice(this,2,0)">Ein Transformator funktioniert mit Gleichspannung dauerhaft gleich gut.</button>
+<button class="choice" onclick="checkChoice(this,2,0)">Ein Kondensator speichert Strom.</button>
+<button class="choice" onclick="checkChoice(this,2,0)">Die Lenzsche Regel widerspricht der Energieerhaltung.</button><div class="feedback"></div></div>
+  <div class="tip-wrapper" data-allowed="1"><div class="badge-list"><button class="btn secondary" data-tip="0" onclick="showTip(this,2,0)">Tipp 1 anzeigen</button> <button class="btn secondary" data-tip="1" onclick="showTip(this,2,1)" disabled>Tipp 2 anzeigen</button> <button class="btn secondary" data-tip="2" onclick="showTip(this,2,2)" disabled>Tipp 3 anzeigen</button> <button class="btn secondary" data-tip="3" onclick="showTip(this,2,3)" disabled>Tipp 4 anzeigen</button></div><div class="tip-area"><div class="tip-card"><strong>Tipp 1:</strong> Suche zuerst die zentrale Größe: In diesem Lernpfad hilft dir meist T = 2π · √(L·C).</div> <div class="tip-card"><strong>Tipp 2:</strong> Trenne Beobachtung und Deutung: Was siehst du direkt, und welches Modell nutzt du zur Erklärung?</div> <div class="tip-card"><strong>Tipp 3:</strong> Notiere gegebene Größen mit Einheit. Wandle erst dann in SI-Einheiten um.</div> <div class="tip-card"><strong>Tipp 4:</strong> Prüfe dein Ergebnis: Ist die Größenordnung plausibel und passt die Einheit?</div></div></div>
+</section>
+
+<section id="station-3" class="station" data-short="Experiment">
+  <span class="pill">Station 3 · Experiment oder Datenauswertung</span>
+  <h2>Untersuchen</h2>
+  <div class="grid two">
+    <div>
+      <h3>Versuchsidee</h3>
+      <p>Simulation oder Demonstration eines LC-Schwingkreises; Energiespeicherzustände ordnen.</p>
+      <h3>Material</h3>
+      <p>Simulation, Spule/Kondensator-Modellkarten, ggf. Oszilloskop-Demonstration.</p>
+    </div>
+    <div>
+      <h3>Sicherheit</h3>
+      <p class="warning">Bei realen Schwingkreisen nur Kleinspannung; Kondensatoren entladen.</p>
+      <h3>Dokumentation</h3>
+      <p>Halte mindestens drei Messwerte, eine Beobachtung und eine Deutung fest. Wenn kein Realexperiment möglich ist, arbeite mit Simulation oder bereitgestellten Daten.</p>
+    </div>
+  </div>
+  <label class="checkline"><input type="checkbox" id="obscheck"> Ich habe Beobachtung und Deutung getrennt notiert.</label>
+  <p><button class="btn" onclick="if(document.getElementById('obscheck').checked) completeStation(3); else alert('Setze den Haken erst, wenn du Beobachtung und Deutung getrennt hast.');">Station abschließen</button></p>
+</section>
+
+<section id="station-4" class="station" data-short="Rechnen">
+  <span class="pill">Station 4 · Interaktives Rechenmodell</span>
+  <h2>Parameter verändern und berechnen</h2>
+  <p>Verändere die Werte. Erkläre anschließend, welche Größe proportional, antiproportional oder nichtlinear wirkt.</p>
+  <div class="calc-box">
+    <label>Induktivität L in mH<input id="calc-a" value="10"></label>
+    <label>Kapazität C in µF<input id="calc-b" value="100"></label>
+  </div>
+  <div class="formula"><span class="katex-source" data-raw="T = 2π√(LC)">\[T=2\pi\sqrt{LC}\]</span></div>
+  <p><button class="btn" onclick="calculateTopic('lc')">Berechnen und Station freischalten</button></p>
+  <div id="calc-result" class="note">Noch keine Berechnung durchgeführt.</div>
+</section>
+
+<section id="station-5" class="station" data-short="Fehler finden">
+  <span class="pill">Station 5 · Fehlerdiagnose</span>
+  <h2>Finde den Fehler</h2>
+  <p>Eine Person schreibt: „Ich setze die Zahlen direkt ein und lasse die Einheiten weg. Wenn das Ergebnis groß aussieht, stimmt die Erklärung wahrscheinlich.“</p>
+  <p><strong>Aufgabe:</strong> Korrigiere diese Aussage mit Bezug auf das Thema <em>Elektromagnetische Schwingung und Energierückgewinnung</em>.</p>
+  <textarea id="text5" placeholder="Der Fehler ist ... Korrekt wäre ..."></textarea>
+  <p><button class="btn" onclick="checkText('text5',5,['schwingkreis', 'kondensator', 'spule', 'energie', 'feld', 'einheit', 'modell', 'formel'])">Fehlerdiagnose prüfen</button></p>
+  <div id="text5_fb"></div>
+</section>
+
+<section id="station-6" class="station" data-short="Transfer">
+  <span class="pill">Station 6 · Alltagstransfer</span>
+  <h2>Übertrage dein Wissen</h2>
+  <p>Wähle eine Anwendung aus dem Kontext und erkläre sie in vier Sätzen: <strong>Phänomen</strong>, <strong>Modell</strong>, <strong>Formel/Größe</strong>, <strong>Grenze der Erklärung</strong>.</p>
+  <textarea id="text6" placeholder="Meine Anwendungserklärung ..."></textarea>
+  <p><button class="btn" onclick="checkText('text6',6,['schwingkreis', 'kondensator', 'spule', 'energie', 'feld'])">Transfer prüfen</button></p>
+  <div id="text6_fb"></div>
+  <details>
+    <summary>Sprinteraufgabe</summary>
+    <p>Erstelle ein eigenes Zahlenbeispiel mit realistischen Einheiten und berechne die zentrale Größe. Tausche es mit einer Partnerin oder einem Partner.</p>
+  </details>
+</section>
+
+
+<section id="station-7" class="station" data-short="Üben">
+  <span class="pill">Station 7 · Übungs- und Prüfungstraining</span>
+  <h2>Übungsaufgaben und Prüfungsfragen</h2>
+  <p>Bearbeite die Aufgaben schriftlich. Die Prüfung der Felder achtet auf zentrale Fachbegriffe, Einheiten und eine erkennbare Begründung. Danach kannst du den Erwartungshorizont aufklappen und deine Lösung verbessern.</p>
+  <div class="grid three">
+
+    <div class="card">
+      <span class="pill">Übungsaufgabe 1 · Rechnen</span>
+      <p>Ein Schwingkreis hat L = 20 mH und C = 100 µF. Berechne Schwingungsdauer T und Frequenz f.</p>
+      <textarea id="practice-7-1" data-practice="q7" data-keywords="schwingkreis|frequenz|induktivität|kapazität" placeholder="Notiere Rechnung, Begründung oder Stichpunkte ..."></textarea>
+    </div>
+
+    <div class="card">
+      <span class="pill">Übungsaufgabe 2 · Deuten</span>
+      <p>Beschreibe den periodischen Energieaustausch zwischen elektrischem Feld des Kondensators und magnetischem Feld der Spule.</p>
+      <textarea id="practice-7-2" data-practice="q7" data-keywords="energieaustausch|elektrisches feld|magnetisches feld|spule" placeholder="Notiere Rechnung, Begründung oder Stichpunkte ..."></textarea>
+    </div>
+
+    <div class="card">
+      <span class="pill">Prüfungsfrage</span>
+      <p>Erläutern Sie, warum reale elektromagnetische Schwingungen gedämpft sind und wie Energierückgewinnung technisch genutzt werden kann.</p>
+      <textarea id="practice-7-3" data-practice="q7" data-keywords="dämpfung|widerstand|energie|rückgewinnung" placeholder="Notiere Rechnung, Begründung oder Stichpunkte ..."></textarea>
+    </div>
+  </div>
+  <details>
+    <summary>Erwartungshorizont nach eigener Bearbeitung öffnen</summary>
+    <ul><li>T = 2π√(LC) = 2π√(0,020·100·10⁻⁶) ≈ 8,9 ms; f ≈ 112 Hz.</li><li>Die Energie wechselt zwischen Kondensatorfeld und Spulenfeld; im idealen Modell bleibt die Gesamtenergie erhalten.</li><li>Reale Widerstände wandeln Energie in Wärme um. Rückgewinnung nutzt Bewegungsenergie, z. B. beim regenerativen Bremsen.</li></ul>
+  </details>
+
+
+
+
+
+  <div class="card exam-block" style="border:2px solid rgba(21,101,192,.18);background:linear-gradient(180deg,#ffffff,#f7fbff);margin-top:18px">
+    <span class="pill">Übungsaufgaben · materialgestützt</span>
+    <h3>Übungsaufgaben: LC-Schwingkreis in einer Energierückgewinnung</h3>
+    <p><strong>Recherchebasis:</strong> Die Aufgabe ist neu formuliert und trainiert typische Kompetenzen: Materialbezug, Operatoren, Berechnung, Diagramm-/Modellinterpretation und Bewertung. Es wird keine Originalaufgabe übernommen.</p>
+    <div class="note"><strong>Material M1:</strong> Ein vereinfachter Schwingkreis besteht aus L = 25 mH und C = 100 µF. Zu Beginn ist der Kondensator auf U_0 = 24 V geladen. Ohmsche Verluste werden in der ersten Modellrechnung vernachlässigt.</div>
+    <ol><li>Berechnen Sie die Eigenfrequenz des Schwingkreises. (5 BE)</li><li>Berechnen Sie die anfangs im Kondensator gespeicherte Energie. (4 BE)</li><li>Beschreiben Sie die Energieumwandlung während einer Schwingung. (4 BE)</li><li>Bewerten Sie, warum reale Energierückgewinnungssysteme nicht verlustfrei arbeiten. (4 BE)</li></ol>
+    <details>
+      <summary>Erwartungshorizont / Lösungsskizze öffnen</summary>
+      <p>f = 1/(2π√(LC)) = 1/(2π√(0,025·100·10⁻⁶)) ≈ 101 Hz. E_C = 1/2CU² = 0,5·100·10⁻⁶ F·24² V² = 0,0288 J. Energie pendelt zwischen elektrischem Feld des Kondensators und magnetischem Feld der Spule. Reale Systeme besitzen Widerstände, Wirbelstromverluste, Schaltverluste und Abstrahlung.</p>
+    </details>
+  </div>
+
+  <p><button class="btn" onclick="checkPracticeStation(7)">Training prüfen und nächste Station freischalten</button></p>
+  <div id="practice-feedback-7"></div>
+  <div class="tip-wrapper" data-allowed="1"><div class="badge-list"><button class="btn secondary" data-tip="0" onclick="showTip(this,7,0)">Tipp 1 anzeigen</button> <button class="btn secondary" data-tip="1" onclick="showTip(this,7,1)" disabled>Tipp 2 anzeigen</button> <button class="btn secondary" data-tip="2" onclick="showTip(this,7,2)" disabled>Tipp 3 anzeigen</button> <button class="btn secondary" data-tip="3" onclick="showTip(this,7,3)" disabled>Tipp 4 anzeigen</button></div><div class="tip-area"><div class="tip-card"><strong>Tipp 1:</strong> Kläre zuerst, welche Größe gesucht ist und welche Formel oder Modellidee dazu passt.</div> <div class="tip-card"><strong>Tipp 2:</strong> Schreibe die gegebenen Größen mit Einheiten auf und wandle sie in SI-Einheiten um.</div> <div class="tip-card"><strong>Tipp 3:</strong> Bei Prüfungsfragen zählt die Begründung: Nenne Beobachtung, Modell, Formel und Grenze des Modells.</div> <div class="tip-card"><strong>Tipp 4:</strong> Vergleiche dein Ergebnis mit dem Erwartungshorizont und verbessere mindestens eine Formulierung.</div></div></div>
+</section>
+<section id="station-8" class="station" data-short="Sicherung">
+  <span class="pill">Station 8 · Sicherung</span>
+  <h2>Was muss am Ende sitzen?</h2>
+  <div class="grid two">
+    <div class="success">
+      <strong>Zielkompetenzen</strong>
+      <ul><li>Elektromagnetische Schwingung qualitativ beschreiben.</li><li>Energieaustausch zwischen Kondensator und Spule modellieren.</li><li>Energierückgewinnung bei Antriebssystemen beurteilen.</li></ul>
+    </div>
+    <div class="note">
+      <strong>Mini-Sicherung</strong>
+      <ol>
+        <li>Schreibe die Leitfrage als beantworteten Merksatz um.</li>
+        <li>Notiere die zentrale Formel mit Bedeutung der Größen.</li>
+        <li>Nenne ein Experiment oder eine Anwendung.</li>
+        <li>Erkläre eine typische Fehlvorstellung.</li>
+      </ol>
+    </div>
+  </div>
+  <p><button class="btn" onclick="completeStation(8)">Lernpfad abschließen</button></p>
+</section>
+
+<section id="station-9" class="station" data-short="Formeltraining">
+  <span class="pill">Station 9 · Formeltraining</span>
+  <h2>Formeln sicher auswählen, umstellen und mit Einheiten prüfen</h2>
+  <p>Trainiere den typischen Klausurweg: <strong>gegeben – gesucht – Formel – Umformen – Einsetzen – Einheit – Deutung</strong>.</p>
+  <div class="operator-row"><span class="operator-chip">Operatoren: berechnen · erläutern · begründen · beurteilen</span><span class="operator-chip">Einheitenkontrolle</span><span class="operator-chip">Formelwahl</span></div>
+  <div class="training-grid"><div class="training-box"><h3>Zentrale Formeln</h3><div class="formula-card"><span class="katex-source" data-raw="Φ = B·A·cos(α)">\[\Phi = B\cdot A\cdot \cos(\alpha)\]</span></div><div class="formula-card"><span class="katex-source" data-raw="U_ind = −N·ΔΦ/Δt">\[U_{\mathrm{ind}} = -N\cdot\frac{\Delta\Phi}{\Delta t}\]</span></div><div class="formula-card"><span class="katex-source" data-raw="U_1/U_2 = N_1/N_2">\[\frac{U_1}{U_2}=\frac{N_1}{N_2}\]</span></div><div class="formula-card"><span class="katex-source" data-raw="E_C = 1/2·C·U²">\[E_C = \frac{1}{2} C U^2\]</span></div></div><div class="training-box"><h3>Dein Rechenweg</h3><ol><li>Wähle eine passende Formel zum Thema und begründe die Wahl.</li><li>Stelle sie nach einer anderen Größe um.</li><li>Erfinde einen kurzen Zahlenwert und prüfe die Einheit.</li></ol></div></div>
+  <textarea data-extgroup="formula9" data-keywords="formel|einheit|gegeben|gesucht|umstellen|berechnen" placeholder="Meine Formelwahl und mein Rechenweg ..."></textarea>
+  <textarea data-extgroup="formula9" data-keywords="einheit|si|meter|sekunde|volt|joule|tesla|hz|ev" placeholder="Meine Einheitenprüfung ..."></textarea>
+  <p><button class="btn" onclick="checkExtensionFields(9,'formula9',2,'Du hast Formelwahl und Einheitenprüfung nachvollziehbar notiert.')">Formeltraining prüfen</button></p>
+  <div id="ext-feedback-formula9"></div>
+</section>
+
+<section id="station-10" class="station" data-short="Diagramme">
+  <span class="pill">Station 10 · Diagrammtraining</span>
+  <h2>Diagramme auswerten statt nur ablesen</h2>
+  <p>Passende Diagramme in diesem Inhaltsfeld: <strong>U_ind(t)-Diagramme, Flussänderungen und Wechselspannungsverläufe</strong>. Achte immer auf Achsen, Einheiten, Steigung, Schnittpunkte und den physikalischen Kontext.</p>
+  <div class="diagram-panel">
+    <svg class="diagram-svg" viewBox="0 0 640 300" role="img" aria-label="schematisches Auswertungsdiagramm">
+      <line x1="70" y1="245" x2="580" y2="245" stroke="#4a2500" stroke-width="3"/><line x1="70" y1="245" x2="70" y2="35" stroke="#4a2500" stroke-width="3"/>
+      <path d="M80,220 C160,180 210,88 290,125 C370,165 425,72 560,55" fill="none" stroke="#ef6c00" stroke-width="5"/>
+      <circle cx="290" cy="125" r="8" fill="#455a64"/><circle cx="425" cy="72" r="8" fill="#455a64"/>
+      <text x="555" y="272" fill="#4a2500" font-size="20">x / t / U</text><text x="18" y="50" fill="#4a2500" font-size="20">Messgröße</text>
+      <text x="95" y="38" fill="#4a2500" font-size="17">Markante Punkte deuten, nicht nur nennen.</text>
+    </svg>
+  </div>
+  <textarea data-extgroup="diagram10" data-keywords="achse|einheit|steigung|maximum|schnittpunkt|wert|diagramm" placeholder="1. Welche Achsen, Einheiten und markanten Punkte müssten in einem echten Diagramm geprüft werden?"></textarea>
+  <textarea data-extgroup="diagram10" data-keywords="steigung|fläche|maximum|halbwertszeit|amplitude|grenzspannung|spannung|intensität" placeholder="2. Welche physikalische Bedeutung könnte eine Steigung, ein Maximum oder ein Schnittpunkt haben?"></textarea>
+  <p><button class="btn" onclick="checkExtensionFields(10,'diagram10',2,'Du hast das Diagramm mit Achsen, Einheiten und physikalischer Bedeutung ausgewertet.')">Diagrammtraining prüfen</button></p>
+  <div id="ext-feedback-diagram10"></div>
+</section>
+
+<section id="station-11" class="station" data-short="Fehler & Modell">
+  <span class="pill">Station 11 · Fehlerdiagnose und Modellgrenzen</span>
+  <h2>Finde den Fehler und begrenze das Modell</h2>
+  <div class="note"><strong>Fehlerhafte Aussage:</strong> Ein Schüler schreibt: „Induktionsspannung entsteht immer dann, wenn der magnetische Fluss groß ist.“</div>
+  <p>Arbeite wie in einer Klausur: Fehler markieren, fachlich korrigieren, Modellannahme nennen.</p>
+  <textarea data-extgroup="model11" data-keywords="fehler|richtig|weil|formel|begründung" placeholder="1. Wo liegt der Fehler? Korrigiere die Aussage fachlich."></textarea>
+  <textarea data-extgroup="model11" data-keywords="modell|annahme|vernachlässigt|grenze|real|ideal" placeholder="2. Welche Modellgrenze muss man bei diesem Thema beachten?"></textarea>
+  <div class="note"><strong>Orientierung:</strong> Bei idealen Generatoren, Transformatoren und Kondensatoren werden Verluste vernachlässigt. Reale Bauteile besitzen Widerstände, Streufelder und Erwärmung.</div>
+  <p><button class="btn" onclick="checkExtensionFields(11,'model11',2,'Fehlerdiagnose und Modellgrenze sind fachlich begründet.')">Fehlerdiagnose prüfen</button></p>
+  <div id="ext-feedback-model11"></div>
+</section>
+
+<section id="station-12" class="station" data-short="Vernetzen">
+  <span class="pill">Station 12 · Querverweise</span>
+  <h2>Verbinde dieses Thema mit anderen Inhaltsfeldern</h2>
+  <p>Physik wird in Klausuren oft vernetzt geprüft. Wähle mindestens zwei passende Querverweise aus und begründe einen Zusammenhang.</p>
+  <div class="crosslink-list"><label><input type="checkbox" data-crossgroup="cross12"> Schwingungen/Wellen/Felder: LC-Schwingungen verbinden Felder und Schwingungen.</label><label><input type="checkbox" data-crossgroup="cross12"> Quantenphysik: Generatoren liefern Energie, die in Photonenprozessen wieder auftaucht.</label><label><input type="checkbox" data-crossgroup="cross12"> Strahlung/Atome/Kerne: Elektromagnetische Strahlung entsteht durch beschleunigte Ladungen.</label></div>
+  <textarea data-crossreason="cross12" placeholder="Meine Begründung für einen Zusammenhang ..."></textarea>
+  <p><button class="btn" onclick="checkCrossLinks(12,'cross12')">Vernetzung prüfen</button></p>
+  <div id="cross-feedback-cross12"></div>
+</section>
+
+<section id="station-13" class="station" data-short="Simulation">
+  <span class="pill">Station 13 · Lokale Simulation</span>
+  <h2>Induktionsmodell</h2>
+  <p>Verändere Windungszahl und Änderungsdauer. Beschreibe, wann der Betrag der Induktionsspannung groß wird.</p>
+  <div class="mini-lab" data-sim-widget="induction">
+    <canvas class="sim-canvas" aria-label="lokale Simulation"></canvas>
+    <div><div class="slider-row"><label>Windungszahl N</label><input type="range" min="50" max="500" step="10" value="220" data-sim="turns"></div><div class="slider-row"><label>Änderungsdauer Δt</label><input type="range" min="0.05" max="1.00" step="0.01" value="0.25" data-sim="time"></div><div class="sim-readout">Simulation wird geladen ...</div></div>
+  </div>
+  <textarea data-extgroup="sim13" data-keywords="größer|kleiner|ändert|konstant|modell|weil|spannung|energie|geschwindigkeit|wahrscheinlichkeit|halbwertszeit" placeholder="Meine Beobachtung und Erklärung zur Simulation ..."></textarea>
+  <p><button class="btn" onclick="checkExtensionFields(13,'sim13',1,'Du hast eine Beobachtung zur Simulation fachlich gedeutet.')">Simulation auswerten</button></p>
+  <div id="ext-feedback-sim13"></div>
+</section>
+
+<section id="station-14" class="station" data-short="Export">
+  <span class="pill">Station 14 · Sicherung und Lernstands-Export</span>
+  <h2>Meine Sicherung kopieren</h2>
+  <p>Formuliere zuerst einen kurzen Merksatz. Danach erzeugst du einen Kopiertext für dein digitales Heft oder für eine Abgabe.</p>
+  <textarea data-extgroup="export14" data-keywords="ich|formel|modell|diagramm|einheit|weil" placeholder="Mein Merksatz zum Thema Elektromagnetische Schwingung und Energierückgewinnung ..."></textarea>
+  <div class="export-box"><button class="btn" onclick="copyLearningExport(14)">Meine Sicherung kopieren</button><p class="small">Der Text enthält Lernpfad, Fortschritt, Diagnose-Code und deine bisherigen Textantworten.</p></div>
+  <textarea id="learning-export-output" readonly placeholder="Hier erscheint dein Kopiertext ..."></textarea>
+  <div id="export-feedback"></div>
+  <p><a class="print-link" href="../../sicherungsblaetter-q1-gk/sicherungsblaetter_q1_gk.html">Sicherungsblätter öffnen</a><a class="print-link" href="../../klausurtraining-q1-gk/klausurtraining_q1_gk.html">Klausurtraining öffnen</a></p>
+</section>
+
+<div class="footer">Lokal nutzbar · ohne externe Bibliotheken · Lernstand wird im Browser gespeichert.</div>
+</main>
+<button class="btn ai-float" onclick="openAiPage('allgemein')">KI-Hilfe</button>
+</div>
+
+<div id="ai-view" class="hidden">
+<header>
+ <div class="header-inner">
+  <section>
+   <span class="eyebrow">Fobizz-/Phobus-Lernhilfe</span>
+   <h1>KI-Hilfe gezielt nutzen</h1>
+   <p class="subtitle">Kopiere zuerst den Link zum Lernpfad und anschließend die Fragevorlage. Übertrage danach eine Rückmeldung oder einen Diagnose-Code in den Lernpfad.</p>
+  </section>
+  <svg class="hero-svg" viewBox="0 0 470 320" role="img" aria-label="Schema zu KI-Lernhilfe">
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#26a69a" />
+      </marker>
+      <linearGradient id="softBg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f5edff" offset="0"/><stop stop-color="#ffffff" offset="1"/></linearGradient>
+    </defs>
+    <rect x="8" y="8" width="454" height="304" rx="26" fill="url(#softBg)" stroke="#6a1b9a" stroke-width="3" opacity=".97"/>
+    
+            <circle cx="261" cy="152" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="321" cy="99" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="326" cy="226" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="338" cy="212" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="340" cy="129" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="277" cy="110" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="398" cy="197" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="337" cy="259" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="354" cy="259" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="357" cy="204" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="347" cy="258" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="307" cy="168" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="353" cy="70" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="379" cy="214" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="324" cy="221" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="410" cy="219" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="356" cy="109" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="295" cy="93" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="353" cy="77" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="393" cy="153" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="339" cy="193" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="318" cy="138" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="260" cy="94" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="361" cy="70" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="394" cy="87" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="264" cy="182" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="271" cy="103" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="345" cy="85" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="353" cy="196" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="275" cy="221" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="402" cy="260" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="334" cy="144" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="323" cy="144" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="267" cy="176" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="269" cy="204" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="360" cy="88" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="301" cy="145" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="360" cy="76" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="316" cy="119" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="322" cy="214" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="395" cy="64" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="309" cy="176" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="263" cy="179" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="369" cy="196" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="403" cy="258" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="341" cy="168" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="407" cy="111" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="370" cy="180" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="388" cy="178" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="336" cy="100" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="347" cy="93" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="362" cy="83" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="402" cy="249" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="410" cy="196" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="274" cy="142" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="280" cy="110" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="361" cy="80" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="267" cy="175" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="352" cy="170" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="276" cy="179" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="330" cy="115" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="398" cy="135" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="344" cy="73" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="327" cy="121" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="285" cy="136" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="319" cy="248" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="272" cy="151" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="349" cy="227" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="330" cy="186" r="4" fill="#6a1b9a" opacity=".75"/><circle cx="358" cy="215" r="4" fill="#6a1b9a" opacity=".75"/>
+            <rect x="80" y="90" width="12" height="150" fill="#32104b"/>
+            <rect x="135" y="90" width="12" height="150" fill="#32104b"/>
+            <line x1="45" y1="165" x2="80" y2="165" stroke="#26a69a" stroke-width="5"/>
+            <text x="245" y="285" font-size="18" fill="#32104b">Viele Zufallstreffer → Muster</text>
+            
+    </svg>
+ </div>
+</header>
+<main class="ai-panel">
+ <button class="btn secondary" onclick="closeAiPage()">← Zurück zum Lernpfad</button>
+ <div class="ai-grid">
+  <section class="card">
+   <h2>1. Lernpfad-Link zuerst kopieren</h2>
+   <p>Kopiere zuerst den Link zu diesem Lernpfad und füge ihn im Fobizz-/Phobus-Chat ein.</p>
+   <input id="learning-path-link" type="text" readonly value="HIER_DEN_LINK_ZUM_LERNPFAD_EINTRAGEN">
+   <p><button class="btn" onclick="copyLearningPathLink()">Lernpfad-Link kopieren</button></p>
+   <div class="warning"><strong>Platzhalter:</strong> CODE HIER EINTRAGEN · endgültiger Lernpfad-Link: HIER_DEN_LINK_ZUM_LERNPFAD_EINTRAGEN</div>
+
+   <h2>2. Fragevorlage kopieren</h2>
+   <textarea id="ai-page-prompt"></textarea>
+   <p><button class="btn" onclick="copyPrompt()">Fragevorlage kopieren</button> <span id="copy-status" class="small"></span></p>
+
+   <h2>3. Rückmeldung übertragen</h2>
+   <p>Trage einen Diagnose-Code oder einen kurzen Hinweis der KI ein. Der Lernpfad zeigt dir danach eine passende Lernstrategie.</p>
+   <input id="diagnosis-input" placeholder="z. B. FORMEL, EINHEIT, MODELL, DIAGRAMM, BEGRIFF">
+   <p><button class="btn" onclick="applyDiagnosis()">Rückmeldung anwenden</button></p>
+   <div id="diagnosis-output"></div>
+  </section>
+
+  <section class="ai-frame-card" id="fobizz-window">
+   <div class="ai-frame-top">
+    <div>
+     <strong>Fobizz-/Phobus-Fenster</strong><br>
+     <span class="small">Falls die Einbettung blockiert wird, nutze den Fallback-Link.</span>
+    </div>
+    <div class="fobizz-window-actions">
+     <button type="button" class="btn secondary" onclick="openFobizzWindowFullscreen()">Fobizz-Fenster vergrößern</button>
+     <button type="button" class="btn secondary" onclick="closeFobizzWindowFullscreen()">Vollbild schließen</button>
+     <a class="btn secondary" href="https://app.fobizz.com/go" target="_blank" rel="noopener">Fobizz öffnen</a>
+    </div>
+   </div>
+   <iframe id="fobizz-frame" class="fobizz-frame" src="https://app.fobizz.com/go" title="Fobizz-Schülerlogin" allow="clipboard-write; fullscreen" allowfullscreen></iframe>
+  </section>
+ </div>
+</main>
+</div>
+
+<script>
+const FOBIZZ_STUDENT_LOGIN_URL = "https://app.fobizz.com/go";
+const FOBIZZ_CLASS_CODE = "HIER_DEN_CODE_EINTRAGEN";
+const LEARNING_PATH_URL = "HIER_DEN_LINK_ZUM_LERNPFAD_EINTRAGEN";
+const PAGE_ID = location.pathname.split('/').slice(-3).join('_') || document.title;
+let learnerState = JSON.parse(localStorage.getItem('lp_' + PAGE_ID) || '{"completed":[],"lastScrollY":0,"diagnosis":""}');
+const stationCount = document.querySelectorAll('.station').length;
+
+function saveState(){ localStorage.setItem('lp_' + PAGE_ID, JSON.stringify(learnerState)); updateLocks(); }
+function completeStation(n){ if(!learnerState.completed.includes(n)) learnerState.completed.push(n); saveState(); }
+function isUnlocked(n){ return n===1 || learnerState.completed.includes(n-1); }
+function updateLocks(){
+  const stations=[...document.querySelectorAll('.station')];
+  stations.forEach((st,i)=>{ const n=i+1; st.classList.toggle('locked', !isUnlocked(n)); });
+  const pct = stationCount ? Math.round((learnerState.completed.length/stationCount)*100) : 100;
+  document.getElementById('progress').style.width = Math.min(100,pct)+'%';
+  const links=document.getElementById('station-links');
+  if(links && !links.dataset.ready){
+    stations.forEach((st,i)=>{ let a=document.createElement('a'); a.className='badge'; a.href='#'+st.id; a.textContent=(i+1)+'. '+(st.dataset.short||'Station'); links.appendChild(a); });
+    links.dataset.ready='1';
+  }
+}
+function toggleNav(){ document.getElementById('nav-panel').classList.toggle('hidden'); }
+function resetProgress(){ if(confirm('Lernstand für diese Datei zurücksetzen?')){ learnerState={completed:[],lastScrollY:0,diagnosis:""}; saveState(); window.scrollTo(0,0); } }
+function checkChoice(btn, station, correctIndex){
+  if(!isUnlocked(station)) return;
+  const group=[...btn.parentElement.querySelectorAll('.choice')];
+  group.forEach((b,i)=>{ b.classList.remove('correct','wrong'); if(i===correctIndex) b.classList.add('correct'); });
+  const index=group.indexOf(btn);
+  const fb=btn.parentElement.querySelector('.feedback');
+  if(index===correctIndex){ fb.innerHTML='<div class="success"><strong>Richtig.</strong> Nutze die Begründung, um die nächste Station zu bearbeiten.</div>'; completeStation(station); }
+  else { btn.classList.add('wrong'); fb.innerHTML='<div class="error"><strong>Noch nicht.</strong> Vergleiche die Aussage mit Modell und Formel. Öffne bei Bedarf die Tippkarten.</div>'; }
+}
+function checkText(inputId, station, keywords){
+  if(!isUnlocked(station)) return;
+  const val=(document.getElementById(inputId).value||'').toLowerCase();
+  let ok=keywords.some(k=>val.includes(k));
+  const fb=document.getElementById(inputId+'_fb');
+  if(ok){ fb.innerHTML='<div class="success"><strong>Passend.</strong> Deine Antwort enthält einen zentralen Fachbegriff.</div>'; completeStation(station); }
+  else{ fb.innerHTML='<div class="error"><strong>Überarbeite.</strong> Verwende mindestens einen zentralen Fachbegriff aus dem Lernpfad.</div>'; }
+}
+function showTip(btn, station, tipIndex){
+  if(!isUnlocked(station)) return;
+  const wrap=btn.closest('.tip-wrapper');
+  const cards=[...wrap.querySelectorAll('.tip-card')];
+  if(tipIndex===0 || wrap.dataset.allowed==='1'){ 
+    cards[tipIndex].classList.add('visible');
+    if(tipIndex < cards.length-1) startTipCooldown(wrap, btn, station, tipIndex+1);
+  }
+}
+function startTipCooldown(wrap, oldBtn, station, nextIndex){
+  wrap.dataset.allowed='0';
+  let wait=30;
+  const nextBtn=wrap.querySelector('[data-tip="'+nextIndex+'"]');
+  if(nextBtn){ nextBtn.disabled=true; nextBtn.textContent='Tipp '+(nextIndex+1)+' in '+wait+' s'; }
+  const timer=setInterval(()=>{
+    wait--;
+    if(nextBtn) nextBtn.textContent='Tipp '+(nextIndex+1)+' in '+wait+' s';
+    if(wait<=0){ clearInterval(timer); wrap.dataset.allowed='1'; if(nextBtn){ nextBtn.disabled=false; nextBtn.textContent='Tipp '+(nextIndex+1)+' anzeigen'; } }
+  },1000);
+}
+function calculateTopic(type){
+  const a=parseFloat(document.getElementById('calc-a').value.replace(',','.'));
+  const b=parseFloat(document.getElementById('calc-b').value.replace(',','.'));
+  let res=0, unit='', note='', m=0, D=0;
+  if(type==='oscillator'){ m=a/1000; D=b; res=2*Math.PI*Math.sqrt(m/D); unit='s'; note='Periodendauer bei kleiner Auslenkung'; }
+  if(type==='wave'){ res=a*b; unit='m/s'; note='Ausbreitungsgeschwindigkeit der Welle'; }
+  if(type==='standing'){ res=b/(2*a); unit='Hz'; note='Grundfrequenz n=1'; }
+  if(type==='interference'){ let lambda=650e-9, L=a, d=b/1000; res=lambda*L/d*1000; unit='mm'; note='Streifenabstand bei kleinen Winkeln'; }
+  if(type==='electric'){ res=a/(b/100); unit='V/m'; note='Betrag des homogenen Feldes'; }
+  if(type==='accelerate'){ const e=1.602e-19, me=9.109e-31; res=Math.sqrt(2*b*e*a/me); unit='m/s'; note='nichtrelativistische Näherung'; }
+  if(type==='magnetic'){ const e=1.602e-19, me=9.109e-31; res=me*(a*1e6)/(e*(b/1000))*100; unit='cm'; note='Kreisbahnradius des Elektrons'; }
+  if(type==='cyclotron'){ const e=1.602e-19, mp=1.673e-27; res=(b*e*(a/1000)/(2*Math.PI*mp))/1000; unit='kHz'; note='nichtrelativistische Zyklotronfrequenz'; }
+  if(type==='photo'){ const h=4.136e-15; res=h*(a*1e14)-b; unit='eV'; note=res>=0?'Elektronen können ausgelöst werden':'Photonenergie reicht nicht aus'; }
+  if(type==='debroglie'){ const h=6.626e-34, me=9.109e-31, e=1.602e-19; res=h/Math.sqrt(2*me*e*a)*1e9; unit='nm'; note='de-Broglie-Wellenlänge'; }
+  if(type==='quantum'){ res=a/b*100; unit='%'; note='relative Häufigkeit als Schätzung der Wahrscheinlichkeit'; }
+  if(type==='whichway'){ res=(a-b)/(a+b); unit=''; note=res>0.6?'hoher Interferenzkontrast':'geringer Interferenzkontrast'; }
+  if(type==='induction'){ let N=300; res=N*(a/1000)/(b/1000); unit='V'; note='Betrag ohne Vorzeicheninformation'; }
+  if(type==='lenz'){ res=a*(b/1000); unit='V'; note='Betrag; Richtung mit Lenzscher Regel bestimmen'; }
+  if(type==='generator'){ let B=0.08,A=15e-4; res=a*B*A*2*Math.PI*b; unit='V'; note='Maximalspannung des Modellgenerators'; }
+  if(type==='transformer'){ res=a*b; unit='V'; note='idealer Transformator'; }
+  if(type==='capacitor'){ res=0.5*(a*1e-6)*b*b*1000; unit='mJ'; note='Energie im elektrischen Feld'; }
+  if(type==='lc'){ res=2*Math.PI*Math.sqrt((a/1000)*(b*1e-6))*1000; unit='ms'; note='Schwingungsdauer des idealen LC-Kreises'; }
+  if(type==='spectrum'){ res=1240/a; unit='eV'; note='Photonenergie'; }
+  if(type==='radiation'){ res=Math.pow(0.5,a/b)*100; unit='%'; note='verbleibender Anteil'; }
+  if(type==='atom'){ res=1240/a; unit='eV'; note='Energie des emittierten/absorbierten Photons'; }
+  if(type==='hydrogen'){ let n2=Math.max(a,b), n1=Math.min(a,b); res=13.6*(1/(n1*n1)-1/(n2*n2)); unit='eV'; note='Energiedifferenz im Wasserstoffatom'; }
+  if(type==='xray'){ res=1240/a; unit='pm'; note='Grenzwellenlänge λmin'; }
+  if(type==='nuclear'){ res=a+b; unit=''; note='Massenzahl A'; }
+  if(type==='massdefect'){ res=a*931.5; unit='MeV'; note='Energie pro Reaktion'; }
+  
+  let shown = Number.isFinite(res) ? (Math.abs(res)>999 ? res.toExponential(3) : res.toLocaleString('de-DE',{maximumFractionDigits:3})) : '—';
+  document.getElementById('calc-result').innerHTML = '<span class="result">'+shown+' '+unit+'</span><br><span class="small">'+note+'</span>';
+  completeStation(4);
+}
+function openAiPage(problemType='allgemein') {
+  learnerState.lastScrollY = window.scrollY || 0; saveState();
+  const prompt = buildPrompt(problemType);
+  document.getElementById('ai-page-prompt').value = prompt;
+  document.getElementById('learning-view').classList.add('hidden');
+  document.getElementById('ai-view').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function closeAiPage() {
+  document.getElementById('ai-view').classList.add('hidden');
+  document.getElementById('learning-view').classList.remove('hidden');
+  setTimeout(()=>window.scrollTo(0, learnerState.lastScrollY || 0), 50);
+}
+function buildPrompt(problemType) {
+  return `Ich bearbeite den Lernpfad "${document.title}" im Grundkurs Physik Q1. 
+Bitte hilf mir nicht mit einer vollständigen Lösung, sondern stelle mir zuerst eine Diagnosefrage. 
+Mein Problemtyp ist: ${problemType}. 
+Nutze die Begriffe aus dem Lernpfad und gib mir am Ende genau einen Diagnose-Code aus: FORMEL, EINHEIT, MODELL, DIAGRAMM, BEGRIFF oder RECHENWEG.`;
+}
+function copyPrompt(){
+  const ta=document.getElementById('ai-page-prompt');
+  ta.select();
+  if(navigator.clipboard){ navigator.clipboard.writeText(ta.value).catch(()=>document.execCommand('copy')); }
+  else { document.execCommand('copy'); }
+  document.getElementById('copy-status').textContent='Kopiert.';
+}
+function copyLearningPathLink(){
+  const field=document.getElementById('learning-path-link');
+  const link=field ? field.value : LEARNING_PATH_URL;
+  if(navigator.clipboard){ navigator.clipboard.writeText(link).then(()=>alert('Der Lernpfad-Link wurde kopiert. Füge ihn zuerst im Fobizz-/Phobus-Chat ein.')).catch(()=>{ field.select(); document.execCommand('copy'); });}
+  else { field.select(); document.execCommand('copy'); alert('Der Lernpfad-Link wurde kopiert.');}
+}
+function openFobizzWindowFullscreen(){ document.getElementById('fobizz-window')?.classList.add('fullscreen'); }
+function closeFobizzWindowFullscreen(){ document.getElementById('fobizz-window')?.classList.remove('fullscreen'); }
+function applyDiagnosis(){
+  const code=(document.getElementById('diagnosis-input').value||'').toUpperCase();
+  learnerState.diagnosis=code; saveState();
+  const map={
+   FORMEL:'Markiere zuerst die passende Formel und kläre jede Variable mit Einheit.',
+   EINHEIT:'Wandle konsequent in SI-Einheiten um und prüfe erst danach die Rechnung.',
+   MODELL:'Beschreibe zuerst das Modell in Worten: Welche Vereinfachung wird angenommen?',
+   DIAGRAMM:'Lies Achsen, Einheiten und Steigung/Schnittpunkte systematisch aus.',
+   BEGRIFF:'Erstelle eine Mini-Begriffskarte: Begriff – Bedeutung – Beispiel – Gegenbeispiel.',
+   RECHENWEG:'Schreibe gegebene und gesuchte Größen untereinander und rechne in zwei klaren Schritten.'
+  };
+  document.getElementById('diagnosis-output').innerHTML='<div class="note"><strong>Adaptive Hilfe:</strong> '+(map[code]||'Nutze eine Tippkarte und formuliere dein Problem genauer.')+'</div>';
+}
+
+function checkPracticeStation(station){
+  if(!isUnlocked(station)) return;
+  const fields=[...document.querySelectorAll('[data-practice="q'+station+'"]')];
+  const missing=[];
+  fields.forEach((field,i)=>{
+    const value=(field.value||'').toLowerCase();
+    const keywords=(field.dataset.keywords||'').toLowerCase().split('|').filter(Boolean);
+    const hasKeyword=keywords.length===0 || keywords.some(k=>value.includes(k));
+    if(value.trim().length<18 || !hasKeyword) missing.push(i+1);
+  });
+  const out=document.getElementById('practice-feedback-'+station);
+  if(missing.length===0){
+    out.innerHTML='<div class="success"><strong>Training abgeschlossen.</strong> Deine Antworten enthalten zentrale Fachbegriffe und sind ausführlich genug. Vergleiche sie nun mit dem Erwartungshorizont.</div>';
+    completeStation(station);
+  } else {
+    out.innerHTML='<div class="error"><strong>Noch überarbeiten.</strong> Ergänze bei Aufgabe '+missing.join(', ')+' eine Rechnung, Einheit oder fachliche Begründung. Nutze bei Bedarf die Tippkarten.</div>';
+  }
+}
+
+
+function runStartCheck(){
+  const checks=[...document.querySelectorAll('[data-startcheck]')];
+  const score=checks.filter(c=>c.checked).length;
+  const note=(document.getElementById('startcheck-note')?.value||'').trim();
+  let level='Starte mit den Basisstationen und nutze die ersten Tippkarten.';
+  if(score>=4) level='Du kannst zügig arbeiten und besonders die Übungsaufgaben, Diagramme und Modellgrenzen nutzen.';
+  else if(score>=2) level='Bearbeite den Lernpfad normal und achte besonders auf Formelansatz und Einheiten.';
+  const out=document.getElementById('startcheck-feedback');
+  if(out) out.innerHTML='<div class="note"><strong>Empfehlung:</strong> '+level+(note?'<br><span class="small">Dein Fokus: '+note.replace(/[<>]/g,'')+'</span>':'')+'</div>';
+}
+function checkExtensionFields(station, group, minFields, okMessage){
+  if(!isUnlocked(station)) return;
+  const fields=[...document.querySelectorAll('[data-extgroup="'+group+'"]')];
+  let good=0;
+  const missing=[];
+  fields.forEach((field,i)=>{
+    const val=(field.value||'').toLowerCase().trim();
+    const keys=(field.dataset.keywords||'').toLowerCase().split('|').filter(Boolean);
+    const keyok=!keys.length || keys.some(k=>val.includes(k));
+    if(val.length>=16 && keyok) good++; else missing.push(i+1);
+  });
+  const out=document.getElementById('ext-feedback-'+group);
+  if(good>=minFields){
+    out.innerHTML='<div class="success"><strong>Bearbeitet.</strong> '+okMessage+'</div>';
+    completeStation(station);
+  } else {
+    out.innerHTML='<div class="error"><strong>Noch ergänzen.</strong> Überarbeite Feld '+missing.slice(0,3).join(', ')+'. Nutze Fachbegriffe, Einheiten oder eine kurze Begründung.</div>';
+  }
+}
+function checkCrossLinks(station, group){
+  if(!isUnlocked(station)) return;
+  const chosen=[...document.querySelectorAll('[data-crossgroup="'+group+'"]')].filter(x=>x.checked).length;
+  const text=(document.querySelector('[data-crossreason="'+group+'"]')?.value||'').toLowerCase();
+  const out=document.getElementById('cross-feedback-'+group);
+  if(chosen>=2 && text.length>24){
+    out.innerHTML='<div class="success"><strong>Vernetzung gesichert.</strong> Du hast mindestens zwei Verbindungen ausgewählt und begründet.</div>';
+    completeStation(station);
+  } else {
+    out.innerHTML='<div class="error"><strong>Noch nicht vollständig.</strong> Wähle mindestens zwei Querverweise und begründe einen Zusammenhang in eigenen Worten.</div>';
+  }
+}
+function makeExportText(){
+  const fields=[...document.querySelectorAll('textarea')];
+  const answers=fields.map((t,i)=>{const v=(t.value||'').trim(); return v?`Antwort ${i+1}: ${v}`:'';}).filter(Boolean).slice(0,12).join('\n');
+  const done=(learnerState.completed||[]).length;
+  const total=document.querySelectorAll('.station').length;
+  return `Lernpfad: ${document.title}\nBearbeitete Stationen: ${done}/${total}\nDiagnose-Code: ${learnerState.diagnosis||'-'}\n\nMeine Sicherung:\n${answers||'Noch keine Textantworten gespeichert.'}`;
+}
+function copyLearningExport(station){
+  if(!isUnlocked(station)) return;
+  const text=makeExportText();
+  const out=document.getElementById('learning-export-output');
+  if(out) out.value=text;
+  if(navigator.clipboard){navigator.clipboard.writeText(text).catch(()=>{});} 
+  completeStation(station);
+  const fb=document.getElementById('export-feedback');
+  if(fb) fb.innerHTML='<div class="success"><strong>Kopiertext erstellt.</strong> Du kannst ihn jetzt in dein digitales Heft, Fobizz oder Moodle übernehmen.</div>';
+}
+function initExtensionWidgets(){
+  document.querySelectorAll('[data-sim-widget]').forEach(box=>{
+    const canvas=box.querySelector('canvas');
+    const sliders=[...box.querySelectorAll('input[type="range"]')];
+    sliders.forEach(sl=>sl.addEventListener('input',()=>drawExtensionSimulation(box)));
+    if(canvas) drawExtensionSimulation(box);
+  });
+}
+function drawExtensionSimulation(box){
+  const type=box.dataset.simWidget;
+  const canvas=box.querySelector('canvas');
+  if(!canvas) return;
+  const dpr=window.devicePixelRatio||1;
+  const cssW=canvas.clientWidth||560, cssH=canvas.clientHeight||260;
+  canvas.width=cssW*dpr; canvas.height=cssH*dpr;
+  const ctx=canvas.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0);
+  const w=cssW,h=cssH; ctx.clearRect(0,0,w,h);
+  const primary=getComputedStyle(document.documentElement).getPropertyValue('--primary').trim()||'#1565c0';
+  const secondary=getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim()||'#00acc1';
+  ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,w,h);
+  ctx.strokeStyle='rgba(0,0,0,.18)'; ctx.lineWidth=1;
+  for(let x=30;x<w;x+=50){ctx.beginPath();ctx.moveTo(x,20);ctx.lineTo(x,h-30);ctx.stroke();}
+  for(let y=30;y<h;y+=45){ctx.beginPath();ctx.moveTo(30,y);ctx.lineTo(w-20,y);ctx.stroke();}
+  const read=box.querySelector('.sim-readout');
+  function val(name){const el=box.querySelector('[data-sim="'+name+'"]'); return el?parseFloat(el.value):0;}
+  if(type==='wave'){
+    const lambda=val('lambda')||2, f=val('freq')||2; const v=lambda*f;
+    ctx.strokeStyle=primary; ctx.lineWidth=4; ctx.beginPath();
+    for(let x=30;x<w-20;x++){const y=h/2-60*Math.sin((x-30)/(lambda*38)); if(x===30)ctx.moveTo(x,y); else ctx.lineTo(x,y);} ctx.stroke();
+    ctx.fillStyle=secondary; ctx.font='bold 18px system-ui'; ctx.fillText('v = λ · f = '+v.toFixed(1)+' m/s',40,34);
+    if(read) read.textContent='Ausbreitungsgeschwindigkeit: '+v.toFixed(1)+' m/s';
+  }
+  if(type==='photo'){
+    const freq=val('freq')||5, inten=val('intensity')||3, wa=2.1; const e=Math.max(0,freq*0.50-wa);
+    ctx.fillStyle='#444'; ctx.fillRect(70,h-82,w-140,26);
+    for(let i=0;i<inten;i++){ctx.strokeStyle=secondary; ctx.lineWidth=3; ctx.beginPath();ctx.moveTo(70+i*28,40);ctx.lineTo(120+i*28,h-94);ctx.stroke();}
+    ctx.fillStyle=e>0?primary:'#999';
+    for(let i=0;i<(e>0?inten:0);i++){ctx.beginPath();ctx.arc(w/2+i*24,h/2-10-i*6,8,0,Math.PI*2);ctx.fill();}
+    ctx.fillStyle=primary; ctx.font='bold 18px system-ui'; ctx.fillText(e>0?'Elektronen werden ausgelöst':'unterhalb der Grenzfrequenz',38,34);
+    if(read) read.textContent='Maximale Elektronenenergie im Modell: '+e.toFixed(2)+' eV';
+  }
+  if(type==='induction'){
+    const N=val('turns')||200, dt=val('time')||0.2, dphi=0.006; const u=N*dphi/dt;
+    ctx.strokeStyle=secondary; ctx.lineWidth=4;
+    for(let x=80;x<w-80;x+=14){ctx.beginPath();ctx.ellipse(x,h/2,16,54,0,0,Math.PI*2);ctx.stroke();}
+    ctx.fillStyle=primary; ctx.fillRect(36,h/2-34,62,68); ctx.fillStyle='white'; ctx.font='bold 20px system-ui'; ctx.fillText('N',58,h/2+8);
+    ctx.fillStyle=primary; ctx.font='bold 18px system-ui'; ctx.fillText('|U_ind| ≈ '+u.toFixed(1)+' V',40,34);
+    if(read) read.textContent='Modellspannung: '+u.toFixed(1)+' V. Größer bei vielen Windungen und kurzer Änderungszeit.';
+  }
+  if(type==='decay'){
+    const t=val('time')||1, half=val('half')||2, rest=Math.pow(0.5,t/half);
+    ctx.strokeStyle=primary; ctx.lineWidth=4; ctx.beginPath();
+    for(let x=40;x<w-20;x++){const xx=(x-40)/(w-70)*8; const y=h-35-(h-70)*Math.pow(0.5,xx/half); if(x===40)ctx.moveTo(x,y); else ctx.lineTo(x,y);} ctx.stroke();
+    ctx.fillStyle=secondary; ctx.beginPath(); ctx.arc(40+(w-70)*(t/8),h-35-(h-70)*rest,8,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle=primary; ctx.font='bold 18px system-ui'; ctx.fillText('Restanteil: '+(rest*100).toFixed(1)+' %',40,34);
+    if(read) read.textContent='Nach '+t.toFixed(1)+' Halbwertzeit-Einheiten im Modell bleiben '+(rest*100).toFixed(1)+' %.';
+  }
+}
+window.addEventListener('resize',()=>document.querySelectorAll('[data-sim-widget]').forEach(drawExtensionSimulation));
+
+document.addEventListener('DOMContentLoaded', ()=>{ updateLocks(); initExtensionWidgets(); });
+</script>
+
+<script>
+(function(){
+  const katexOptions={
+    delimiters:[
+      {left:'$$',right:'$$',display:true},
+      {left:'\\[',right:'\\]',display:true},
+      {left:'\\(',right:'\\)',display:false}
+    ],
+    throwOnError:false,
+    strict:false,
+    ignoredTags:['script','noscript','style','textarea','pre','code']
+  };
+  function renderAllMath(){
+    if(window.renderMathInElement){
+      try{ renderMathInElement(document.body,katexOptions); document.body.classList.remove('katex-fallback'); document.body.classList.add('katex-ready'); }
+      catch(err){ console.warn('KaTeX-Rendering übersprungen:',err); document.body.classList.add('katex-fallback'); }
+    } else {
+      document.body.classList.add('katex-fallback');
+    }
+  }
+  function safeCopyText(text, sourceField, successMessage){
+    const fallback=()=>{
+      try{
+        if(sourceField){ sourceField.focus(); sourceField.select(); if(sourceField.setSelectionRange) sourceField.setSelectionRange(0, sourceField.value.length); }
+        document.execCommand('copy');
+      }catch(e){}
+      if(successMessage) window.setTimeout(()=>alert(successMessage), 10);
+    };
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(()=>{ if(successMessage) alert(successMessage); }).catch(fallback);
+    } else fallback();
+  }
+  function stabiliseForIPad(){
+    document.querySelectorAll('button:not([type])').forEach(b=>b.setAttribute('type','button'));
+    document.querySelectorAll('textarea,input,select').forEach(el=>{
+      if(!el.getAttribute('autocomplete')) el.setAttribute('autocomplete','off');
+      el.addEventListener('focus',()=>{try{el.scrollIntoView({block:'center',behavior:'smooth'});}catch(e){}},{passive:true});
+    });
+    document.querySelectorAll('canvas').forEach(c=>{c.style.touchAction='none';});
+    document.querySelectorAll('iframe').forEach(fr=>{
+      fr.setAttribute('loading','lazy');
+      fr.setAttribute('referrerpolicy','no-referrer-when-downgrade');
+    });
+  }
+  window.safeCopyText=safeCopyText;
+  window.renderAllMath=renderAllMath;
+  document.addEventListener('DOMContentLoaded',()=>{
+    stabiliseForIPad();
+    window.setTimeout(renderAllMath,60);
+    window.setTimeout(renderAllMath,600);
+  });
+  window.addEventListener('load',()=>window.setTimeout(renderAllMath,120));
+  window.addEventListener('orientationchange',()=>window.setTimeout(()=>{
+    document.querySelectorAll('[data-sim-widget]').forEach(box=>{ if(window.drawExtensionSimulation) drawExtensionSimulation(box); });
+    renderAllMath();
+  },450));
+})();
+</script>
+
+
+<script>
+(function(){
+  if(typeof window.copyPrompt==='function'){
+    window.copyPrompt=function(){
+      const ta=document.getElementById('ai-page-prompt');
+      if(!ta) return;
+      if(window.safeCopyText) safeCopyText(ta.value, ta, null);
+      const status=document.getElementById('copy-status');
+      if(status) status.textContent='Kopiert.';
+    };
+  }
+  if(typeof window.copyLearningPathLink==='function'){
+    window.copyLearningPathLink=function(){
+      const field=document.getElementById('learning-path-link');
+      const link=field ? field.value : (window.LEARNING_PATH_URL || location.href);
+      if(window.safeCopyText) safeCopyText(link, field, 'Der Lernpfad-Link wurde kopiert. Füge ihn zuerst im Fobizz-/Phobus-Chat ein.');
+    };
+  }
+  if(typeof window.copyLearningExport==='function'){
+    window.copyLearningExport=function(station){
+      if(typeof isUnlocked==='function' && !isUnlocked(station)) return;
+      const text=typeof makeExportText==='function' ? makeExportText() : document.title;
+      const out=document.getElementById('learning-export-output');
+      if(out) out.value=text;
+      if(window.safeCopyText) safeCopyText(text, out, null);
+      if(typeof completeStation==='function') completeStation(station);
+      const fb=document.getElementById('export-feedback');
+      if(fb) fb.innerHTML='<div class="success"><strong>Kopiertext erstellt.</strong> Du kannst ihn jetzt in dein digitales Heft, Fobizz oder Moodle übernehmen.</div>';
+    };
+  }
+})();
+</script>
+
+</body>
+</html>
