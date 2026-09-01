@@ -2136,6 +2136,29 @@
         "material_ordner": "ef/bewegungen-kraefte-und-energie/einstieg"
       },
       {
+        "id": "ef-bewegungen-kraefte-und-energie-eintsieg-einheiten-si-lernpfad",
+        "bereich": "Bewegungen Kräfte und Energie",
+        "titel": "Das internationale Einheitensystem",
+        "typ": "Lernpfad",
+        "tags": [
+          "EF",
+          "Lernpfad",
+          "HTML",
+          "SI-Einheiten"
+        ],
+        "format": "HTML",
+        "pfad": "ef/bewegungen-kraefte-und-energie/Eintsieg Einheiten/SI_Lernpfad.html",
+        "lernpfad_html": "ef/bewegungen-kraefte-und-energie/Eintsieg Einheiten/SI_Lernpfad.html",
+        "arbeitsblatt_pdf": null,
+        "klasse_id": "ef",
+        "klasse_titel": "EF",
+        "thema_id": "bewegungen-kraefte-und-energie",
+        "thema_titel": "Mechanik: Bewegungen, Kräfte und Energie",
+        "thema_ordner": "ef/bewegungen-kraefte-und-energie",
+        "thema_index": "ef/bewegungen-kraefte-und-energie/index.html",
+        "material_ordner": "ef/bewegungen-kraefte-und-energie/Eintsieg Einheiten"
+      },
+      {
         "id": "ef-bewegungen-kraefte-und-energie-freier-fall-und-waagerechter-wurf-lernpfad",
         "bereich": "Bewegungen Kräfte und Energie",
         "titel": "Freier Fall und waagerechter Wurf",
@@ -4180,12 +4203,12 @@
         "beschreibung": "Kinematik, Dynamik, Newtonsche Gesetze, Energie und Bewegungsauswertung.",
         "ordner": "ef/bewegungen-kraefte-und-energie",
         "index": "ef/bewegungen-kraefte-und-energie/index.html",
-        "anzahl_materialien": 7,
+        "anzahl_materialien": 8,
         "anzahl_pdfs": 7,
         "tags": [
           "Mechanik",
           "EF",
-          "7 Materialien"
+          "8 Materialien"
         ]
       },
       {
