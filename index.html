@@ -1,73 +1,316 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Physik · Lernpfade und Arbeitsblätter</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EF · Physik</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+  <header class="hero compact">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="../index.html">Startseite</a>
+        <span>›</span>
+        <span>EF</span>
+      </div>
+      <h1>EF</h1>
+      <p class="subtitle">
+        Lernpfade und zugeordnete PDF-Arbeitsblätter.
+        Die Übersicht wird automatisch aus der zentralen data.json erzeugt.
+      </p>
 
-<header class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">Digitale Physik-Lernplattform</div>
-    <h1>Physik</h1>
-    <p class="subtitle">Wähle zuerst eine Klasse oder einen Kurs. Danach erscheinen die Themenbereiche nach Lehrplan und Ordnerstruktur; darin liegen die Lernpfade mit den zugehörigen PDF-Arbeitsblättern.</p>
-    <div class="stats"><span class="stat"><strong>7</strong> Klassen/Kurse</span><span class="stat"><strong>26</strong> Themenbereiche</span><span class="stat"><strong>168</strong> Lernpfade/Materialien</span><span class="stat"><strong>163</strong> PDF-Arbeitsblätter</span></div>
-  </div>
-</header>
-<main class="page">
-  <section class="panel">
-    <div class="section-head"><div><h2>Klasse oder Kurs auswählen</h2><p>Die Navigation ist dreistufig aufgebaut: Klasse/Kurs → Themenbereich → Lernpfad und PDF.</p></div><div class="toolbar"><input class="input" data-search placeholder="Klasse oder Kurs suchen …"></div></div>
-    <div class="grid">
-<a class="card" href="klasse-5/index.html" data-filter="klasse 5 einstieg in physikalisches denken mit licht, schall, wärme, strom und magneten. klasse-5">
-  <div class="badge">5</div>
-  <div><h2>Klasse 5</h2><p>Einstieg in physikalisches Denken mit Licht, Schall, Wärme, Strom und Magneten.</p></div>
-  <div class="tags"><span class="tag">5 Themenbereiche</span><span class="tag">26 Lernpfade</span><span class="tag">25 PDFs</span></div>
-  <span class="primary">Klasse/Kurs öffnen</span>
-</a>
-<a class="card" href="klasse-8/index.html" data-filter="klasse 8 vertiefung mit optik, astronomie und bewegungslehre. klasse-8">
-  <div class="badge">8</div>
-  <div><h2>Klasse 8</h2><p>Vertiefung mit Optik, Astronomie und Bewegungslehre.</p></div>
-  <div class="tags"><span class="tag">3 Themenbereiche</span><span class="tag">21 Lernpfade</span><span class="tag">21 PDFs</span></div>
-  <span class="primary">Klasse/Kurs öffnen</span>
-</a>
-<a class="card" href="klasse-9/index.html" data-filter="klasse 9 elektrizitätslehre sowie mechanische grundbegriffe zu kräften, arbeit und energie. klasse-9">
-  <div class="badge">9</div>
-  <div><h2>Klasse 9</h2><p>Elektrizitätslehre sowie mechanische Grundbegriffe zu Kräften, Arbeit und Energie.</p></div>
-  <div class="tags"><span class="tag">2 Themenbereiche</span><span class="tag">15 Lernpfade</span><span class="tag">15 PDFs</span></div>
-  <span class="primary">Klasse/Kurs öffnen</span>
-</a>
-<a class="card" href="klasse-10/index.html" data-filter="klasse 10 druck und auftrieb, energieversorgung sowie strahlung und kernenergie. klasse-10">
-  <div class="badge">10</div>
-  <div><h2>Klasse 10</h2><p>Druck und Auftrieb, Energieversorgung sowie Strahlung und Kernenergie.</p></div>
-  <div class="tags"><span class="tag">4 Themenbereiche</span><span class="tag">26 Lernpfade</span><span class="tag">25 PDFs</span></div>
-  <span class="primary">Klasse/Kurs öffnen</span>
-</a>
-<a class="card" href="ef/index.html" data-filter="ef einführungsphase mit mechanik, kreisbewegung, gravitation und weltbildern. ef">
-  <div class="badge">EF</div>
-  <div><h2>EF</h2><p>Einführungsphase mit Mechanik, Kreisbewegung, Gravitation und Weltbildern.</p></div>
-  <div class="tags"><span class="tag">2 Themenbereiche</span><span class="tag">13 Lernpfade</span><span class="tag">13 PDFs</span></div>
-  <span class="primary">Klasse/Kurs öffnen</span>
-</a>
-<a class="card" href="q1-q2-grundkurs/index.html" data-filter="q1/q2 grundkurs grundkurs-materialien zu feldern, induktion, quantenphysik sowie atom- und kernphysik. q1-q2-grundkurs">
-  <div class="badge">GK</div>
-  <div><h2>Q1/Q2 Grundkurs</h2><p>Grundkurs-Materialien zu Feldern, Induktion, Quantenphysik sowie Atom- und Kernphysik.</p></div>
-  <div class="tags"><span class="tag">5 Themenbereiche</span><span class="tag">31 Lernpfade</span><span class="tag">30 PDFs</span></div>
-  <span class="primary">Klasse/Kurs öffnen</span>
-</a>
-<a class="card" href="q1-q2-leistungskurs/index.html" data-filter="q1/q2 leistungskurs leistungskurs-materialien mit vertieften lernpfaden zu feldern, wellen, quantenphysik und kernphysik. q1-q2-leistungskurs">
-  <div class="badge">LK</div>
-  <div><h2>Q1/Q2 Leistungskurs</h2><p>Leistungskurs-Materialien mit vertieften Lernpfaden zu Feldern, Wellen, Quantenphysik und Kernphysik.</p></div>
-  <div class="tags"><span class="tag">5 Themenbereiche</span><span class="tag">36 Lernpfade</span><span class="tag">34 PDFs</span></div>
-  <span class="primary">Klasse/Kurs öffnen</span>
-</a></div>
-  </section>
-</main>
-<script>
-const input=document.querySelector('[data-search]');
-if(input){input.addEventListener('input',()=>{const t=input.value.trim().toLowerCase();document.querySelectorAll('[data-filter]').forEach(el=>{el.classList.toggle('hidden',t && !el.dataset.filter.includes(t));});});}
-</script>
+      <div class="stats" aria-live="polite">
+        <span class="stat"><strong id="materialCount">–</strong> Materialien</span>
+        <span class="stat"><strong id="pdfCount">–</strong> PDFs</span>
+      </div>
+    </div>
+  </header>
 
+  <main class="page">
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Materialien</h2>
+          <p>
+            Neue EF-Lernpfade erscheinen hier automatisch, sobald sie in
+            <code>data.json</code> unter <code>materialien.ef</code> eingetragen sind.
+          </p>
+        </div>
+
+        <div class="toolbar">
+          <input
+            class="input"
+            id="searchInput"
+            type="search"
+            placeholder="Material suchen …"
+            aria-label="Material suchen"
+          >
+        </div>
+      </div>
+
+      <div id="status" class="notice">Materialien werden geladen …</div>
+      <div id="materialList"></div>
+    </section>
+  </main>
+
+  <script>
+    const CLASS_ID = "ef";
+    const DATA_URL = "../data.json";
+
+    const listEl = document.getElementById("materialList");
+    const statusEl = document.getElementById("status");
+    const searchInput = document.getElementById("searchInput");
+    const materialCountEl = document.getElementById("materialCount");
+    const pdfCountEl = document.getElementById("pdfCount");
+
+    let materials = [];
+
+    function pathRelativeToClass(path) {
+      if (!path) return "";
+
+      const prefix = CLASS_ID + "/";
+
+      if (path.startsWith(prefix)) {
+        return path.slice(prefix.length);
+      }
+
+      return "../" + path;
+    }
+
+    function createTextElement(tag, className, text) {
+      const element = document.createElement(tag);
+
+      if (className) {
+        element.className = className;
+      }
+
+      element.textContent = text;
+      return element;
+    }
+
+    function createMaterialCard(material) {
+      const article = document.createElement("article");
+      article.className = "material-card";
+
+      const main = document.createElement("div");
+      main.className = "main";
+
+      main.appendChild(
+        createTextElement(
+          "strong",
+          "",
+          material.titel || "Unbenanntes Material"
+        )
+      );
+
+      const metaParts = [];
+
+      if (material.thema_titel) {
+        metaParts.push(material.thema_titel);
+      } else if (material.bereich) {
+        metaParts.push(material.bereich);
+      }
+
+      if (material.typ) {
+        metaParts.push(material.typ);
+      }
+
+      main.appendChild(
+        createTextElement("p", "", metaParts.join(" · "))
+      );
+
+      const htmlPath = material.lernpfad_html || material.pfad;
+
+      if (htmlPath) {
+        main.appendChild(
+          createTextElement(
+            "div",
+            "path",
+            "HTML: " + htmlPath
+          )
+        );
+      }
+
+      if (material.arbeitsblatt_pdf) {
+        main.appendChild(
+          createTextElement(
+            "div",
+            "path",
+            "PDF: " + material.arbeitsblatt_pdf
+          )
+        );
+      }
+
+      if (Array.isArray(material.tags) && material.tags.length > 0) {
+        const tags = document.createElement("div");
+        tags.className = "tags";
+
+        material.tags.forEach(tag => {
+          tags.appendChild(
+            createTextElement("span", "tag", tag)
+          );
+        });
+
+        main.appendChild(tags);
+      }
+
+      const actions = document.createElement("div");
+      actions.className = "actions";
+
+      if (htmlPath) {
+        const openLink = document.createElement("a");
+        openLink.className = "primary";
+        openLink.href = pathRelativeToClass(htmlPath);
+        openLink.textContent = "Lernpfad öffnen";
+        actions.appendChild(openLink);
+      }
+
+      if (material.arbeitsblatt_pdf) {
+        const pdfLink = document.createElement("a");
+        pdfLink.className = "secondary";
+        pdfLink.href = pathRelativeToClass(material.arbeitsblatt_pdf);
+        pdfLink.textContent = "AB als PDF";
+        actions.appendChild(pdfLink);
+      }
+
+      article.appendChild(main);
+      article.appendChild(actions);
+
+      return article;
+    }
+
+    function searchableText(material) {
+      return [
+        material.titel,
+        material.bereich,
+        material.thema_titel,
+        material.typ,
+        ...(Array.isArray(material.tags) ? material.tags : [])
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+    }
+
+    function renderMaterials(filter = "") {
+      listEl.replaceChildren();
+
+      const normalizedFilter = filter.trim().toLowerCase();
+
+      const visibleMaterials = normalizedFilter
+        ? materials.filter(material =>
+            searchableText(material).includes(normalizedFilter)
+          )
+        : materials;
+
+      if (visibleMaterials.length === 0) {
+        const empty = document.createElement("div");
+        empty.className = "notice";
+
+        empty.textContent = normalizedFilter
+          ? "Zu dieser Suche wurden keine Materialien gefunden."
+          : "Für die EF sind derzeit keine Materialien in data.json eingetragen.";
+
+        listEl.appendChild(empty);
+        return;
+      }
+
+      const groups = new Map();
+
+      visibleMaterials.forEach(material => {
+        const key =
+          material.thema_id ||
+          material.bereich ||
+          "weitere-materialien";
+
+        if (!groups.has(key)) {
+          groups.set(key, {
+            title:
+              material.thema_titel ||
+              material.bereich ||
+              "Weitere Materialien",
+            materials: []
+          });
+        }
+
+        groups.get(key).materials.push(material);
+      });
+
+      groups.forEach(group => {
+        const section = document.createElement("section");
+        section.style.marginTop = "1.5rem";
+
+        const heading = createTextElement(
+          "h2",
+          "",
+          group.title
+        );
+
+        heading.style.marginBottom = ".85rem";
+        section.appendChild(heading);
+
+        const materialList = document.createElement("div");
+        materialList.className = "material-list";
+
+        group.materials.forEach(material => {
+          materialList.appendChild(
+            createMaterialCard(material)
+          );
+        });
+
+        section.appendChild(materialList);
+        listEl.appendChild(section);
+      });
+    }
+
+    async function loadMaterials() {
+      try {
+        const response = await fetch(DATA_URL, {
+          cache: "no-store"
+        });
+
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+
+        const data = await response.json();
+
+        materials =
+          Array.isArray(data?.materialien?.[CLASS_ID])
+            ? data.materialien[CLASS_ID]
+            : [];
+
+        const pdfCount = materials.filter(
+          material => Boolean(material.arbeitsblatt_pdf)
+        ).length;
+
+        materialCountEl.textContent = materials.length;
+        pdfCountEl.textContent = pdfCount;
+
+        statusEl.hidden = true;
+        renderMaterials();
+      } catch (error) {
+        console.error(
+          "data.json konnte nicht geladen werden:",
+          error
+        );
+
+        materialCountEl.textContent = "0";
+        pdfCountEl.textContent = "0";
+
+        statusEl.hidden = false;
+        statusEl.textContent =
+          "Die Materialübersicht konnte nicht aus data.json geladen werden. " +
+          "Bitte die Seite neu laden oder prüfen, ob data.json gültiges JSON enthält.";
+      }
+    }
+
+    searchInput.addEventListener("input", () => {
+      renderMaterials(searchInput.value);
+    });
+
+    loadMaterials();
+  </script>
 </body>
 </html>
