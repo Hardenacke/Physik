@@ -1,316 +1,799 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EF · Physik</title>
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-  <header class="hero compact">
-    <div class="hero-content">
-      <div class="breadcrumb">
-        <a href="../index.html">Startseite</a>
-        <span>›</span>
-        <span>EF</span>
-      </div>
-      <h1>EF</h1>
-      <p class="subtitle">
-        Lernpfade und zugeordnete PDF-Arbeitsblätter.
-        Die Übersicht wird automatisch aus der zentralen data.json erzeugt.
-      </p>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Physik · Digitale Lernplattform</title>
+  <style>
+    :root{
+      --bg:#f3f7fb;
+      --surface:#ffffff;
+      --surface-soft:#f8fafc;
+      --text:#142033;
+      --muted:#64748b;
+      --primary:#1769aa;
+      --primary-dark:#0d4777;
+      --primary-soft:#e1f0fb;
+      --border:#d8e1eb;
+      --shadow:0 12px 32px rgba(13,71,119,.10);
+      --radius:20px;
+    }
 
-      <div class="stats" aria-live="polite">
-        <span class="stat"><strong id="materialCount">–</strong> Materialien</span>
-        <span class="stat"><strong id="pdfCount">–</strong> PDFs</span>
-      </div>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left,rgba(23,105,170,.12),transparent 34rem),
+        linear-gradient(180deg,#edf6ff 0,#f8fbff 35rem,#f3f7fb 100%);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    a{color:inherit}
+    button,input{font:inherit}
+
+    .hero{
+      padding:3.5rem 1.25rem 2.8rem;
+      color:#fff;
+      background:linear-gradient(135deg,#0a355a,#1769aa 62%,#328ac8);
+      border-bottom-left-radius:34px;
+      border-bottom-right-radius:34px;
+      box-shadow:0 16px 38px rgba(13,71,119,.18);
+    }
+
+    .hero-content,.page{
+      width:min(1120px,calc(100% - 2rem));
+      margin:0 auto;
+    }
+
+    .eyebrow{
+      margin:0 0 .45rem;
+      font-size:.82rem;
+      font-weight:900;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.78);
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(2.35rem,6vw,4.6rem);
+      line-height:1;
+      letter-spacing:-.035em;
+    }
+
+    .subtitle{
+      max-width:820px;
+      margin:1rem 0 0;
+      color:rgba(255,255,255,.9);
+      font-size:1.08rem;
+      line-height:1.6;
+    }
+
+    .page{padding:2rem 0 4rem}
+
+    .panel{
+      padding:clamp(1rem,2.4vw,1.6rem);
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(216,225,235,.95);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+
+    .topbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:1rem;
+    }
+
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      color:var(--primary-dark);
+      font-weight:850;
+      text-decoration:none;
+    }
+
+    .home-link:hover{text-decoration:underline}
+
+    .status{
+      display:inline-flex;
+      flex-wrap:wrap;
+      gap:.35rem;
+      align-items:center;
+      border-radius:999px;
+      padding:.45rem .75rem;
+      background:var(--primary-soft);
+      color:var(--primary-dark);
+      font-size:.84rem;
+      font-weight:800;
+    }
+
+    .breadcrumb{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.4rem;
+      align-items:center;
+      margin:0 0 1rem;
+      color:var(--muted);
+      font-size:.92rem;
+      font-weight:700;
+    }
+
+    .breadcrumb a{
+      color:var(--primary-dark);
+      text-decoration:none;
+    }
+
+    .breadcrumb a:hover{text-decoration:underline}
+    .breadcrumb span::before{content:"›";margin-right:.4rem;color:#94a3b8}
+
+    .search-area{
+      display:grid;
+      gap:.6rem;
+      margin-bottom:1.4rem;
+    }
+
+    .search-label{
+      font-weight:850;
+      font-size:1rem;
+    }
+
+    .search-field{
+      width:100%;
+      min-height:3rem;
+      padding:.8rem 1rem;
+      color:var(--text);
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      outline:none;
+    }
+
+    .search-field:focus{
+      border-color:#6ba6cf;
+      box-shadow:0 0 0 4px rgba(23,105,170,.12);
+    }
+
+    .search-results{
+      display:none;
+      gap:.7rem;
+      padding:1rem;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:var(--surface-soft);
+    }
+
+    .search-results.is-visible{display:grid}
+
+    .section-title{
+      margin:0;
+      font-size:clamp(1.4rem,3vw,2rem);
+      letter-spacing:-.015em;
+    }
+
+    .section-text{
+      margin:.55rem 0 1.2rem;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:1rem;
+    }
+
+    .card{
+      min-height:205px;
+      padding:1.15rem;
+      display:flex;
+      flex-direction:column;
+      gap:.75rem;
+      color:inherit;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:0 8px 22px rgba(15,23,42,.06);
+      text-decoration:none;
+      transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:#9dc5e2;
+      box-shadow:0 14px 28px rgba(13,71,119,.11);
+    }
+
+    .level-badge,.material-type,.tag{
+      display:inline-flex;
+      width:fit-content;
+      align-items:center;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:850;
+    }
+
+    .level-badge{
+      padding:.28rem .58rem;
+      color:var(--primary-dark);
+      background:var(--primary-soft);
+    }
+
+    .card-title{
+      margin:0;
+      font-size:1.15rem;
+      line-height:1.25;
+    }
+
+    .card-text{
+      margin:0;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .path-note{
+      margin:auto 0 0;
+      color:#7b8798;
+      font-size:.82rem;
+      line-height:1.35;
+      overflow-wrap:anywhere;
+    }
+
+    .material-stack{
+      display:grid;
+      gap:.75rem;
+    }
+
+    .material-card{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:1rem;
+      align-items:center;
+      padding:1rem;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:0 7px 18px rgba(15,23,42,.05);
+    }
+
+    .material-card h3{
+      margin:.35rem 0 .2rem;
+      font-size:1.04rem;
+    }
+
+    .material-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.88rem;
+      overflow-wrap:anywhere;
+    }
+
+    .material-type{
+      padding:.25rem .5rem;
+      background:var(--surface-soft);
+      border:1px solid var(--border);
+      color:var(--muted);
+    }
+
+    .button{
+      display:inline-flex;
+      min-height:2.7rem;
+      align-items:center;
+      justify-content:center;
+      padding:.7rem 1rem;
+      color:#fff;
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      border-radius:999px;
+      box-shadow:0 8px 18px rgba(23,105,170,.18);
+      font-weight:850;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    .button.pdf{
+      color:var(--primary-dark);
+      background:#fff;
+      border:1px solid #b8ccdc;
+      box-shadow:none;
+    }
+
+    .small-link{
+      color:var(--primary-dark);
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .small-link:hover{text-decoration:underline}
+
+    .empty-state,.error-state{
+      padding:1rem;
+      color:var(--muted);
+      background:var(--surface-soft);
+      border:1px dashed var(--border);
+      border-radius:14px;
+      line-height:1.55;
+    }
+
+    .error-state{color:#8a2929;background:#fff7f7;border-color:#efcaca}
+
+    .footer{
+      padding:0 1rem 2.5rem;
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    code{
+      padding:.08rem .3rem;
+      border-radius:.35rem;
+      background:#edf3f8;
+    }
+
+    @media(max-width:720px){
+      .hero{padding-top:2.8rem;border-bottom-left-radius:24px;border-bottom-right-radius:24px}
+      .material-card{grid-template-columns:1fr}
+      .button{width:100%}
+      .status{width:100%;justify-content:center}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Digitale Lernplattform</p>
+      <h1>Physik</h1>
+      <p class="subtitle">
+        Wähle eine Klasse oder Kursstufe aus und navigiere über Themenbereiche und Unterthemen
+        zu den vorhandenen Lernpfaden und Arbeitsblättern. Die gesamte Übersicht wird automatisch
+        aus der Datei <strong>data.json</strong> erzeugt.
+      </p>
     </div>
   </header>
 
   <main class="page">
     <section class="panel">
-      <div class="section-head">
-        <div>
-          <h2>Materialien</h2>
-          <p>
-            Neue EF-Lernpfade erscheinen hier automatisch, sobald sie in
-            <code>data.json</code> unter <code>materialien.ef</code> eingetragen sind.
-          </p>
-        </div>
-
-        <div class="toolbar">
-          <input
-            class="input"
-            id="searchInput"
-            type="search"
-            placeholder="Material suchen …"
-            aria-label="Material suchen"
-          >
-        </div>
+      <div class="topbar">
+        <a class="home-link" href="#/">⌂ Startseite</a>
+        <span id="statusInfo" class="status">Daten werden geladen …</span>
       </div>
 
-      <div id="status" class="notice">Materialien werden geladen …</div>
-      <div id="materialList"></div>
+      <nav id="breadcrumb" class="breadcrumb" aria-label="Pfadnavigation"></nav>
+
+      <div class="search-area">
+        <label for="searchInput" class="search-label">Materialien durchsuchen</label>
+        <input
+          id="searchInput"
+          class="search-field"
+          type="search"
+          placeholder="z. B. SI-Einheiten, Newton, Induktion, Arbeitsblatt …"
+          autocomplete="off"
+        >
+        <div id="searchResults" class="search-results"></div>
+      </div>
+
+      <div id="app" aria-live="polite"></div>
     </section>
   </main>
 
+  <footer class="footer">
+    Die Navigation benötigt nur <strong>index.html</strong> und <strong>data.json</strong>
+    im Hauptordner. Eine separate <code>style.css</code> ist nicht erforderlich.
+  </footer>
+
   <script>
-    const CLASS_ID = "ef";
-    const DATA_URL = "../data.json";
+    const DATA_URL = "data.json";
 
-    const listEl = document.getElementById("materialList");
-    const statusEl = document.getElementById("status");
+    let DATA = null;
+    let MATERIAL_INDEX = [];
+
+    const app = document.getElementById("app");
+    const breadcrumb = document.getElementById("breadcrumb");
+    const statusInfo = document.getElementById("statusInfo");
     const searchInput = document.getElementById("searchInput");
-    const materialCountEl = document.getElementById("materialCount");
-    const pdfCountEl = document.getElementById("pdfCount");
+    const searchResults = document.getElementById("searchResults");
 
-    let materials = [];
-
-    function pathRelativeToClass(path) {
-      if (!path) return "";
-
-      const prefix = CLASS_ID + "/";
-
-      if (path.startsWith(prefix)) {
-        return path.slice(prefix.length);
-      }
-
-      return "../" + path;
+    function normalizePath(path){
+      return String(path || "")
+        .replace(/^\/+/, "")
+        .replace(/\/{2,}/g, "/");
     }
 
-    function createTextElement(tag, className, text) {
-      const element = document.createElement(tag);
-
-      if (className) {
-        element.className = className;
-      }
-
-      element.textContent = text;
-      return element;
+    function joinPath(base,path){
+      const cleanBase = normalizePath(base || "");
+      const cleanPath = normalizePath(path || "");
+      if(!cleanBase) return cleanPath;
+      if(!cleanPath) return cleanBase;
+      return `${cleanBase.replace(/\/$/,"")}/${cleanPath}`;
     }
 
-    function createMaterialCard(material) {
-      const article = document.createElement("article");
-      article.className = "material-card";
+    function escapeHtml(value){
+      return String(value ?? "")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
 
-      const main = document.createElement("div");
-      main.className = "main";
+    function slugParts(){
+      return location.hash
+        .replace(/^#\/?/,"")
+        .split("/")
+        .map(part => decodeURIComponent(part.trim()))
+        .filter(Boolean);
+    }
 
-      main.appendChild(
-        createTextElement(
-          "strong",
-          "",
-          material.titel || "Unbenanntes Material"
-        )
-      );
+    function toHash(...parts){
+      return "#/" + parts.filter(Boolean).map(part => encodeURIComponent(part)).join("/");
+    }
 
-      const metaParts = [];
+    function findFach(){
+      return DATA?.faecher?.[0] || null;
+    }
 
-      if (material.thema_titel) {
-        metaParts.push(material.thema_titel);
-      } else if (material.bereich) {
-        metaParts.push(material.bereich);
+    function findKlasse(id){
+      return (findFach()?.klassen || []).find(item => item.id === id) || null;
+    }
+
+    function findFeld(klasse,id){
+      return (klasse?.inhaltsfelder || []).find(item => item.id === id) || null;
+    }
+
+    function findTopicRecursive(themen,ids,index=0){
+      if(!Array.isArray(themen) || index >= ids.length) return null;
+      const topic = themen.find(item => item.id === ids[index]);
+      if(!topic) return null;
+      if(index === ids.length - 1) return topic;
+      return findTopicRecursive(topic.unterthemen || [],ids,index + 1);
+    }
+
+    function countMaterials(thema){
+      return (thema.materialien || []).length +
+        (thema.unterthemen || []).reduce((sum,child) => sum + countMaterials(child),0);
+    }
+
+    function collectMaterials(){
+      MATERIAL_INDEX = [];
+
+      for(const fach of DATA?.faecher || []){
+        for(const klasse of fach.klassen || []){
+          for(const feld of klasse.inhaltsfelder || []){
+            for(const thema of feld.themen || []){
+              collectFromTopic({fach,klasse,feld,thema,ancestors:[thema]});
+            }
+          }
+        }
       }
+    }
 
-      if (material.typ) {
-        metaParts.push(material.typ);
-      }
-
-      main.appendChild(
-        createTextElement("p", "", metaParts.join(" · "))
-      );
-
-      const htmlPath = material.lernpfad_html || material.pfad;
-
-      if (htmlPath) {
-        main.appendChild(
-          createTextElement(
-            "div",
-            "path",
-            "HTML: " + htmlPath
-          )
-        );
-      }
-
-      if (material.arbeitsblatt_pdf) {
-        main.appendChild(
-          createTextElement(
-            "div",
-            "path",
-            "PDF: " + material.arbeitsblatt_pdf
-          )
-        );
-      }
-
-      if (Array.isArray(material.tags) && material.tags.length > 0) {
-        const tags = document.createElement("div");
-        tags.className = "tags";
-
-        material.tags.forEach(tag => {
-          tags.appendChild(
-            createTextElement("span", "tag", tag)
-          );
+    function collectFromTopic({fach,klasse,feld,thema,ancestors}){
+      for(const material of thema.materialien || []){
+        MATERIAL_INDEX.push({
+          fach,
+          klasse,
+          feld,
+          ancestors,
+          material,
+          searchText:[
+            fach.titel,
+            klasse.titel,
+            feld.titel,
+            ...ancestors.map(item => item.titel),
+            material.titel,
+            material.materialart,
+            material.format,
+            material.pfad,
+            ...(material.tags || [])
+          ].join(" ").toLowerCase()
         });
-
-        main.appendChild(tags);
       }
 
-      const actions = document.createElement("div");
-      actions.className = "actions";
-
-      if (htmlPath) {
-        const openLink = document.createElement("a");
-        openLink.className = "primary";
-        openLink.href = pathRelativeToClass(htmlPath);
-        openLink.textContent = "Lernpfad öffnen";
-        actions.appendChild(openLink);
+      for(const child of thema.unterthemen || []){
+        collectFromTopic({
+          fach,
+          klasse,
+          feld,
+          thema:child,
+          ancestors:[...ancestors,child]
+        });
       }
-
-      if (material.arbeitsblatt_pdf) {
-        const pdfLink = document.createElement("a");
-        pdfLink.className = "secondary";
-        pdfLink.href = pathRelativeToClass(material.arbeitsblatt_pdf);
-        pdfLink.textContent = "AB als PDF";
-        actions.appendChild(pdfLink);
-      }
-
-      article.appendChild(main);
-      article.appendChild(actions);
-
-      return article;
     }
 
-    function searchableText(material) {
-      return [
-        material.titel,
-        material.bereich,
-        material.thema_titel,
-        material.typ,
-        ...(Array.isArray(material.tags) ? material.tags : [])
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
+    function setStatus(){
+      const klassen = findFach()?.klassen || [];
+      const htmlCount = MATERIAL_INDEX.filter(item => item.material.typ === "html").length;
+      const pdfCount = MATERIAL_INDEX.filter(item => item.material.typ === "pdf").length;
+      statusInfo.textContent =
+        `${klassen.length} Klassen/Kurse · ${htmlCount} HTML · ${pdfCount} PDF`;
     }
 
-    function renderMaterials(filter = "") {
-      listEl.replaceChildren();
+    function renderBreadcrumb(parts){
+      const crumbs=[`<a href="#/">Startseite</a>`];
 
-      const normalizedFilter = filter.trim().toLowerCase();
+      if(parts[0]){
+        const klasse=findKlasse(parts[0]);
+        crumbs.push(`<span><a href="${toHash(parts[0])}">${escapeHtml(klasse?.titel || parts[0])}</a></span>`);
+      }
 
-      const visibleMaterials = normalizedFilter
-        ? materials.filter(material =>
-            searchableText(material).includes(normalizedFilter)
-          )
-        : materials;
+      if(parts[0] && parts[1]){
+        const klasse=findKlasse(parts[0]);
+        const feld=findFeld(klasse,parts[1]);
+        crumbs.push(`<span><a href="${toHash(parts[0],parts[1])}">${escapeHtml(feld?.titel || parts[1])}</a></span>`);
+      }
 
-      if (visibleMaterials.length === 0) {
-        const empty = document.createElement("div");
-        empty.className = "notice";
+      if(parts.length > 2){
+        const klasse=findKlasse(parts[0]);
+        const feld=findFeld(klasse,parts[1]);
+        let current=feld?.themen || [];
+        const ids=parts.slice(2);
 
-        empty.textContent = normalizedFilter
-          ? "Zu dieser Suche wurden keine Materialien gefunden."
-          : "Für die EF sind derzeit keine Materialien in data.json eingetragen.";
+        ids.forEach((id,index) => {
+          const topic=current.find(item => item.id === id);
+          crumbs.push(
+            `<span><a href="${toHash(parts[0],parts[1],...ids.slice(0,index+1))}">${escapeHtml(topic?.titel || id)}</a></span>`
+          );
+          current=topic?.unterthemen || [];
+        });
+      }
 
-        listEl.appendChild(empty);
+      breadcrumb.innerHTML=crumbs.join("");
+    }
+
+    function renderStart(){
+      const fach=findFach();
+      const klassen=fach?.klassen || [];
+      renderBreadcrumb([]);
+
+      app.innerHTML=`
+        <h2 class="section-title">Klassen und Kursstufen</h2>
+        <p class="section-text">
+          Wähle zunächst eine Klasse oder Kursstufe. Alle folgenden Ansichten werden direkt
+          aus der Ordnerstruktur in <code>data.json</code> erzeugt.
+        </p>
+        <div class="grid">
+          ${klassen.map(klasse => `
+            <a class="card" href="${toHash(klasse.id)}">
+              <span class="level-badge">${escapeHtml(fach?.titel || "Physik")}</span>
+              <h3 class="card-title">${escapeHtml(klasse.titel)}</h3>
+              <p class="card-text">${escapeHtml(klasse.beschreibung || "")}</p>
+              <p class="card-text">
+                ${escapeHtml(klasse.inhaltsfelder?.length || 0)} Themenbereiche ·
+                ${escapeHtml(klasse.anzahlMaterialien || 0)} Dateien
+              </p>
+              <p class="path-note">${escapeHtml(klasse.pfad || "")}</p>
+            </a>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderKlasse(klasseId){
+      const klasse=findKlasse(klasseId);
+      if(!klasse) return renderNotFound();
+
+      renderBreadcrumb([klasseId]);
+
+      app.innerHTML=`
+        <h2 class="section-title">${escapeHtml(klasse.titel)}</h2>
+        <p class="section-text">${escapeHtml(klasse.beschreibung || "Wähle einen Themenbereich.")}</p>
+        <div class="grid">
+          ${(klasse.inhaltsfelder || []).map(feld => `
+            <a class="card" href="${toHash(klasse.id,feld.id)}">
+              <span class="level-badge">Themenbereich</span>
+              <h3 class="card-title">${escapeHtml(feld.titel)}</h3>
+              <p class="card-text">${escapeHtml(feld.beschreibung || "")}</p>
+              <p class="card-text">
+                ${escapeHtml(feld.anzahlThemen || 0)} Themen/Unterthemen ·
+                ${escapeHtml(feld.anzahlMaterialien || 0)} Dateien
+              </p>
+              <p class="path-note">${escapeHtml(feld.pfad || "")}</p>
+            </a>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderFeld(klasseId,feldId){
+      const klasse=findKlasse(klasseId);
+      const feld=findFeld(klasse,feldId);
+      if(!klasse || !feld) return renderNotFound();
+
+      renderBreadcrumb([klasseId,feldId]);
+
+      app.innerHTML=`
+        <h2 class="section-title">${escapeHtml(feld.titel)}</h2>
+        <p class="section-text">${escapeHtml(feld.beschreibung || "Wähle ein Thema.")}</p>
+        <div class="grid">
+          ${(feld.themen || []).map(thema => renderTopicCard(thema,[klasse.id,feld.id])).join("")}
+        </div>
+      `;
+    }
+
+    function renderTopicCard(thema,parentParts){
+      const childCount=(thema.unterthemen || []).length;
+      const materialCount=countMaterials(thema);
+
+      return `
+        <a class="card" href="${toHash(...parentParts,thema.id)}">
+          <span class="level-badge">${childCount ? "Ordner" : "Thema"}</span>
+          <h3 class="card-title">${escapeHtml(thema.titel)}</h3>
+          <p class="card-text">
+            ${escapeHtml(childCount)} Unterthemen · ${escapeHtml(materialCount)} Dateien
+          </p>
+          <p class="path-note">${escapeHtml(thema.pfad || "")}</p>
+        </a>
+      `;
+    }
+
+    function renderTopic(klasseId,feldId,topicIds){
+      const klasse=findKlasse(klasseId);
+      const feld=findFeld(klasse,feldId);
+      const thema=findTopicRecursive(feld?.themen || [],topicIds);
+      if(!klasse || !feld || !thema) return renderNotFound();
+
+      renderBreadcrumb([klasseId,feldId,...topicIds]);
+
+      const childTopics=thema.unterthemen || [];
+      const materialien=(thema.materialien || []).filter(mat => mat.sichtbar !== false);
+
+      app.innerHTML=`
+        <h2 class="section-title">${escapeHtml(thema.titel)}</h2>
+        <p class="section-text">${escapeHtml(thema.beschreibung || "")}</p>
+        <p class="path-note" style="margin:0 0 1.2rem">${escapeHtml(thema.pfad || "")}</p>
+
+        ${childTopics.length ? `
+          <h3 class="section-title" style="font-size:1.22rem;margin-bottom:.8rem">Unterthemen</h3>
+          <div class="grid">
+            ${childTopics.map(child => renderTopicCard(child,[klasse.id,feld.id,...topicIds])).join("")}
+          </div>
+        ` : ""}
+
+        <h3 class="section-title" style="font-size:1.22rem;margin-top:1.5rem;margin-bottom:.8rem">Materialien</h3>
+        ${materialien.length ? `
+          <div class="material-stack">
+            ${materialien.map(renderMaterialCard).join("")}
+          </div>
+        ` : `
+          <div class="empty-state">
+            In diesem Ordner liegen keine direkt zugeordneten Materialien.
+            Wähle gegebenenfalls eines der Unterthemen.
+          </div>
+        `}
+      `;
+    }
+
+    function renderMaterialCard(mat){
+      const href=joinPath(DATA?.basePath || "",mat.pfad || mat.datei || "");
+      const isPdf=mat.typ === "pdf";
+      const label=isPdf ? "PDF öffnen" : "Lernpfad öffnen";
+
+      return `
+        <article class="material-card">
+          <div>
+            <span class="material-type">${escapeHtml(mat.format || mat.typ || "Material")}</span>
+            <h3>${escapeHtml(mat.titel || mat.datei || "Material")}</h3>
+            <p>${escapeHtml(href)}</p>
+          </div>
+          <a class="button ${isPdf ? "pdf" : ""}" href="${escapeHtml(href)}" target="_blank" rel="noopener">
+            ${escapeHtml(label)}
+          </a>
+        </article>
+      `;
+    }
+
+    function renderSearch(){
+      const query=searchInput.value.trim().toLowerCase();
+
+      if(!query){
+        searchResults.classList.remove("is-visible");
+        searchResults.innerHTML="";
         return;
       }
 
-      const groups = new Map();
+      const results=MATERIAL_INDEX
+        .filter(item => item.searchText.includes(query))
+        .slice(0,16);
 
-      visibleMaterials.forEach(material => {
-        const key =
-          material.thema_id ||
-          material.bereich ||
-          "weitere-materialien";
+      searchResults.classList.add("is-visible");
 
-        if (!groups.has(key)) {
-          groups.set(key, {
-            title:
-              material.thema_titel ||
-              material.bereich ||
-              "Weitere Materialien",
-            materials: []
-          });
-        }
+      if(!results.length){
+        searchResults.innerHTML=`<div class="empty-state">Keine Materialien gefunden.</div>`;
+        return;
+      }
 
-        groups.get(key).materials.push(material);
-      });
+      searchResults.innerHTML=`
+        <strong>Suchergebnisse</strong>
+        <div class="material-stack">
+          ${results.map(item => {
+            const href=joinPath(DATA?.basePath || "",item.material.pfad || "");
+            const navHref=toHash(
+              item.klasse.id,
+              item.feld.id,
+              ...item.ancestors.map(topic => topic.id)
+            );
 
-      groups.forEach(group => {
-        const section = document.createElement("section");
-        section.style.marginTop = "1.5rem";
-
-        const heading = createTextElement(
-          "h2",
-          "",
-          group.title
-        );
-
-        heading.style.marginBottom = ".85rem";
-        section.appendChild(heading);
-
-        const materialList = document.createElement("div");
-        materialList.className = "material-list";
-
-        group.materials.forEach(material => {
-          materialList.appendChild(
-            createMaterialCard(material)
-          );
-        });
-
-        section.appendChild(materialList);
-        listEl.appendChild(section);
-      });
+            return `
+              <article class="material-card">
+                <div>
+                  <span class="material-type">${escapeHtml(item.material.format || item.material.typ)}</span>
+                  <h3>${escapeHtml(item.material.titel)}</h3>
+                  <p>
+                    ${escapeHtml(item.klasse.titel)} ·
+                    ${escapeHtml(item.feld.titel)} ·
+                    ${escapeHtml(item.ancestors.map(topic => topic.titel).join(" › "))}
+                  </p>
+                  <p><a class="small-link" href="${navHref}">Zum Themenordner</a></p>
+                </div>
+                <a class="button ${item.material.typ === "pdf" ? "pdf" : ""}" href="${escapeHtml(href)}" target="_blank" rel="noopener">
+                  Öffnen
+                </a>
+              </article>
+            `;
+          }).join("")}
+        </div>
+      `;
     }
 
-    async function loadMaterials() {
-      try {
-        const response = await fetch(DATA_URL, {
-          cache: "no-store"
-        });
+    function renderNotFound(){
+      renderBreadcrumb([]);
+      app.innerHTML=`
+        <div class="empty-state">
+          Der gewählte Bereich wurde in <code>data.json</code> nicht gefunden.
+          <br><a class="small-link" href="#/">Zurück zur Startseite</a>
+        </div>
+      `;
+    }
 
-        if (!response.ok) {
-          throw new Error("HTTP " + response.status);
+    function renderRoute(){
+      if(!DATA) return;
+
+      const parts=slugParts();
+
+      if(parts.length === 0) return renderStart();
+      if(parts.length === 1) return renderKlasse(parts[0]);
+      if(parts.length === 2) return renderFeld(parts[0],parts[1]);
+
+      return renderTopic(parts[0],parts[1],parts.slice(2));
+    }
+
+    async function init(){
+      try{
+        const response=await fetch(DATA_URL,{cache:"no-store"});
+        if(!response.ok){
+          throw new Error(`HTTP ${response.status}`);
         }
 
-        const data = await response.json();
-
-        materials =
-          Array.isArray(data?.materialien?.[CLASS_ID])
-            ? data.materialien[CLASS_ID]
-            : [];
-
-        const pdfCount = materials.filter(
-          material => Boolean(material.arbeitsblatt_pdf)
-        ).length;
-
-        materialCountEl.textContent = materials.length;
-        pdfCountEl.textContent = pdfCount;
-
-        statusEl.hidden = true;
-        renderMaterials();
-      } catch (error) {
-        console.error(
-          "data.json konnte nicht geladen werden:",
-          error
-        );
-
-        materialCountEl.textContent = "0";
-        pdfCountEl.textContent = "0";
-
-        statusEl.hidden = false;
-        statusEl.textContent =
-          "Die Materialübersicht konnte nicht aus data.json geladen werden. " +
-          "Bitte die Seite neu laden oder prüfen, ob data.json gültiges JSON enthält.";
+        DATA=await response.json();
+        collectMaterials();
+        setStatus();
+        renderRoute();
+      }catch(error){
+        statusInfo.textContent="Fehler beim Laden";
+        breadcrumb.innerHTML="";
+        app.innerHTML=`
+          <div class="error-state">
+            <strong>data.json konnte nicht geladen werden.</strong><br>
+            <code>index.html</code> und <code>data.json</code> müssen gemeinsam im Hauptordner
+            des GitHub-Pages-Repositories liegen.<br><br>
+            ${escapeHtml(error.message)}
+          </div>
+        `;
       }
     }
 
-    searchInput.addEventListener("input", () => {
-      renderMaterials(searchInput.value);
-    });
-
-    loadMaterials();
+    window.addEventListener("hashchange",renderRoute);
+    searchInput.addEventListener("input",renderSearch);
+    init();
   </script>
 </body>
 </html>

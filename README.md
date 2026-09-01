@@ -1,26 +1,63 @@
-# Physik-Lernpfade mit dreistufiger Themen-Navigation
+# Physik – GitHub-Pages-Struktur
 
-Diese Fassung ist für GitHub Pages vorbereitet und nutzt eine klare Navigationslogik:
+Diese Fassung orientiert sich an der dynamischen Navigation der Mathematik-Sammlung.
 
-1. `index.html`: Auswahl der Klasse oder des Kurses
-2. `<klasse-oder-kurs>/index.html`: Übersicht über Themenbereiche nach Lehrplan und Ordnerstruktur
-3. `<klasse-oder-kurs>/<themenbereich>/index.html`: Lernpfade und die zugehörigen PDF-Arbeitsblätter
+## Benötigte Dateien im Hauptordner
 
-## Strukturprinzip
+```text
+Physik/
+├── index.html
+├── data.json
+├── README.md
+├── klasse-5/
+├── klasse-8/
+├── klasse-9/
+├── klasse-10/
+├── ef/
+├── q1-q2-grundkurs/
+└── q1-q2-leistungskurs/
+```
 
-- Jeder Lernpfad bleibt in seinem Materialordner.
-- Lokale Assets wie Bilder bleiben im jeweiligen `assets/`-Ordner des Lernpfads.
-- Arbeitsblätter liegen nur als PDF im Materialordner.
-- LaTeX-Projektdateien sind nicht enthalten.
-- Die zentrale `data.json` enthält alle Klassen/Kurse, Themenbereiche und Materialpfade.
+Die eigentlichen Lernpfade, PDFs und Assets bleiben in ihren bestehenden Materialordnern.
 
-## Umfang
+## Funktionsweise
 
-- Klassen/Kurse: 7
-- Themenbereiche: 26
-- Lernpfade/Materialien: 168
-- PDF-Arbeitsblätter: 163
+- `index.html` ist die einzige Navigationsanwendung.
+- `data.json` enthält Klassen/Kurse, Themenbereiche, Unterordner und Materialien.
+- Die Navigation läuft über Hash-Routen wie `#/ef/bewegungen-kraefte-und-energie/...`.
+- Materialdateien werden direkt über ihren tatsächlichen Repository-Pfad geöffnet.
+- HTML-Dateien und PDFs werden als getrennte Materialien geführt.
+- Eine separate `style.css` wird nicht benötigt; alle Styles stehen in `index.html`.
 
-## Kompatibilität
+## Dateien, die im Root nicht mehr benötigt werden
 
-Alte Links wie `klasse.html?klasse=klasse-8` werden auf die neue Ordnernavigation weitergeleitet.
+Nach dem Ersetzen der Hauptdateien können diese alten Root-Dateien entfernt werden:
+
+- `style.css`
+- `klasse.html`
+- `struktur_pruefbericht.json`
+
+Die bisherigen automatisch erzeugten Klassen-Übersichtsseiten wie `ef/index.html`,
+`klasse-5/index.html` usw. werden von der neuen Navigation ebenfalls nicht mehr benötigt.
+Sie können zunächst liegen bleiben; die neue Root-Navigation verlinkt sie nicht.
+
+**Wichtig:** Nicht pauschal alle tiefer liegenden `index.html`-Dateien löschen.
+In einzelnen Materialordnern sind `index.html`-Dateien selbst Lernpfade und werden
+über `data.json` direkt geöffnet.
+
+## EF – SI-Einheiten
+
+Der vorhandene Lernpfad ist eingetragen unter:
+
+`ef/bewegungen-kraefte-und-energie/Eintsieg Einheiten/SI_Lernpfad.html`
+
+Der früher eingetragene Ordner
+
+`ef/bewegungen-kraefte-und-energie/einstieg/`
+
+wurde aus der neuen `data.json` entfernt, da die zugehörigen Dateien im Repository gelöscht wurden.
+
+## Aktualisieren der Sammlung
+
+Neue Materialien werden künftig ausschließlich in `data.json` ergänzt.
+Die Root-`index.html` muss dafür nicht mehr verändert werden.
