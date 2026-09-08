@@ -4933,7 +4933,32 @@
                   "titel": "Druck Messen",
                   "pfad": "klasse-10/druck-schwimmen-und-auftrieb/druck-messen/",
                   "beschreibung": "",
-                  "materialien": [],
+                  "materialien": [
+                    {
+                      "id": "klasse-10-druck-schwimmen-und-auftrieb-druck-messen-druckwaage-simulation-html",
+                      "titel": "Simulation: Druckwaage",
+                      "kurztitel": "Druckwaage",
+                      "beschreibung": "Interaktive Simulation einer Druckwaage: Masse und Querschnittsflächen verändern, Gleichgewicht untersuchen und den Druck anzeigen.",
+                      "typ": "html",
+                      "format": "HTML",
+                      "materialart": "Simulation",
+                      "datei": "Druckwaage_Simulation.html",
+                      "pfad": "klasse-10/druck-schwimmen-und-auftrieb/druck-messen/Druckwaage_Simulation.html",
+                      "url": "klasse-10/druck-schwimmen-und-auftrieb/druck-messen/Druckwaage_Simulation.html",
+                      "tags": [
+                        "druck",
+                        "druck-messen",
+                        "druckwaage",
+                        "html",
+                        "klasse 10",
+                        "physik",
+                        "simulation"
+                      ],
+                      "status": "verfügbar",
+                      "sichtbar": true,
+                      "oeffnenIn": "neuer-tab"
+                    }
+                  ],
                   "unterthemen": [
                     {
                       "id": "druck-messen",
@@ -5002,7 +5027,7 @@
                       ]
                     }
                   ],
-                  "anzahlMaterialien": 2,
+                  "anzahlMaterialien": 3,
                   "tags": [
                     "druck-messen",
                     "physik"
@@ -5240,7 +5265,7 @@
                 "klasse 10"
               ],
               "anzahlThemen": 13,
-              "anzahlMaterialien": 14
+              "anzahlMaterialien": 15
             },
             {
               "id": "radioaktivitaet-strahlung-und-kernenergie",
@@ -6736,7 +6761,7 @@
             }
           ],
           "anzahlThemen": 48,
-          "anzahlMaterialien": 51
+          "anzahlMaterialien": 52
         },
         {
           "id": "ef",
