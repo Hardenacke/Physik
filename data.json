@@ -7916,16 +7916,16 @@
                   "beschreibung": "Materialien zur Herleitung des Induktionsgesetzes und zur Lenzschen Regel.",
                   "materialien": [
                     {
-                      "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-induktionsgesetz-und-lenzsche-regel-index-html",
+                      "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-induktionsgesetz-und-lenzsche-regel-lernpfad-lenzsche-regel-html",
                       "titel": "Herleitung Induktionsgesetz",
                       "kurztitel": "Herleitung Induktionsgesetz",
                       "beschreibung": "",
                       "typ": "html",
                       "format": "HTML",
                       "materialart": "Lernpfad",
-                      "datei": "index.html",
-                      "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/induktionsgesetz-und-lenzsche-regel/index.html",
-                      "url": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/induktionsgesetz-und-lenzsche-regel/index.html",
+                      "datei": "lernpfad-lenzsche-regel.html",
+                      "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/induktionsgesetz-und-lenzsche-regel/lernpfad-lenzsche-regel.html",
+                      "url": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/induktionsgesetz-und-lenzsche-regel/lernpfad-lenzsche-regel.html",
                       "tags": [
                         "html",
                         "lernpfad",
