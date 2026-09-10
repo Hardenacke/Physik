@@ -113,28 +113,6 @@
     .eyebrow { margin: 0 0 .45rem; color: var(--teal); font-size: .78rem; letter-spacing: .12em; font-weight: 800; text-transform: uppercase; }
     .hero h2 { max-width: 780px; margin: 0; color: #0b3954; font-size: clamp(2rem, 5vw, 4.2rem); line-height: 1.04; letter-spacing: -.04em; }
     .hero p { max-width: 720px; margin: 1.1rem 0 0; color: #466278; font-size: clamp(1rem, 1.8vw, 1.2rem); }
-    .hero-equation {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(1.25rem, 3vw, 2rem);
-      border: 1px solid rgba(14, 116, 144, .18);
-      border-radius: 24px;
-      background: linear-gradient(145deg, #ffffff, #e5f8fb);
-      box-shadow: var(--shadow);
-    }
-    .hero-equation::after {
-      content: "";
-      position: absolute;
-      right: -3rem;
-      bottom: -4rem;
-      width: 12rem;
-      height: 12rem;
-      border: 28px solid rgba(34, 211, 238, .14);
-      border-radius: 50%;
-    }
-    .hero-equation .eq { position: relative; z-index: 1; display: block; margin: .55rem 0; font-size: clamp(1.15rem, 2.6vw, 1.8rem); }
-    .hero-equation .eq:last-child { color: var(--teal-dark); }
-
     .layout {
       display: grid;
       grid-template-columns: 250px minmax(0, 1fr);
@@ -272,16 +250,6 @@
     .unit { color: var(--muted); white-space: nowrap; }
 
     .lab-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .78fr); gap: 1.25rem; align-items: stretch; }
-    .case-visual { position: relative; min-height: 220px; overflow: hidden; border: 1px solid #c5e1e9; border-radius: 15px; background: linear-gradient(180deg, #f1fbfd 0 70%, #dcebf0 70% 71%, #eef5f7 71% 100%); }
-    .case-visual .field-region { position: absolute; left: 7%; top: 28%; width: 58%; height: 38%; padding: .6rem; overflow: hidden; border: 2px dashed #76cbd7; border-radius: 13px; color: #16728a; background: rgba(222, 249, 252, .84); font-size: .8rem; font-weight: 750; }
-    .case-visual .field-region::after { content: "→  →  →  →  →  →  →  →"; position: absolute; left: .7rem; right: .5rem; bottom: .8rem; color: #219ebc; font-size: 1.15rem; letter-spacing: .08em; white-space: nowrap; }
-    .case-visual .loop-outline { position: absolute; left: 61%; top: 46%; display: grid; place-items: center; width: 76px; height: 100px; border: 5px solid #b77b25; border-radius: 50%; color: #8b5e1a; background: rgba(255, 255, 255, .7); font-family: "STIX Two Math", "Cambria Math", serif; font-size: 1.45rem; font-weight: 700; transform: translate(-50%, -50%); transition: left .35s ease, width .35s ease, height .35s ease; }
-    .case-visual .case-arrow { position: absolute; left: 57%; top: 73%; color: #075985; font-size: 1.2rem; font-weight: 800; transition: left .35s ease; }
-    .case-visual .case-caption { position: absolute; left: 7%; bottom: .6rem; color: #61758a; font-size: .76rem; }
-    .case-visual.field-case .field-region { width: 72%; }
-    .case-visual.field-case .field-region::after { opacity: .35; transition: opacity .3s ease; }
-    .case-visual.field-case .loop-outline { left: 78%; }
-    .case-visual.field-case .case-arrow { display: none; }
     .lab-output { position: relative; display: grid; place-items: center; min-height: 250px; overflow: hidden; border-radius: 15px; background: linear-gradient(145deg, #ecfbfd, #dceef9); }
     .flux-visual { position: relative; width: 84%; height: 190px; }
     .flux-plate { position: absolute; left: 13%; top: 28%; width: 74%; height: 44%; border: 3px solid var(--teal); border-radius: 12px; background: rgba(255, 255, 255, .82); box-shadow: 0 5px 20px rgba(14, 116, 144, .12); transform-origin: center; transition: transform .25s ease; }
@@ -446,7 +414,6 @@
       .topbar, .sidebar, .page-footer, button, input, textarea, .source-note { display: none !important; }
       body { background: #fff; }
       .hero, .layout { display: block; max-width: none; padding: 1rem; }
-      .hero-equation { margin-top: 1rem; }
       .page, .page.active { display: block; page-break-after: always; }
       .card { box-shadow: none; }
     }
@@ -513,7 +480,7 @@
     .hero {
       position: relative;
       isolation: isolate;
-      grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+      grid-template-columns: 1fr;
       gap: clamp(1.25rem, 4vw, 3.2rem);
       max-width: 1200px;
       padding: clamp(1.65rem, 5vw, 3.8rem) clamp(.9rem, 4vw, 2.2rem) clamp(1.5rem, 4vw, 2.8rem);
@@ -543,13 +510,6 @@
     .route-node:last-child::after { display: none; }
     .route-node strong { display: block; color: var(--teal-dark); font-size: .78rem; }
     .route-node span { display: block; margin-top: .12rem; color: var(--muted); font-size: .71rem; }
-    .hero-equation { min-height: 232px; padding: clamp(1.2rem, 3vw, 1.8rem); border: 1px solid rgba(8, 127, 140, .2); border-radius: 28px; background: linear-gradient(145deg, rgba(255, 255, 255, .95), rgba(226, 249, 249, .92)); box-shadow: var(--shadow); }
-    .hero-equation::before { content: "FLUSS  →  SPANNUNG  →  GEGENWIRKUNG"; position: absolute; left: 1.5rem; top: 1.2rem; color: #73a5b1; font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-    .hero-equation::after { right: -2.2rem; bottom: -4.2rem; border-width: 25px; border-color: rgba(53, 198, 208, .12); }
-    .hero-equation .eq { margin: 1.35rem 0 .6rem; color: var(--navy); }
-    .hero-equation .eq + .eq { margin-top: 1rem; color: var(--teal-dark); }
-    .hero-equation .eq:last-child { margin-top: 1rem; color: var(--purple); }
-
     .layout { grid-template-columns: 232px minmax(0, 1fr); gap: clamp(1rem, 3vw, 1.8rem); max-width: 1200px; padding: 0 clamp(.9rem, 4vw, 2.2rem) 3rem; }
     .sidebar { top: 5.25rem; padding: .85rem; border: 1px solid rgba(8, 127, 140, .16); border-radius: 20px; background: rgba(255, 255, 255, .77); box-shadow: var(--soft-shadow); backdrop-filter: blur(10px); }
     .sidebar-title { display: flex; align-items: center; gap: .65rem; margin: .15rem .25rem .75rem; }
@@ -601,7 +561,6 @@
     .eq { color: var(--navy); }
     .eq .katex, .formula-token .katex { font-size: 1em; }
     .display-eq .katex { font-size: 1.06em; }
-    .hero-equation .katex { font-size: 1.08em; }
     .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .1rem 0; }
     .transition-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); gap: .65rem; align-items: stretch; }
     .transition-step { position: relative; padding: 1rem; border: 1px solid #d7e6ed; border-radius: 17px; background: linear-gradient(145deg, #fff, #f8fbfd); }
@@ -618,11 +577,7 @@
     .transition-list { display: grid; gap: .8rem; margin: .2rem 0 0; padding-left: 1.35rem; color: #536d81; }
     .transition-list li { padding-left: .25rem; }
     .transition-list strong { color: var(--navy); }
-    .case-banner { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(190px, .92fr); gap: .9rem; align-items: stretch; margin: 1rem 0; }
-    .case-visual { min-height: 170px; border-color: #bfe2e8; border-radius: 18px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .85); }
-    .case-visual .eq { color: inherit; }
-    .case-visual .field-region { border-style: solid; background: rgba(225, 250, 251, .8); }
-    .case-visual .loop-outline { width: 72px; height: 92px; border-width: 4px; }
+    .case-banner { margin: 1rem 0; }
     .case-summary { display: flex; flex-direction: column; justify-content: center; padding: 1.15rem; border: 1px solid #d6e6ed; border-radius: 18px; background: linear-gradient(145deg, #fff, #f5fafc); box-shadow: var(--soft-shadow); }
     .case-kicker { margin-bottom: .45rem; color: var(--teal); font-size: .68rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
     .case-summary > .eq { display: block; color: var(--navy); font-size: clamp(1.18rem, 3vw, 1.7rem); font-weight: 750; }
@@ -630,7 +585,6 @@
 
     @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-equation { min-height: 0; }
       .layout { grid-template-columns: 1fr; }
       .sidebar { position: static; }
       .sidebar-title { margin-bottom: .65rem; }
@@ -653,11 +607,7 @@
       .hero-route { grid-template-columns: 1fr; gap: .45rem; }
       .route-node::after { content: "↓"; right: auto; top: auto; bottom: -.7rem; left: 50%; transform: translateX(-50%); }
       .route-node:last-child::after { display: none; }
-      .hero-equation { padding: 1.2rem 1rem; border-radius: 21px; }
-      .hero-equation::before { left: 1rem; }
       .layout { padding-inline: .75rem; }
-      .case-banner { grid-template-columns: 1fr; }
-      .case-visual { min-height: 155px; }
       .step-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .step-nav button { min-height: 48px; font-size: .76rem; }
       .page-head { align-items: flex-start; padding: .85rem .9rem; }
@@ -713,11 +663,6 @@
           <div class="route-node"><strong>3 · Begründen</strong><span>Minuszeichen und Energie</span></div>
         </div>
       </div>
-      <div class="hero-equation" aria-label="zentrale Formeln">
-        <span class="eq">Φ = B · A · cos(α)</span>
-        <span class="eq" data-tex="U_{\mathrm{ind}}=-N\cdot\frac{\mathrm{d}\Phi}{\mathrm{d}t}">U<sub>ind</sub> = −N · <span class="frac"><span>dΦ</span><span>dt</span></span></span>
-        <span class="eq">dΦ/dt = Φ̇</span>
-      </div>
     </section>
 
     <div class="layout">
@@ -743,12 +688,6 @@
 
           <div class="display-eq"><span class="eq">Φ = B · A</span><br><span class="eq">B = konstant  ⇒  ΔΦ = B · ΔA</span></div>
           <div class="case-banner">
-            <div class="case-visual" aria-label="Skizze der Flächenänderung">
-              <div class="field-region">Magnetfeld <span class="eq" data-tex="B">B</span></div>
-              <div class="loop-outline"><span class="eq" data-tex="A">A</span></div>
-              <div class="case-arrow" aria-hidden="true">→</div>
-              <div class="case-caption">Die wirksame Fläche wird größer.</div>
-            </div>
             <div class="case-summary"><span class="case-kicker">Unverändert</span><span class="eq" data-tex="B=\mathrm{konstant}">B = konstant</span><p>Nur <span class="eq" data-tex="A">A</span> und damit <span class="eq" data-tex="\Phi">Φ</span> ändern sich.</p></div>
           </div>
           <div class="callout orange"><strong>Noch ohne Richtungsbetrachtung:</strong> Wir untersuchen zunächst nur den Betrag der mittleren Induktionsspannung. Baue die bekannte Formel für eine reine Flächenänderung zusammen.</div>
@@ -777,11 +716,6 @@
 
           <div class="display-eq"><span class="eq">Φ = B · A</span><br><span class="eq">A = konstant  ⇒  ΔΦ = A · ΔB</span></div>
           <div class="case-banner">
-            <div class="case-visual field-case" aria-label="Skizze der Feldänderung">
-              <div class="field-region">Magnetfeld <span class="eq" data-tex="B">B</span> ↑</div>
-              <div class="loop-outline"><span class="eq" data-tex="A">A</span></div>
-              <div class="case-caption">Die Fläche bleibt gleich.</div>
-            </div>
             <div class="case-summary field-summary"><span class="case-kicker">Unverändert</span><span class="eq" data-tex="A=\mathrm{konstant}">A = konstant</span><p>Nur <span class="eq" data-tex="B">B</span> und damit <span class="eq" data-tex="\Phi">Φ</span> ändern sich.</p></div>
           </div>
           <div class="callout orange"><strong>Noch ohne Richtungsbetrachtung:</strong> Jetzt verändert sich nur die Flussdichte. Baue die bekannte Formel für eine reine Feldänderung zusammen.</div>
