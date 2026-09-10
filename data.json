@@ -7911,14 +7911,14 @@
                 },
                 {
                   "id": "induktionsgesetz-und-lenzsche-regel",
-                  "titel": "Induktionsgesetz und Thomson-Ring",
+                  "titel": "Herleitung Induktionsgesetz",
                   "pfad": "q1-q2-grundkurs/induktion-und-elektrische-energieuebertragung/induktionsgesetz-und-lenzsche-regel/",
-                  "beschreibung": "Materialien zu Induktionsgesetz und Thomson-Ring.",
+                  "beschreibung": "Materialien zur Herleitung des Induktionsgesetzes und zur Lenzschen Regel.",
                   "materialien": [
                     {
                       "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-induktionsgesetz-und-lenzsche-regel-index-html",
-                      "titel": "Induktionsgesetz und Thomson-Ring",
-                      "kurztitel": "Induktionsgesetz und Thomson-Ring",
+                      "titel": "Herleitung Induktionsgesetz",
+                      "kurztitel": "Herleitung Induktionsgesetz",
                       "beschreibung": "",
                       "typ": "html",
                       "format": "HTML",
@@ -7939,7 +7939,7 @@
                     },
                     {
                       "id": "q1-q2-grundkurs-induktion-und-elektrische-energieuebertragung-induktionsgesetz-und-lenzsche-regel-index-pdf",
-                      "titel": "Arbeitsblatt: Induktionsgesetz und Thomson-Ring",
+                      "titel": "Arbeitsblatt: Herleitung Induktionsgesetz",
                       "kurztitel": "Arbeitsblatt",
                       "beschreibung": "",
                       "typ": "pdf",
